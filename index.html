@@ -43,17 +43,29 @@ Viz: HTML cards with Unicode icons. Interaction: Hover tooltips for detailed exp
             height: 320px;
             border-radius: 50%;
             margin: 2rem auto;
+            border: 4px solid #a7d9f8; /* Light blue border for circles */
+            background-color: #e0f2fe; /* Very light blue background */
         }
         .solar-term-item {
             position: absolute;
-            width: 60px;
-            height: 60px;
+            width: 70px; /* Slightly larger for better readability */
+            height: 70px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
             text-align: center;
             transform: translate(-50%, -50%);
+            background-color: #bfdbfe; /* Light blue */
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+            cursor: default;
+        }
+        .solar-term-item:hover {
+            background-color: #93c5fd; /* Slightly darker blue on hover */
+            transform: translate(-50%, -50%) scale(1.05);
         }
         .card-glow {
             transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out; /* Add border to transition */
@@ -139,10 +151,20 @@ Viz: HTML cards with Unicode icons. Interaction: Hover tooltips for detailed exp
                         <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">中文中的时间概念丰富而深远，不仅有精确的计时单位，更有蕴含哲学思考的词汇。本节将带您探索一日的流转、汉字的字源以及一些独特的传统时间词汇。 <br><span class="text-sm text-slate-500">(Chinese time concepts are rich and profound, encompassing not only precise units of measurement but also philosophical terms.
 This section explores the daily cycle, character etymology, and unique traditional time vocabulary.)</span></p>
                         
+                        <section id="simplified-time-chart" class="mb-12">
+                            <div class="text-center max-w-3xl mx-auto mb-8">
+                                <h2 class="text-2xl font-bold text-slate-800 mb-2">每日时间段 <br><span class="text-base font-normal text-slate-600">(Daily Time Periods)</span></h2>
+                                <p class="text-slate-600">除了古代的计时方式，现代中文中也常将一天划分为更易理解的日常时间段。以下是根据您的要求整理的每日时间段及其时长，以直观的环形图形式呈现。 <br><span class="text-sm text-slate-500">(In addition to ancient timekeeping methods, modern Chinese also commonly divides a day into more easily understood daily time periods. Here is a visual representation in a donut chart form of the daily time periods and their durations as you requested.)</span></p>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="dailyPeriodChart"></canvas>
+                            </div>
+                        </section>
+
                         <section id="daily-cycle" class="mb-12">
                             <div class="text-center max-w-3xl mx-auto mb-8">
                                 <h2 class="text-2xl font-bold text-slate-800 mb-2">一日的流转 <br><span class="text-base font-normal text-slate-600">(The Daily Cycle)</span></h2>
-                                <p class="text-slate-600">中文将一天精细地划分为不同时段，每个名称都蕴含着独特的节奏感。下方的图表展示了从午夜到夜晚各个时段的分布与时长，直观地呈现了一天24小时的循环往复。 <br><span class="text-sm text-slate-500">(Chinese precisely divides a day into different periods, each name imbued with a unique sense of rhythm. The chart below illustrates the distribution and duration of each period from midnight to night, visually presenting the 24-hour cycle of a day.)</span></p>
+                                <p class="text-slate-600">中文将一天精细地划分为十二个**时辰**，每个名称都蕴含着独特的节奏感，这是中国古代的计时方法。下方的图表直观地呈现了一天24小时的循环往复中，各个时辰的分布与时长。 <br><span class="text-sm text-slate-500">(Chinese precisely divides a day into twelve **shichen**, each name imbued with a unique sense of rhythm; this is an ancient Chinese timekeeping method. The chart below visually presents the distribution and duration of each shichen within the 24-hour daily cycle.)</span></p>
                             </div>
                             <div class="chart-container">
                                 <canvas id="dayCycleChart"></canvas>
@@ -271,7 +293,7 @@ Often used in poetry and prose, it carries a sentiment of cherishing time and th
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">⏳</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">流年 <span class="text-lg font-normal text-slate-600">(liú nián)</span></h3>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">流年 <span class="text-lg font-normal text-slate-600">(liú nián)</h3>
                                     <p class="text-slate-700">指流逝的岁月，常带有对时间飞逝或世事变迁的感慨，也常用于命理学中指当年的运势。 <br><span class="text-xs">(Refers to the passing years, often with a sense of time flowing quickly or impermanence. Also commonly used in numerology to refer to the fortune of the current year.)</span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
@@ -478,7 +500,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                 </div>
 
                 <!-- Tab 4: Festivals -->
-                <div id="tab-content-festivals">
+                <div id="tab-content-festivals" class="hidden">
                     <div class="p-2">
                         <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">中国传统节日是中华民族悠久历史和灿烂文化的重要组成部分，它们承载着丰富的民俗习惯、神话传说和道德观念。本节将带您探索一些主要的中国传统节日，了解它们的起源、习俗和文化意义。 <br><span class="text-sm text-slate-500">(Chinese traditional festivals are an important part of the long history and brilliant culture of the Chinese nation. They carry rich folk customs, myths and legends, and moral concepts. This section will guide you to explore some major Chinese traditional festivals, understand their origins, customs, and cultural significance.)</span></p>
                         
@@ -592,7 +614,65 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                 });
             });
 
-            // Day Cycle Chart
+            // --- Daily Period Donut Chart ---
+            const dailyPeriodsData = [
+                { zh: '午夜', en: 'Midnight', duration: 1 },
+                { zh: '凌晨', en: 'Early Morning', duration: 4 },
+                { zh: '清晨', en: 'Dawn', duration: 1 },
+                { zh: '早上', en: 'Morning', duration: 2 },
+                { zh: '上午', en: 'Late Morning', duration: 3 },
+                { zh: '中午', en: 'Noon', duration: 2 },
+                { zh: '下午', en: 'Afternoon', duration: 5 },
+                { zh: '傍晚', en: 'Dusk', duration: 1 },
+                { zh: '晚上', en: 'Evening', duration: 5 }
+            ];
+
+            const dailyPeriodCtx = document.getElementById('dailyPeriodChart').getContext('2d');
+            const dailyPeriodChart = new Chart(dailyPeriodCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: dailyPeriodsData.map(d => `${d.zh} (${d.duration}h)`),
+                    datasets: [{
+                        data: dailyPeriodsData.map(d => d.duration),
+                        backgroundColor: [
+                            '#003f5c', '#2f4b7c', '#665191', '#a05195',
+                            '#d45087', '#f95d6a', '#ff7c43', '#ffa600', '#4b9e82'
+                        ],
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#4A5568',
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += context.parsed + '小时 (hours)';
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+
+            // Day Cycle Chart (original 12 shichen chart)
             const ctx = document.getElementById('dayCycleChart').getContext('2d');
             const dayCycleChart = new Chart(ctx, {
                 type: 'doughnut',
@@ -654,24 +734,26 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                 { zh: '小寒', en: 'Xiǎohán', angle: 330 }, { zh: '大寒', en: 'Dàhán', angle: 345 }
             ];
 
-            const container = document.getElementById('solar-term-container');
-            const radius = container.offsetWidth / 2 - 30; // Adjust for item size
+            const solarTermContainer = document.getElementById('solar-term-container');
+            const solarTermRadius = solarTermContainer.offsetWidth / 2 - 30; // Adjust for item size
+            const solarTermCenterX = solarTermContainer.offsetWidth / 2;
+            const solarTermCenterY = solarTermContainer.offsetHeight / 2;
 
             solarTerms.forEach(term => {
                 const item = document.createElement('div');
-                item.classList.add('solar-term-item', 'bg-blue-200', 'rounded-full', 'shadow-sm', 'hover:bg-blue-300', 'transition-colors', 'duration-200', 'cursor-default');
+                item.classList.add('solar-term-item');
                 item.innerHTML = `<span class="font-medium text-blue-800">${term.zh}</span><br><span class="text-blue-600 text-xs">${term.en}</span>`;
                 item.setAttribute('data-zh-explanation', `${term.zh}`); // Placeholder, actual explanation might be longer
                 item.setAttribute('data-en-explanation', `${term.en}`); // Placeholder
 
                 const angleRad = (term.angle - 90) * (Math.PI / 180); // Adjust -90 to start from top
-                const x = radius * Math.cos(angleRad);
-                const y = radius * Math.sin(angleRad);
+                const x = solarTermCenterX + solarTermRadius * Math.cos(angleRad);
+                const y = solarTermCenterY + solarTermRadius * Math.sin(angleRad);
 
-                item.style.top = `${container.offsetHeight / 2 + y}px`;
-                item.style.left = `${container.offsetWidth / 2 + x}px`;
+                item.style.top = `${y}px`;
+                item.style.left = `${x}px`;
 
-                container.appendChild(item);
+                solarTermContainer.appendChild(item);
             });
 
             // Comparison functionality for Calendars tab
@@ -728,12 +810,12 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                 }
             });
 
-            // Tooltip for li items
+            // Tooltip for li items and new circular items
             const tooltip = document.getElementById('tooltip');
-            document.querySelectorAll('li[data-zh-explanation]').forEach(item => {
+            document.querySelectorAll('li[data-zh-explanation], .solar-term-item').forEach(item => { // Removed .daily-period-item from here as it's now a chart
                 item.addEventListener('mouseover', (e) => {
-                    const zhExplanation = e.target.dataset.zhExplanation;
-                    const enExplanation = e.target.dataset.enExplanation;
+                    const zhExplanation = e.target.dataset.zhExplanation || e.target.querySelector('span:first-child')?.textContent;
+                    const enExplanation = e.target.dataset.enExplanation || e.target.querySelector('span:last-child')?.textContent;
                     
                     tooltip.innerHTML = `<p class="font-bold mb-1">${zhExplanation}</p><p class="text-slate-300">${enExplanation}</p>`;
                     tooltip.classList.add('show');
