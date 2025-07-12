@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>时间、自然与节庆词汇探索 (Chinese Time, Nature, and Festival Vocabulary Explorer)</title>
     <!-- Chosen Palette: Calm Harmony -->
-    <!-- Application Structure Plan: A comprehensive tabbed interface for exploring Chinese vocabulary related to Time, Calendars, Natural Phenomena, and Traditional Festivals. Each tab provides focused content with interactive elements (charts, comparisons, tooltips) to enhance understanding and exploration. This structure allows for clear categorization and easy navigation across distinct but interconnected cultural concepts. -->
-    <!-- Visualization & Content Choices: Time: Goal: Inform/Organize. Viz: Donut Chart for daily cycle, Styled HTML Cards for character etymology, Styled HTML List for other concepts. Interaction: Chart provides visual distribution; Cards offer structured info. | Calendars: Goal: Inform/Compare. Viz: Styled HTML Cards for lunar concepts, Side-by-side text blocks for comparison. Interaction: JS-powered content switching for comparisons. | Natural Phenomena: Goal: Inform/Organize. Viz: HTML lists and cards. Interaction: Hover tooltips for detailed explanations. | Festivals: Goal: Inform/Organize. Viz: HTML cards with Unicode icons. Interaction: Hover tooltips for detailed explanations. -> All sections use Vanilla JS & Tailwind CSS. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <!-- Application Structure Plan: A comprehensive tabbed interface for exploring Chinese vocabulary related to Time, Calendars, Natural Phenomena, and Traditional Festivals.
+Each tab provides focused content with interactive elements (charts, comparisons, tooltips) to enhance understanding and exploration.
+This structure allows for clear categorization and easy navigation across distinct but interconnected cultural concepts.
+-->
+    <!-- Visualization & Content Choices: Time: Goal: Inform/Organize.
+Viz: Donut Chart for daily cycle, Styled HTML Cards for character etymology, Styled HTML List for other concepts.
+Interaction: Chart provides visual distribution; Cards offer structured info. | Calendars: Goal: Inform/Compare.
+Viz: Styled HTML Cards for lunar concepts, Side-by-side text blocks for comparison. Interaction: JS-powered content switching for comparisons. |
+Natural Phenomena: Goal: Inform/Organize. Viz: HTML lists and cards. Interaction: Hover tooltips for detailed explanations. | Festivals: Goal: Inform/Organize.
+Viz: HTML cards with Unicode icons. Interaction: Hover tooltips for detailed explanations.
+-> All sections use Vanilla JS & Tailwind CSS. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+-->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +26,7 @@
     <style>
         body {
             font-family: 'Noto Sans SC', sans-serif;
-            background-color: #f8fafc; 
+            background-color: #FFCCCC; /* A more noticeable light red for good luck */
         }
         .tab-btn.active {
             border-color: #3b82f6;
@@ -46,21 +56,25 @@
             transform: translate(-50%, -50%);
         }
         .card-glow {
-            transition: box-shadow 0.3s ease-in-out;
+            transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out; /* Add border to transition */
+            border: 2px solid transparent; /* Initial transparent border */
         }
         .card-glow:hover {
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); /* Gold shadow on hover */
+            border-color: #FFD700; /* Gold outline on hover */
         }
         .tooltip {
             position: absolute;
             background-color: rgba(30, 41, 59, 0.95); /* slate-900 with opacity */
-            color: #f8fafc; /* slate-50 */
+            color: #f8fafc;
+            /* slate-50 */
             padding: 0.75rem 1rem;
             border-radius: 0.5rem;
             font-size: 0.875rem; /* text-sm */
             line-height: 1.5;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            z-index: 50; /* Ensure it's above other content */
+            z-index: 50;
+            /* Ensure it's above other content */
             max-width: 300px;
             pointer-events: none; /* Allows clicks to pass through to elements below */
             opacity: 0;
@@ -77,6 +91,17 @@
             width: 100%;
             max-width: 500px;
         }
+        /* New style for the main content area to make body background visible */
+        .main-content-area {
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+            backdrop-filter: blur(5px); /* Optional: add a blur effect */
+        }
+        /* Specific background for the Festivals tab content */
+        #tab-content-festivals {
+            background-color: #FFDDDD; /* A distinct red for the festivals tab */
+            border-radius: 1rem; /* Match parent rounded-2xl */
+            padding: 1rem; /* Adjust padding as needed */
+        }
     </style>
 </head>
 <body class="text-slate-800">
@@ -88,7 +113,7 @@
             <p class="text-lg text-slate-600">深入了解时间、历法、自然与传统节日 <br><span class="text-base text-slate-500">(Explore Time, Calendars, Nature & Traditional Festivals)</span></p>
         </header>
 
-        <div class="bg-white rounded-2xl shadow-lg p-4 sm:p-6">
+        <div class="rounded-2xl shadow-lg p-4 sm:p-6 main-content-area">
             
             <div class="border-b border-slate-200 mb-6 overflow-x-auto">
                 <nav class="flex space-x-2 sm:space-x-4 min-w-max" aria-label="Tabs">
@@ -111,7 +136,8 @@
                 <!-- Tab 1: Time -->
                 <div id="tab-content-time">
                     <div class="p-2">
-                        <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">中文中的时间概念丰富而深远，不仅有精确的计时单位，更有蕴含哲学思考的词汇。本节将带您探索一日的流转、汉字的字源以及一些独特的传统时间词汇。 <br><span class="text-sm text-slate-500">(Chinese time concepts are rich and profound, encompassing not only precise units of measurement but also philosophical terms. This section explores the daily cycle, character etymology, and unique traditional time vocabulary.)</span></p>
+                        <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">中文中的时间概念丰富而深远，不仅有精确的计时单位，更有蕴含哲学思考的词汇。本节将带您探索一日的流转、汉字的字源以及一些独特的传统时间词汇。 <br><span class="text-sm text-slate-500">(Chinese time concepts are rich and profound, encompassing not only precise units of measurement but also philosophical terms.
+This section explores the daily cycle, character etymology, and unique traditional time vocabulary.)</span></p>
                         
                         <section id="daily-cycle" class="mb-12">
                             <div class="text-center max-w-3xl mx-auto mb-8">
@@ -126,7 +152,9 @@
                         <section id="character-analysis" class="mb-12">
                             <div class="text-center max-w-3xl mx-auto mb-8">
                                 <h2 class="text-2xl font-bold text-slate-800 mb-2">字源深解：光与影的描绘 <br><span class="text-base font-normal text-slate-600">(Etymology: Depicting Light and Shadow)</span></h2>
-                                <p class="text-slate-600">汉字不仅是符号，更是图画。关于时间的核心汉字，通过其结构生动地描绘了自然景象，反映了古人的哲学思考。每一个字，都是一个凝固的瞬间。 <br><span class="text-sm text-slate-500">(Chinese characters are not just symbols but also pictures. Core characters related to time vividly depict natural scenes through their structures, reflecting ancient philosophical thinking. Each character is a frozen moment.)</span></p>
+                                <p class="text-slate-600">汉字不仅是符号，更是图画。关于时间的核心汉字，通过其结构生动地描绘了自然景象，反映了古人的哲学思考。每一个字，都是一个凝固的瞬间。 <br><span class="text-sm text-slate-500">(Chinese characters are not just symbols but also pictures.
+Core characters related to time vividly depict natural scenes through their structures, reflecting ancient philosophical thinking.
+Each character is a frozen moment.)</span></p>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
@@ -137,7 +165,8 @@
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌙</div>
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">夜 <span class="text-lg font-normal text-slate-600">(yè)</span></h3>
-                                    <p class="text-slate-700">字形核心是“夕”（月亮），描绘了月亮出现、太阳隐去的景象。它与“黑”组成“黑夜”，代表静谧与休憩，体现阴阳轮转。 <br><span class="text-xs">(The core of the character form is "夕" (moon), depicting the scene where the moon appears and the sun hides. It combines with "黑" (black) to form "黑夜" (night), representing tranquility and rest, embodying the cycle of Yin and Yang.)</span></p>
+                                    <p class="text-slate-700">字形核心是“夕”（月亮），描绘了月亮出现、太阳隐去的景象。它与“黑”组成“黑夜”，代表静谧与休憩，体现阴阳轮转。 <br><span class="text-xs">(The core of the character form is "夕" (moon), depicting the scene where the moon appears and the sun hides.
+It combines with "黑" (black) to form "黑夜" (night), representing tranquility and rest, embodying the cycle of Yin and Yang.)</span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌅</div>
@@ -147,7 +176,8 @@
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌇</div>
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">夕 <span class="text-lg font-normal text-slate-600">(xī)</span></h3>
-                                    <p class="text-slate-700">古字形为一弯新月，描绘日落后月亮初升的景象。本义是傍晚，带有一种结束、沉静、归于宁寂的色彩，如“除夕”。 <br><span class="text-xs">(The ancient character form is a crescent moon, depicting the scene of the moon rising after sunset. Its original meaning is evening, carrying a sense of ending, tranquility, and returning to stillness, such as "除夕" (Chinese New Year's Eve).)</span></p>
+                                    <p class="text-slate-700">古字形为一弯新月，描绘日落后月亮初升的景象。本义是傍晚，带有一种结束、沉静、归于宁寂的色彩，如“除夕”。 <br><span class="text-xs">(The ancient character form is a crescent moon, depicting the scene of the moon rising after sunset.
+Its original meaning is evening, carrying a sense of ending, tranquility, and returning to stillness, such as "除夕" (Chinese New Year's Eve).)</span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌄</div>
@@ -157,7 +187,8 @@
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌆</div>
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">昏 <span class="text-lg font-normal text-slate-600">(hūn)</span></h3>
-                                    <p class="text-slate-700">描绘太阳落到地平线之下，天色变暗的情景。因光线暗淡、视野模糊，引申出“昏暗”、“昏迷”等含义。 <br><span class="text-xs">(Depicts the scene where the sun sets below the horizon and the sky darkens. Due to dim light and blurred vision, it extends to meanings like "昏暗" (dim) and "昏迷" (coma).)</span></p>
+                                    <p class="text-slate-700">描绘太阳落到地平线之下，天色变暗的情景。因光线暗淡、视野模糊，引申出“昏暗”、“昏迷”等含义。 <br><span class="text-xs">(Depicts the scene where the sun sets below the horizon and the sky darkens.
+Due to dim light and blurred vision, it extends to meanings like "昏暗" (dim) and "昏迷" (coma).)</span></p>
                                 </div>
                             </div>
                         </section>
@@ -186,7 +217,8 @@
                                     <div class="text-4xl text-blue-600">🗓️</div>
                                     <div>
                                         <h4 class="text-xl font-bold text-slate-800">闰年 <span class="text-base font-normal text-slate-600">(rùn nián)</span></h4>
-                                        <p class="text-slate-700">为弥补历法与地球公转周期的差异而设，公历中指2月有29天的一年。 <br><span class="text-xs">(A leap year is set to compensate for the difference between the calendar and Earth's orbital period; in the Gregorian calendar, it refers to a year with 29 days in February.)</span></p>
+                                        <p class="text-slate-700">为弥补历法与地球公转周期的差异而设，公历中指2月有29天的一年。 <br><span class="text-xs">(A leap year is set to compensate for the difference between the calendar and Earth's orbital period;
+in the Gregorian calendar, it refers to a year with 29 days in February.)</span></p>
                                     </div>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-md p-6 flex items-center space-x-6 card-glow">
@@ -213,7 +245,9 @@
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌀</div>
                                     <h3 class="text-xl font-bold text-slate-800 mb-2">光阴 <span class="text-lg font-normal text-slate-600">(guāng yīn)</span></h3>
-                                    <p class="text-slate-700">“光”指日光，“阴”指月光，合指日月交替，引申为时间。常用于诗词歌赋，带有珍惜时间、岁月流逝的感慨。 <br><span class="text-xs">("光" refers to daylight, "阴" refers to moonlight; together they denote the alternation of sun and moon, extended to mean time. Often used in poetry and prose, it carries a sentiment of cherishing time and the passage of years.)</span></p>
+                                    <p class="text-slate-700">“光”指日光，“阴”指月光，合指日月交替，引申为时间。常用于诗词歌赋，带有珍惜时间、岁月流逝的感慨。 <br><span class="text-xs">("光" refers to daylight, "阴" refers to moonlight;
+together they denote the alternation of sun and moon, extended to mean time.
+Often used in poetry and prose, it carries a sentiment of cherishing time and the passage of years.)</span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🕰️</div>
@@ -263,7 +297,8 @@
                 <!-- Tab 2: Calendars -->
                 <div id="tab-content-calendar" class="hidden">
                     <div class="p-2">
-                        <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">日历是人类记录时间、规划生活的重要工具。本节将深入探讨中国农历的独特之处，并将其与国际通用的阳历进行对比，帮助您理解不同历法系统的原理与应用。 <br><span class="text-sm text-slate-500">(Calendars are essential tools for humans to record time and plan life. This section delves into the unique aspects of the Chinese Lunar Calendar and compares it with the internationally used Gregorian Calendar, helping you understand the principles and applications of different calendar systems.)</span></p>
+                        <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">日历是人类记录时间、规划生活的重要工具。本节将深入探讨中国农历的独特之处，并将其与国际通用的阳历进行对比，帮助您理解不同历法系统的原理与应用。 <br><span class="text-sm text-slate-500">(Calendars are essential tools for humans to record time and plan life.
+This section delves into the unique aspects of the Chinese Lunar Calendar and compares it with the internationally used Gregorian Calendar, helping you understand the principles and applications of different calendar systems.)</span></p>
 
                         <section id="lunar-deep-dive" class="mb-12">
                             <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">深入了解农历 <br><span class="text-base font-normal text-slate-600">(Deep Dive into Lunar Calendar)</span></h2>
@@ -271,7 +306,8 @@
                                 <div class="bg-slate-50 rounded-lg p-6 text-center transition-shadow hover:shadow-md card-glow">
                                     <div class="text-5xl mb-4">🌕</div>
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">月相周期 <br><span class="text-sm font-normal text-slate-600">(Moon Phase Cycle)</span></h3>
-                                    <p class="text-sm text-slate-600">农历以月亮的盈亏周期（朔望月）为基础来划分月份，平均为29.53天。因此农历的月份分为29天的小月和30天的大月。 <br><span class="text-xs">(The Lunar Calendar divides months based on the moon's waxing and waning cycle (synodic month), averaging 29.53 days. Thus, lunar months are either 29-day 'small months' or 30-day 'large months'.)</span></p>
+                                    <p class="text-sm text-slate-600">农历以月亮的盈亏周期（朔望月）为基础来划分月份，平均为29.53天。因此农历的月份分为29天的小月和30天的大月。 <br><span class="text-xs">(The Lunar Calendar divides months based on the moon's waxing and waning cycle (synodic month), averaging 29.53 days.
+Thus, lunar months are either 29-day 'small months' or 30-day 'large months'.)</span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 text-center transition-shadow hover:shadow-md card-glow">
                                     <div class="text-5xl mb-4">🗓️</div>
@@ -281,7 +317,8 @@
                                 <div class="bg-slate-50 rounded-lg p-6 text-center transition-shadow hover:shadow-md card-glow">
                                     <div class="text-5xl mb-4">🌱</div>
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">文化意义 <br><span class="text-sm font-normal text-slate-600">(Cultural Significance)</span></h3>
-                                    <p class="text-sm text-slate-600">许多重要的传统节日，如春节、端午节、中秋节等，都由农历确定。它深深植根于中华文化，影响着人们的生活节奏与习俗。 <br><span class="text-xs">(Many important traditional festivals, such as Chinese New Year, Dragon Boat Festival, and Mid-Autumn Festival, are determined by the Lunar Calendar. It is deeply rooted in Chinese culture, influencing people's daily rhythms and customs.)</span></p>
+                                    <p class="text-sm text-slate-600">许多重要的传统节日，如春节、端午节、中秋节等，都由农历确定。它深深植根于中华文化，影响着人们的生活节奏与习俗。 <br><span class="text-xs">(Many important traditional festivals, such as Chinese New Year, Dragon Boat Festival, and Mid-Autumn Festival, are determined by the Lunar Calendar.
+It is deeply rooted in Chinese culture, influencing people's daily rhythms and customs.)</span></p>
                                 </div>
                             </div>
 
@@ -299,10 +336,11 @@
 
                         <section id="calendar-comparison" class="mb-12">
                             <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">农历 vs. 阳历 <br><span class="text-base font-normal text-slate-600">(Lunar vs. Gregorian Calendars)</span></h2>
-                            <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">农历与国际通用的阳历（公历）在制定原理、结构和用途上存在显著差异。点击下方按钮，探索它们在不同方面的具体区别，更好地理解这两种历法系统。 <br><span class="text-sm text-slate-500">(The Lunar Calendar and the internationally used Gregorian Calendar differ significantly in their underlying principles, structure, and applications. Click the buttons below to explore their specific distinctions in various aspects, gaining a better understanding of these two calendar systems.)</span></p>
+                            <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">农历与国际通用的阳历（公历）在制定原理、结构和用途上存在显著差异。点击下方按钮，探索它们在不同方面的具体区别，更好地理解这两种历法系统。 <br><span class="text-sm text-slate-500">(The Lunar Calendar and the internationally used Gregorian Calendar differ significantly in their underlying principles, structure, and applications.
+Click the buttons below to explore their specific distinctions in various aspects, gaining a better understanding of these two calendar systems.)</span></p>
                             
                             <div class="flex flex-wrap justify-center gap-2 mb-8" id="comparison-nav">
-                                
+                                <!-- Comparison buttons will be injected here by JavaScript -->
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
@@ -322,8 +360,9 @@
                 <!-- Tab 3: Natural Phenomena -->
                 <div id="tab-content-natural" class="hidden">
                     <div class="p-2">
-                        <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">自然现象是自然界中发生的各种事件和过程，它们或壮丽，或神秘，展现着大自然的力量与美丽。本节将带您探索节气、天气、季节、气候以及各种天象和自然现象的中文词汇。 <br><span class="text-sm text-slate-500">(Natural phenomena are various events and processes occurring in nature, which can be magnificent or mysterious, showcasing the power and beauty of the natural world. This section will guide you through Chinese vocabulary related to solar terms, weather, seasons, climate, and various celestial and natural phenomena.)</span></p>
-                        
+                        <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">自然现象是自然界中发生的各种事件和过程，它们或壮丽，或神秘，展现着大自然的力量与美丽。本节将带您探索节气、天气、季节、气候以及各种天象和自然现象的中文词汇。 <br><span class="text-sm text-slate-500">(Natural phenomena are various events and processes occurring in nature, which can be magnificent or mysterious, showcasing the power and beauty of the natural world.
+This section will guide you through Chinese vocabulary related to solar terms, weather, seasons, climate, and various celestial and natural phenomena.)</span></p>
+
                         <section id="solar-terms-list" class="mb-12">
                             <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">二十四节气 <br><span class="text-base font-normal text-slate-600">(The 24 Solar Terms)</span></h2>
                             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -352,453 +391,345 @@
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">秋季节气 <br><span class="text-sm font-normal text-slate-600">(Autumn Solar Terms)</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="立秋标志着秋季的开始，气温逐渐下降，凉爽宜人。" data-en-explanation="Beginning of Autumn marks the start of autumn, with gradually falling temperatures and pleasant coolness.">立秋 (Lìqiū) - Beginning of Autumn</li>
-                                        <li data-zh-explanation="处暑时节，暑气逐渐消退，天气由热转凉。" data-en-explanation="End of Heat solar term, the summer heat gradually recedes, and the weather turns from hot to cool.">处暑 (Chǔshǔ) - End of Heat</li>
-                                        <li data-zh-explanation="白露时节，昼夜温差大，水汽在夜晚凝结成露珠。" data-en-explanation="White Dew solar term, large temperature difference between day and night, water vapor condenses into dew drops at night.">白露 (Báilù) - White Dew</li>
-                                        <li data-zh-explanation="秋分时，昼夜等长，秋高气爽，是作物成熟的季节。" data-en-explanation="At Autumn Equinox, day and night are of equal length, the autumn sky is clear and crisp, and it's the season for crops to ripen.">秋分 (Qiūfēn) - Autumn Equinox</li>
-                                        <li data-zh-explanation="寒露时节，气温更低，露水更冷，即将出现霜冻。" data-en-explanation="Cold Dew solar term, temperatures are lower, dew is colder, and frost is imminent.">寒露 (Hánlù) - Cold Dew</li>
-                                        <li data-zh-explanation="霜降时节，天气渐冷，开始出现霜，秋作物收割完毕。" data-en-explanation="Frost's Descent solar term, the weather gradually turns cold, frost begins to appear, and autumn crops are harvested.">霜降 (Shuāngjiàng) - Frost's Descent</li>
+                                        <li data-zh-explanation="立秋标志着秋季的开始，天气逐渐转凉，降水减少。" data-en-explanation="Beginning of Autumn marks the start of autumn, with gradually cooler weather and reduced precipitation.">立秋 (Lìqiū) - Beginning of Autumn</li>
+                                        <li data-zh-explanation="处暑时节，暑气逐渐消退，但白天仍可能炎热。" data-en-explanation="End of Heat solar term, the summer heat gradually recedes, but it can still be hot during the day.">处暑 (Chǔshǔ) - End of Heat</li>
+                                        <li data-zh-explanation="白露时节，气温下降明显，水汽在夜晚凝结成露珠，天气转凉。" data-en-explanation="White Dew solar term, temperatures drop significantly, water vapor condenses into dew at night, and the weather turns cooler.">白露 (Báilù) - White Dew</li>
+                                        <li data-zh-explanation="秋分时，昼夜等长，秋高气爽，是作物成熟和收获的时节。" data-en-explanation="At Autumn Equinox, day and night are of equal length, the autumn sky is clear and refreshing, and it's a time for crops to mature and be harvested.">秋分 (Qiūfēn) - Autumn Equinox</li>
+                                        <li data-zh-explanation="寒露时节，气温继续下降，露水更冷，即将凝结成霜。" data-en-explanation="Cold Dew solar term, temperatures continue to drop, dew becomes colder, and is about to condense into frost.">寒露 (Hánlù) - Cold Dew</li>
+                                        <li data-zh-explanation="霜降时节，天气渐冷，开始出现霜冻，标志着深秋的到来。" data-en-explanation="Frost's Descent solar term, the weather gradually turns cold, frost begins to appear, marking the arrival of late autumn.">霜降 (Shuāngjiàng) - Frost's Descent</li>
                                     </ul>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">冬季节气 <br><span class="text-sm font-normal text-slate-600">(Winter Solar Terms)</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="立冬标志着冬季的开始，天气逐渐寒冷，万物收藏。" data-en-explanation="Beginning of Winter marks the start of winter, with gradually colder weather and all things storing up.">立冬 (Lìdōng) - Beginning of Winter</li>
-                                        <li data-zh-explanation="小雪时节，开始降雪，但雪量不大，气温进一步降低。" data-en-explanation="Lesser Snow solar term, snow begins to fall, but the amount is not large, and temperatures drop further.">小雪 (Xiǎoxuě) - Lesser Snow</li>
-                                        <li data-zh-explanation="大雪时节，降雪量增多，天气严寒，冰冻现象常见。" data-en-explanation="Greater Snow solar term, snowfall increases, the weather is severely cold, and freezing is common.">大雪 (Dàxuě) - Greater Snow</li>
-                                        <li data-zh-explanation="冬至是北半球白昼最短的一天，也是冬季的中心。" data-en-explanation="Winter Solstice is the shortest day in the Northern Hemisphere, and the center of winter.">冬至 (Dōngzhì) - Winter Solstice</li>
-                                        <li data-zh-explanation="小寒时节，天气非常寒冷，但尚未达到最冷。" data-en-explanation="Lesser Cold solar term, the weather is very cold, but has not yet reached its coldest.">小寒 (Xiǎohán) - Lesser Cold</li>
+                                        <li data-zh-explanation="立冬标志着冬季的开始，气温骤降，作物收割完毕。" data-en-explanation="Beginning of Winter marks the start of winter, with a sharp drop in temperatures and crops harvested.">立冬 (Lìdōng) - Beginning of Winter</li>
+                                        <li data-zh-explanation="小雪时节，气温持续降低，开始降雪，但量通常不大。" data-en-explanation="Lesser Snow solar term, temperatures continue to drop, and light snow begins to fall, but the amount is usually not large.">小雪 (Xiǎoxuě) - Lesser Snow</li>
+                                        <li data-zh-explanation="大雪时节，气温更低，降雪量增多，大地被积雪覆盖。" data-en-explanation="Greater Snow solar term, temperatures are lower, snowfall increases, and the earth is covered by accumulated snow.">大雪 (Dàxuě) - Greater Snow</li>
+                                        <li data-zh-explanation="冬至是北半球白昼最短的一天，标志着寒冬的到来。" data-en-explanation="Winter Solstice is the shortest day in the Northern Hemisphere, marking the arrival of deep winter.">冬至 (Dōngzhì) - Winter Solstice</li>
+                                        <li data-zh-explanation="小寒时节，天气严寒，进入一年中最冷的时段之一。" data-en-explanation="Lesser Cold solar term, the weather is severely cold, entering one of the coldest periods of the year.">小寒 (Xiǎohán) - Lesser Cold</li>
                                         <li data-zh-explanation="大寒是一年中最冷的节气，严寒刺骨，冰天雪地。" data-en-explanation="Greater Cold is the coldest solar term of the year, with biting cold and icy, snowy conditions.">大寒 (Dàhán) - Greater Cold</li>
                                     </ul>
                                 </div>
                             </div>
                         </section>
 
-                        <section id="weather-details" class="mb-12">
-                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">天气 <br><span class="text-base font-normal text-slate-600">(Weather)</span></h2>
-                            <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">天气是指一个地区在短时间内大气状况的变化，如温度、湿度、风向和降水等。掌握这些词汇能帮助您准确描述日常天气。 <br><span class="text-sm text-slate-500">(Weather refers to the atmospheric conditions in a specific area over a short period, including temperature, humidity, wind direction, and precipitation. Mastering these terms helps you accurately describe daily weather.)</span></p>
-                            
+                        <section id="weather-and-seasons" class="mb-12">
+                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">天气与季节 <br><span class="text-base font-normal text-slate-600">(Weather & Seasons)</span></h2>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">常见天气状况 <br><span class="text-sm font-normal text-slate-600">(Common Weather Conditions)</span></h3>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">天气词汇 <br><span class="text-sm font-normal text-slate-600">(Weather Vocabulary)</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="天空晴朗，没有云或只有少量云的天气。" data-en-explanation="Weather with a clear sky, no clouds, or only a few clouds.">☀️ 晴天 (Qíngtiān) - Sunny</li>
-                                        <li data-zh-explanation="天空中有较多云，但阳光仍能透过云层。" data-en-explanation="Weather with many clouds in the sky, but sunlight can still penetrate through them.">☁️ 多云 (Duōyún) - Cloudy</li>
-                                        <li data-zh-explanation="天空被云层完全覆盖，没有阳光的天气。" data-en-explanation="Weather where the sky is completely covered by clouds, with no sunlight.">阴天 (Yīntiān) - Overcast</li>
-                                        <li data-zh-explanation="天空中有水滴降落到地面的现象。" data-en-explanation="The phenomenon of water droplets falling from the sky to the ground.">🌧️ 下雨 (Xiàyǔ) - Raining</li>
-                                        <li data-zh-explanation="伴有雷电的阵发性降雨。" data-en-explanation="Intermittent rainfall accompanied by thunder and lightning.">⛈️ 雷阵雨 (Léizhènyǔ) - Thunderstorm</li>
-                                        <li data-zh-explanation="天空中有冰晶降落到地面的现象。" data-en-explanation="The phenomenon of ice crystals falling from the sky to the ground.">❄️ 下雪 (Xiàxuě) - Snowing</li>
-                                        <li data-zh-explanation="从云中降落的坚硬的冰粒。" data-en-explanation="Hard ice pellets falling from clouds.">🌨️ 冰雹 (Bīngbáo) - Hail</li>
-                                        <li data-zh-explanation="空气中大量水滴或冰晶悬浮，导致能见度降低的现象。" data-en-explanation="A phenomenon where a large number of water droplets or ice crystals are suspended in the air, leading to reduced visibility.">🌫️ 雾 (Wù) - Fog</li>
-                                        <li data-zh-explanation="空气中悬浮的细小颗粒物导致能见度降低的现象。" data-en-explanation="A phenomenon where fine particulate matter suspended in the air causes reduced visibility.">霾 (Mái) - Haze</li>
-                                        <li data-zh-explanation="在寒冷天气中，水蒸气在物体表面凝结形成的冰晶。" data-en-explanation="Ice crystals formed when water vapor condenses on surfaces in cold weather.">霜 (Shuāng) - Frost</li>
+                                        <li data-zh-explanation="晴朗：天空无云，阳光充足。" data-en-explanation="Clear: Cloudless sky, abundant sunshine.">晴朗 (Qínglǎng) - Clear/Sunny</li>
+                                        <li data-zh-explanation="多云：天空云量较多，阳光时隐时现。" data-en-explanation="Cloudy: More clouds in the sky, sun appears and disappears.">多云 (Duōyún) - Cloudy</li>
+                                        <li data-zh-explanation="阴天：天空被云层完全覆盖，没有阳光。" data-en-explanation="Overcast: Sky completely covered by clouds, no sunshine.">阴天 (Yīntiān) - Overcast</li>
+                                        <li data-zh-explanation="小雨：降水量较小，持续时间可能较短。" data-en-explanation="Light rain: Small amount of precipitation, possibly short duration.">小雨 (Xiǎoyǔ) - Light Rain</li>
+                                        <li data-zh-explanation="大雨：降水量较大，可能伴有雷电。" data-en-explanation="Heavy rain: Large amount of precipitation, possibly accompanied by thunder and lightning.">大雨 (Dàyǔ) - Heavy Rain</li>
+                                        <li data-zh-explanation="雷阵雨：伴有雷电的局部性、短时阵雨。" data-en-explanation="Thunderstorm: Localized, short-duration showers with thunder and lightning.">雷阵雨 (Léizhènyǔ) - Thunderstorm</li>
+                                        <li data-zh-explanation="雪：固态降水，温度低于冰点时形成。" data-en-explanation="Snow: Solid precipitation, forms when temperature is below freezing.">雪 (Xuě) - Snow</li>
+                                        <li data-zh-explanation="雾：空气中悬浮的微小水滴，能见度降低。" data-en-explanation="Fog: Tiny water droplets suspended in the air, reducing visibility.">雾 (Wù) - Fog</li>
+                                        <li data-zh-explanation="风：空气流动形成的自然现象。" data-en-explanation="Wind: Natural phenomenon formed by air movement.">风 (Fēng) - Wind</li>
+                                        <li data-zh-explanation="冰雹：从积雨云中降落的固态冰块。" data-en-explanation="Hail: Solid ice chunks falling from cumulobimbus clouds.">冰雹 (Bīngbáo) - Hail</li>
                                     </ul>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">气象术语 <br><span class="text-sm font-normal text-slate-600">(Meteorological Terms)</span></h3>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">季节词汇 <br><span class="text-sm font-normal text-slate-600">(Season Vocabulary)</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="衡量物体冷热程度的物理量。" data-en-explanation="A physical quantity that measures the degree of hotness or coldness of an object.">🌡️ 温度 (Wēndù) - Temperature</li>
-                                        <li data-zh-explanation="风吹来的方向。" data-en-explanation="The direction from which the wind is blowing.">🌬️ 风向 (Fēngxiàng) - Wind Direction</li>
-                                        <li data-zh-explanation="风移动的速度。" data-en-explanation="The speed at which the wind is moving.">风速 (Fēngsù) - Wind Speed</li>
-                                        <li data-zh-explanation="空气中水蒸气的含量。" data-en-explanation="The amount of water vapor in the air.">💧 湿度 (Shīdù) - Humidity</li>
-                                        <li data-zh-explanation="空气中水蒸气达到饱和并开始凝结成露水或雾的温度。" data-en-explanation="The temperature at which air becomes saturated with water vapor and condensation begins to form dew or fog.">露点 (Lùdiǎn) - Dew Point</li>
-                                        <li data-zh-explanation="大气对地球表面产生的压力。" data-en-explanation="The pressure exerted by the atmosphere on the Earth's surface.">气压 (Qìyā) - Atmospheric Pressure</li>
-                                        <li data-zh-explanation="从观测点能看清目标物体的最远距离。" data-en-explanation="The maximum distance at which an object can be clearly seen from an observation point.">能见度 (Néngjiàndù) - Visibility</li>
+                                        <li data-zh-explanation="春季：通常指农历正月到三月，万物复苏，生机勃勃。" data-en-explanation="Spring: Usually refers to the first to third lunar months, when all things revive and are full of vitality.">春季 (Chūnjì) - Spring</li>
+                                        <li data-zh-explanation="夏季：通常指农历四月到六月，炎热多雨，植物生长旺盛。" data-en-explanation="Summer: Usually refers to the fourth to sixth lunar months, hot and rainy, with vigorous plant growth.">夏季 (Xiàjì) - Summer</li>
+                                        <li data-zh-explanation="秋季：通常指农历七月到九月，天气凉爽，作物成熟。" data-en-explanation="Autumn: Usually refers to the seventh to ninth lunar months, cool weather, and crops mature.">秋季 (Qiūjì) - Autumn</li>
+                                        <li data-zh-explanation="冬季：通常指农历十月到十二月，天气寒冷，万物收藏。" data-en-explanation="Winter: Usually refers to the tenth to twelfth lunar months, cold weather, and all things are stored away.">冬季 (Dōngjì) - Winter</li>
+                                        <li data-zh-explanation="旱季：降水稀少，空气干燥的季节。" data-en-explanation="Dry season: A season with scarce precipitation and dry air.">旱季 (Hànjì) - Dry Season</li>
+                                        <li data-zh-explanation="雨季：降水集中，空气湿润的季节。" data-en-explanation="Rainy season: A season with concentrated precipitation and humid air.">雨季 (Yǔjì) - Rainy Season</li>
                                     </ul>
                                 </div>
-                            </div>
-
-                            <div class="bg-slate-50 rounded-lg p-6 card-glow mt-6">
-                                <h3 class="font-bold text-lg text-slate-800 mb-2">天气描述例句 <br><span class="text-sm font-normal text-slate-600">(Example Sentences for Weather Descriptions)</span></h3>
-                                <ul class="list-disc list-inside text-sm text-slate-600 space-y-2">
-                                    <li>上午多云，下午转晴。 <br><span class="text-xs">(Cloudy in the morning, turning sunny in the afternoon.)</span></li>
-                                    <li>今天气温25摄氏度，微风。 <br><span class="text-xs">(Today's temperature is 25 degrees Celsius, with a light breeze.)</span></li>
-                                    <li>预计今晚有雷阵雨。 <br><span class="text-xs">(Thunderstorms are expected tonight.)</span></li>
-                                    <li>受冷空气影响，明天会降温。 <br><span class="text-xs">(Affected by cold air, the temperature will drop tomorrow.)</span></li>
-                                    <li>大雾弥漫，能见度很低。 <br><span class="text-xs">(Heavy fog, visibility is very low.)</span></li>
-                                </ul>
                             </div>
                         </section>
 
-                        <section id="seasons-details" class="mb-12">
-                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">季节 <br><span class="text-base font-normal text-slate-600">(Seasons)</span></h2>
-                            <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">地球的倾斜和绕太阳公转导致了四季的变化。春夏秋冬各有特色，深刻影响着自然界和人类生活。 <br><span class="text-sm text-slate-500">(The Earth's tilt and revolution around the sun cause the change of seasons. Spring, Summer, Autumn, and Winter each have distinct characteristics, profoundly influencing nature and human life.)</span></p>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <section id="celestial-and-natural-phenomena" class="mb-12">
+                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">天象与自然现象 <br><span class="text-base font-normal text-slate-600">(Celestial & Natural Phenomena)</span></h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="bg-slate-50 rounded-lg p-6 card-glow">
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">日食 <br><span class="text-sm font-normal text-slate-600">(Rìshí) - Solar Eclipse</span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="月球运行到太阳与地球之间，遮挡太阳光线，使地球上的部分区域或完全看不到太阳。" data-en-explanation="When the moon passes between the sun and Earth, blocking the sun's light, causing parts of Earth to see a partial or total obscuration of the sun.">月球运行到太阳与地球之间，遮挡太阳光线。</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-6 card-glow">
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">月食 <br><span class="text-sm font-normal text-slate-600">(Yuèshí) - Lunar Eclipse</span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="地球运行到太阳与月球之间，地球的影子遮挡月球，使月亮变暗或消失。" data-en-explanation="When the Earth passes between the sun and moon, casting a shadow on the moon, causing it to dim or disappear.">地球的影子遮挡月球，使月亮变暗。</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-6 card-glow">
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">彩虹 <br><span class="text-sm font-normal text-slate-600">(Cǎihóng) - Rainbow</span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="阳光穿过空气中的水滴时，经过折射和反射形成的光学现象。" data-en-explanation="An optical phenomenon formed when sunlight passes through water droplets in the air, undergoing refraction and reflection.">阳光穿过水滴，形成七色弧线。</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-6 card-glow">
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">极光 <br><span class="text-sm font-normal text-slate-600">(Jíguāng) - Aurora</span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="太阳风中的带电粒子进入地球磁场，与大气层中的气体原子碰撞发光。" data-en-explanation="Charged particles from solar winds enter Earth's magnetic field and collide with gas atoms in the atmosphere, emitting light.">太阳风粒子与大气碰撞发光，常见于两极。</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-6 card-glow">
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">海啸 <br><span class="text-sm font-normal text-slate-600">(Hǎixiào) - Tsunami</span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="海底地震、火山爆发或滑坡等引起的海水剧烈波动，形成巨大波浪。" data-en-explanation="Giant ocean waves caused by drastic disturbances of seawater due to undersea earthquakes, volcanic eruptions, or landslides.">海底地震或火山爆发引起的海水巨浪。</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-6 card-glow">
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">地震 <br><span class="text-sm font-normal text-slate-600">(Dìzhèn) - Earthquake</span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="地球内部岩石破裂和错动引起的地表震动。" data-en-explanation="Shaking of the Earth's surface caused by the rupture and displacement of rocks within the Earth's interior.">地球内部岩石破裂引起地表震动。</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Festivals -->
+                <div id="tab-content-festivals">
+                    <div class="p-2">
+                        <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">中国传统节日是中华民族悠久历史和灿烂文化的重要组成部分，它们承载着丰富的民俗习惯、神话传说和道德观念。本节将带您探索一些主要的中国传统节日，了解它们的起源、习俗和文化意义。 <br><span class="text-sm text-slate-500">(Chinese traditional festivals are an important part of the long history and brilliant culture of the Chinese nation. They carry rich folk customs, myths and legends, and moral concepts. This section will guide you to explore some major Chinese traditional festivals, understand their origins, customs, and cultural significance.)</span></p>
+                        
+                        <section id="major-festivals" class="mb-12">
+                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">主要传统节日 <br><span class="text-base font-normal text-slate-600">(Major Traditional Festivals)</span></h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                    <div class="text-5xl mb-4">🌸</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">春季 <br><span class="text-sm font-normal text-slate-600">(Spring)</span></h3>
-                                    <p class="text-sm text-slate-600">万物复苏，生机勃勃，气温回升，百花盛开。 <br><span class="text-xs">(Everything revives, full of vitality, temperatures rise, and flowers bloom.)</span></p>
+                                    <div class="text-5xl mb-4">🧧</div>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">春节 <br><span class="text-sm font-normal text-slate-600">(Chūn Jié) - Chinese New Year/Spring Festival</span></h3>
+                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                        <li data-zh-explanation="农历正月初一，中国最重要、最盛大的传统节日。" data-en-explanation="The first day of the first lunar month, China's most important and grandest traditional festival.">时间：农历正月初一</li>
+                                        <li data-zh-explanation="贴春联、放鞭炮、拜年、吃饺子、看春晚。" data-en-explanation="Pasting Spring Festival couplets, setting off firecrackers, paying New Year calls, eating dumplings, watching the Spring Festival Gala.">习俗：贴春联、拜年、吃饺子</li>
+                                        <li data-zh-explanation="阖家团圆、辞旧迎新、祈福纳祥。" data-en-explanation="Family reunion, bidding farewell to the old and ushering in the new, praying for blessings and good fortune.">意义：团圆、辞旧迎新</li>
+                                    </ul>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                    <div class="text-5xl mb-4">☀️</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">夏季 <br><span class="text-sm font-normal text-slate-600">(Summer)</span></h3>
-                                    <p class="text-sm text-slate-600">炎热潮湿，雷雨多发，植物繁茂生长。 <br><span class="text-xs">(Hot and humid, frequent thunderstorms, lush plant growth.)</span></p>
+                                    <div class="text-5xl mb-4">🏮</div>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">元宵节 <br><span class="text-sm font-normal text-slate-600">(Yuán Xiāo Jié) - Lantern Festival</span></h3>
+                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                        <li data-zh-explanation="农历正月十五，春节的最后一天，标志着春节假期的结束。" data-en-explanation="The fifteenth day of the first lunar month, the last day of the Spring Festival, marking the end of the Spring Festival holiday.">时间：农历正月十五</li>
+                                        <li data-zh-explanation="赏花灯、猜灯谜、吃元宵/汤圆。" data-en-explanation="Admiring lanterns, guessing lantern riddles, eating tangyuan (sweet glutinous rice balls).">习俗：赏花灯、吃元宵</li>
+                                        <li data-zh-explanation="庆祝新年的延续，祈求团圆美满。" data-en-explanation="Celebrating the continuation of the New Year, praying for family reunion and happiness.">意义：团圆、喜庆</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
+                                    <div class="text-5xl mb-4">🐉</div>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">端午节 <br><span class="text-sm font-normal text-slate-600">(Duān Wǔ Jié) - Dragon Boat Festival</span></h3>
+                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                        <li data-zh-explanation="农历五月初五，纪念屈原，也是夏季的传统节日。" data-en-explanation="The fifth day of the fifth lunar month, commemorating Qu Yuan, and also a traditional summer festival.">时间：农历五月初五</li>
+                                        <li data-zh-explanation="赛龙舟、吃粽子、挂艾草和菖蒲、佩香囊。" data-en-explanation="Dragon boat racing, eating zongzi (glutinous rice dumplings), hanging mugwort and calamus, wearing sachets.">习俗：赛龙舟、吃粽子</li>
+                                        <li data-zh-explanation="驱邪避灾、纪念先贤、祈求健康。" data-en-explanation="Expelling evil and warding off disasters, commemorating ancient sages, praying for health.">意义：健康、纪念</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
+                                    <div class="text-5xl mb-4">🥮</div>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">中秋节 <br><span class="text-sm font-normal text-slate-600">(Zhōng Qiū Jié) - Mid-Autumn Festival</span></h3>
+                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                        <li data-zh-explanation="农历八月十五，月亮最圆，象征团圆。" data-en-explanation="The fifteenth day of the eighth lunar month, when the moon is fullest, symbolizing reunion.">时间：农历八月十五</li>
+                                        <li data-zh-explanation="赏月、吃月饼、家人团聚。" data-en-explanation="Admiring the moon, eating mooncakes, family reunion.">习俗：赏月、吃月饼</li>
+                                        <li data-zh-explanation="阖家团圆、丰收感恩、思念亲友。" data-en-explanation="Family reunion, expressing gratitude for harvest, missing relatives and friends.">意义：团圆、丰收</li>
+                                    </ul>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🍂</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">秋季 <br><span class="text-sm font-normal text-slate-600">(Autumn)</span></h3>
-                                    <p class="text-sm text-slate-600">天高气爽，枫叶变红，果实成熟，是收获的季节。 <br><span class="text-xs">(Clear and crisp weather, maple leaves turn red, fruits ripen, it's harvest season.)</p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">重阳节 <br><span class="text-sm font-normal text-slate-600">(Chóng Yáng Jié) - Double Ninth Festival</span></h3>
+                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                        <li data-zh-explanation="农历九月初九，因“九”为阳数，两九相重故称“重阳”。" data-en-explanation="The ninth day of the ninth lunar month, called 'Chongyang' because 'nine' is a yang number and two nines coincide.">时间：农历九月初九</li>
+                                        <li data-zh-explanation="登高、赏菊、饮菊花酒、吃重阳糕。" data-en-explanation="Climbing mountains (or high places), admiring chrysanthemums, drinking chrysanthemum wine, eating Chongyang cake.">习俗：登高、赏菊</li>
+                                        <li data-zh-explanation="敬老爱老、祈福长寿、健身。" data-en-explanation="Respecting and loving the elderly, praying for longevity, and physical fitness.">意义：敬老、健身</li>
+                                    </ul>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">❄️</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">冬季 <br><span class="text-sm font-normal text-slate-600">(Winter)</span></h3>
-                                    <p class="text-sm text-slate-600">寒冷干燥，可能降雪，万物休眠，等待来年。 <br><span class="text-xs">(Cold and dry, possibly snowing, all things dormant, awaiting the next year.)</span></p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">冬至 <br><span class="text-sm font-normal text-slate-600">(Dōng Zhì) - Winter Solstice</span></h3>
+                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                        <li data-zh-explanation="农历十一月上半月，太阳直射南回归线，北半球白昼最短。" data-en-explanation="First half of the eleventh lunar month, when the sun is directly over the Tropic of Capricorn, and the Northern Hemisphere has the shortest day.">时间：农历十一月</li>
+                                        <li data-zh-explanation="吃饺子或汤圆、祭祖、家庭聚餐。" data-en-explanation="Eating dumplings or tangyuan, ancestor worship, family dinners.">习俗：吃饺子/汤圆</li>
+                                        <li data-zh-explanation="阴阳转换、阖家团圆、进补养生。" data-en-explanation="Yin-yang transition, family reunion, nourishing health.">意义：团圆、养生</li>
+                                    </ul>
                                 </div>
                             </div>
                         </section>
 
-                        <section id="climate-details" class="mb-12">
-                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">气候 <br><span class="text-base font-normal text-slate-600">(Climate)</span></h2>
-                            <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">气候是指一个地区在长时间内（通常是几十年）的平均天气状况。它比天气更稳定，是衡量一个地区自然环境的重要指标。 <br><span class="text-sm text-slate-500">(Climate refers to the average weather conditions in a region over a long period, typically decades. It is more stable than weather and serves as an important indicator of a region's natural environment.)</span></p>
-                            
-                            <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                <h3 class="font-bold text-lg text-slate-800 mb-2">气候与天气的区别 <br><span class="text-sm font-normal text-slate-600">(Difference between Climate and Weather)</span></h3>
-                                <p class="text-sm text-slate-600 mb-2">**天气**是短期的、局部的、多变的，例如“今天下雨”。 <br><span class="text-xs">(**Weather** is short-term, local, and variable, e.g., "It's raining today.")</span></p>
-                                <p class="text-sm text-slate-600">**气候**是长期的、区域性的、相对稳定的，例如“北京是温带季风气候”。 <br><span class="text-xs">(**Climate** is long-term, regional, and relatively stable, e.g., "Beijing has a temperate monsoon climate.")</p>
-                            </div>
-
-                            <div class="bg-slate-50 rounded-lg p-6 card-glow mt-6">
-                                <h3 class="font-bold text-lg text-slate-800 mb-2">常见气候类型 (Common Climate Types)</h3>
-                                <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                    <li>热带气候 (Tropical Climate)</li>
-                                    <li>温带气候 (Temperate Climate)</li>
-                                    <li>寒带气候 (Polar Climate)</li>
-                                    <li>高原山地气候 (Highland Climate)</li>
-                                    <li>沙漠气候 (Desert Climate)</li>
-                                </ul>
-                            </div>
-                        </section>
-
-                        <section id="celestial-natural-phenomena" class="mb-12">
-                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">天象与自然现象 <br><span class="text-base font-normal text-slate-600">(Celestial & Natural Phenomena)</span></h2>
-                            <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">自然现象是自然界中发生的各种事件和过程，它们或壮丽，或神秘，展现着大自然的力量与美丽。 <br><span class="text-sm text-slate-500">(Natural phenomena are various events and processes occurring in nature, which can be magnificent or mysterious, showcasing the power and beauty of the natural world.)</span></p>
-                            
+                        <section id="other-festivals" class="mb-12">
+                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">其他重要节日 <br><span class="text-base font-normal text-slate-600">(Other Important Festivals)</span></h2>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">天象 <br><span class="text-sm font-normal text-slate-600">(Celestial Phenomena)</span></h3>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">腊八节 <br><span class="text-sm font-normal text-slate-600">(Là Bā Jié) - Laba Festival</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="太阳从地平线升起的现象，标志着一天的开始。" data-en-explanation="The phenomenon of the sun rising above the horizon, marking the beginning of the day.">☀️ 日出 (Rìchū) - Sunrise</li>
-                                        <li data-zh-explanation="太阳从地平线落下的现象，标志着一天的结束。" data-en-explanation="The phenomenon of the sun setting below the horizon, marking the end of the day.">🌇 日落 (Rìluò) - Sunset</li>
-                                        <li data-zh-explanation="地球的天然卫星，在夜空中发出光芒。" data-en-explanation="Earth's natural satellite, shining in the night sky.">🌙 月亮 (Yuèliang) - Moon</li>
-                                        <li data-zh-explanation="夜空中闪烁的遥远天体。" data-en-explanation="Distant celestial bodies twinkling in the night sky.">✨ 星星 (Xīngxing) - Stars</li>
-                                        <li data-zh-explanation="在夜空中短暂划过并发出亮光的宇宙尘埃或小块岩石。" data-en-explanation="Cosmic dust or small rocks that briefly streak across the night sky and emit light.">流星 (Liúxīng) - Meteor</li>
-                                        <li data-zh-explanation="在地球两极地区高层大气中出现的绚丽多彩的光现象。" data-en-explanation="A dazzling, colorful light phenomenon occurring in the upper atmosphere near Earth's poles.">极光 (Jíguāng) - Aurora</li>
+                                        <li data-zh-explanation="农历十二月初八，是春节前的预热节日。" data-en-explanation="The eighth day of the twelfth lunar month, a warm-up festival before the Spring Festival.">时间：农历十二月初八</li>
+                                        <li data-zh-explanation="喝腊八粥、腌腊八蒜。" data-en-explanation="Drinking Laba porridge, pickling Laba garlic.">习俗：喝腊八粥</li>
+                                        <li data-zh-explanation="祈求丰收、避邪、庆祝农闲。" data-en-explanation="Praying for good harvest, warding off evil, celebrating the slack farming season.">意义：丰收、祈福</li>
                                     </ul>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">自然现象 <br><span class="text-sm font-normal text-slate-600">(Natural Phenomena)</span></h3>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">小年 <br><span class="text-sm font-normal text-slate-600">(Xiǎo Nián) - Minor New Year/Little New Year</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="阳光穿过空气中的水滴时，经过折射和反射形成的光谱现象。" data-en-explanation="A spectrum of light formed when sunlight passes through water droplets in the air, undergoing refraction and reflection.">🌈 彩虹 (Cǎihóng) - Rainbow</li>
-                                        <li data-zh-explanation="大气中发生的放电现象，通常伴随雷声和闪光。" data-en-explanation="An electrical discharge phenomenon occurring in the atmosphere, usually accompanied by thunder and lightning.">⚡ 雷电 (Léidiàn) - Thunder and Lightning</li>
-                                        <li data-zh-explanation="一种强烈的旋转气柱，从积雨云延伸到地面，具有极强的破坏力。" data-en-explanation="A violently rotating column of air extending from a cumulonimbus cloud to the ground, with immense destructive power.">🌪️ 龙卷风 (Lóngjuǎnfēng) - Tornado</li>
-                                        <li data-zh-explanation="由海底地震、火山爆发或水下山体滑坡引起的海水巨浪。" data-en-explanation="Giant ocean waves caused by underwater earthquakes, volcanic eruptions, or submarine landslides.">🌊 海啸 (Hǎixiào) - Tsunami</li>
-                                        <li data-zh-explanation="地球内部的岩浆、气体和火山碎屑物从地壳喷出地表的现象。" data-en-explanation="The phenomenon of magma, gases, and pyroclastic materials from Earth's interior erupting onto the surface from the crust.">🌋 火山爆发 (Huǒshānbàofā) - Volcanic Eruption</li>
-                                        <li data-zh-explanation="地球地壳快速释放能量引起的地面震动。" data-en-explanation="Ground shaking caused by the rapid release of energy in the Earth's crust.">地震 (Dìzhèn) - Earthquake</li>
+                                        <li data-zh-explanation="农历腊月二十三或二十四，是祭灶王、扫尘的节日。" data-en-explanation="The twenty-third or twenty-fourth day of the twelfth lunar month, a festival for worshipping the Kitchen God and cleaning.">时间：农历腊月廿三/廿四</li>
+                                        <li data-zh-explanation="祭灶、扫尘、剪窗花、备年货。" data-en-explanation="Worshipping the Kitchen God, sweeping away dust, cutting paper-cuts for windows, preparing New Year's goods.">习俗：祭灶、扫尘</li>
+                                        <li data-zh-explanation="迎接春节、清洁房屋、祈求平安。" data-en-explanation="Welcoming the Spring Festival, cleaning the house, praying for peace.">意义：迎春、清洁</li>
                                     </ul>
                                 </div>
                             </div>
                         </section>
-                    </div>
-                </div>
-
-                <!-- Tab 4: Traditional Festivals -->
-                <div id="tab-content-festivals" class="hidden">
-                    <div class="p-2">
-                        <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">中国传统节日是中华民族悠久历史和灿烂文化的集中体现，它们与农历、节气和自然现象紧密相连，承载着丰富的文化内涵和民族情感。本节将带您了解一些主要的中国传统节日。 <br><span class="text-sm text-slate-500">(Traditional Chinese festivals are a concentrated expression of the Chinese nation's long history and brilliant culture. They are closely linked to the lunar calendar, solar terms, and natural phenomena, carrying rich cultural connotations and national sentiments. This section will introduce you to some major traditional Chinese festivals.)</span></p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                <div class="text-5xl mb-4">🧧</div>
-                                <h3 class="font-bold text-lg text-slate-800 mb-2">春节 <br><span class="text-sm font-normal text-slate-600">(Spring Festival)</span></h3>
-                                <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                    <li data-zh-explanation="农历正月初一，中国最重要的传统节日，标志着农历新年的开始。家家户户贴春联、吃饺子、放鞭炮，辞旧迎新。" data-en-explanation="The first day of the lunar new year, China's most important traditional festival, marking the beginning of the lunar new year. Families put up Spring Festival couplets, eat dumplings, and set off firecrackers to bid farewell to the old year and usher in the new.">春节 (Chūnjié) - Chinese New Year</li>
-                                    <li data-zh-explanation="过年时给晚辈的压岁钱，寓意压住邪祟，保佑平安。" data-en-explanation="Lucky money given to younger generations during Chinese New Year, symbolizing warding off evil spirits and ensuring safety.">压岁钱 (Yāsuìqián) - Lucky Money</li>
-                                    <li data-zh-explanation="中国农历除夕夜的传统习俗，全家人团聚在一起吃年夜饭。" data-en-explanation="A traditional custom on Chinese New Year's Eve, where the whole family gathers for a reunion dinner.">年夜饭 (Niányèfàn) - New Year's Eve Dinner</li>
-                                </ul>
-                            </div>
-                            <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                <div class="text-5xl mb-4">🏮</div>
-                                <h3 class="font-bold text-lg text-slate-800 mb-2">元宵节 <br><span class="text-sm font-normal text-slate-600">(Lantern Festival)</span></h3>
-                                <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                    <li data-zh-explanation="农历正月十五，春节的最后一天，人们赏花灯、猜灯谜、吃元宵。" data-en-explanation="The 15th day of the first lunar month, the last day of the Spring Festival, people enjoy lanterns, solve lantern riddles, and eat tangyuan (rice dumplings).">元宵节 (Yuánxiāojié) - Lantern Festival</li>
-                                    <li data-zh-explanation="元宵节的传统食物，由糯米粉制成的圆形甜点，象征团圆美满。" data-en-explanation="Traditional food for Lantern Festival, round sweet dumplings made of glutinous rice flour, symbolizing reunion and completeness.">元宵/汤圆 (Yuánxiāo/Tāngyuán) - Tangyuan</li>
-                                </ul>
-                            </div>
-                            <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                <div class="text-5xl mb-4">🌳</div>
-                                <h3 class="font-bold text-lg text-slate-800 mb-2">清明节 <br><span class="text-sm font-normal text-slate-600">(Qingming Festival)</span></h3>
-                                <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                    <li data-zh-explanation="二十四节气之一，也是重要的祭祀节日，人们扫墓祭祖，踏青郊游。" data-en-explanation="One of the 24 solar terms and an important sacrificial festival, people sweep tombs to honor ancestors and go on spring outings.">清明节 (Qīngmíngjié) - Tomb-Sweeping Day</li>
-                                    <li data-zh-explanation="清明节扫墓后，全家人到郊外踏青游玩。" data-en-explanation="After sweeping tombs during Qingming Festival, the whole family goes on a spring outing in the countryside.">踏青 (Tàqīng) - Spring Outing</li>
-                                </ul>
-                            </div>
-                            <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                <div class="text-5xl mb-4">🛶</div>
-                                <h3 class="font-bold text-lg text-slate-800 mb-2">端午节 <br><span class="text-sm font-normal text-slate-600">(Dragon Boat Festival)</span></h3>
-                                <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                    <li data-zh-explanation="农历五月初五，为纪念屈原而设，习俗有赛龙舟、吃粽子。" data-en-explanation="The fifth day of the fifth lunar month, established to commemorate Qu Yuan, customs include dragon boat racing and eating zongzi (rice dumplings).">端午节 (Duānwǔjié) - Dragon Boat Festival</li>
-                                    <li data-zh-explanation="端午节的传统食物，用糯米和馅料包裹在竹叶中蒸煮而成。" data-en-explanation="Traditional food for Dragon Boat Festival, made by wrapping glutinous rice and fillings in bamboo leaves and steaming them.">粽子 (Zòngzi) - Zongzi</li>
-                                    <li data-zh-explanation="端午节的传统竞技活动，人们划着龙形船只进行比赛。" data-en-explanation="A traditional competitive activity during the Dragon Boat Festival, where people race in dragon-shaped boats.">赛龙舟 (Sài Lóngzhōu) - Dragon Boat Race</li>
-                                </ul>
-                            </div>
-                            <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                <div class="text-5xl mb-4">🥮</div>
-                                <h3 class="font-bold text-lg text-slate-800 mb-2">中秋节 <br><span class="text-sm font-normal text-slate-600">(Mid-Autumn Festival)</span></h3>
-                                <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                    <li data-zh-explanation="农历八月十五，家人团聚，赏月，吃月饼，象征团圆。" data-en-explanation="The 15th day of the eighth lunar month, families reunite, admire the moon, and eat mooncakes, symbolizing reunion.">中秋节 (Zhōngqiūjié) - Mid-Autumn Festival</li>
-                                    <li data-zh-explanation="中秋节的传统食物，圆形糕点，内有各种馅料，象征团圆。" data-en-explanation="Traditional food for Mid-Autumn Festival, round pastries with various fillings, symbolizing reunion.">月饼 (Yuèbǐng) - Mooncake</li>
-                                </ul>
-                            </div>
-                            <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                <div class="text-5xl mb-4">👵👴</div>
-                                <h3 class="font-bold text-lg text-slate-800 mb-2">重阳节 <br><span class="text-sm font-normal text-slate-600">(Double Ninth Festival)</span></h3>
-                                <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                    <li data-zh-explanation="农历九月初九，有登高、赏菊、饮菊花酒、吃重阳糕的习俗，寓意长寿。" data-en-explanation="The ninth day of the ninth lunar month, customs include climbing mountains, appreciating chrysanthemums, drinking chrysanthemum wine, and eating Chongyang cake, symbolizing longevity.">重阳节 (Chóngyángjié) - Double Ninth Festival</li>
-                                    <li data-zh-explanation="重阳节登高望远的习俗，寓意步步高升。" data-en-explanation="The custom of climbing high on Double Ninth Festival, symbolizing continuous progress and promotion.">登高 (Dēnggāo) - Mountain Climbing</li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </main>
+
         </div>
-        
-        <footer class="text-center mt-10">
-            <p class="text-sm text-slate-500">探索大自然的语言与奥秘。 <br><span class="text-xs">(Exploring the language and mysteries of nature.)</span></p>
-        </footer>
+
     </div>
 
-    <!-- Tooltip element -->
     <div id="tooltip" class="tooltip"></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Tab Buttons and Contents
-            const tabButtons = {
-                'time': document.getElementById('tab-btn-time'),
-                'calendar': document.getElementById('tab-btn-calendar'),
-                'natural': document.getElementById('tab-btn-natural'),
-                'festivals': document.getElementById('tab-btn-festivals'),
-            };
-            const tabContents = {
-                'time': document.getElementById('tab-content-time'),
-                'calendar': document.getElementById('tab-content-calendar'),
-                'natural': document.getElementById('tab-content-natural'),
-                'festivals': document.getElementById('tab-content-festivals'),
-            };
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('main > div');
 
-            const tooltip = document.getElementById('tooltip');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active', 'border-blue-600', 'text-blue-600'));
+                    tabButtons.forEach(btn => btn.classList.add('border-transparent', 'text-slate-600', 'hover:text-blue-600'));
+                    button.classList.add('active', 'border-blue-600', 'text-blue-600');
+                    button.classList.remove('border-transparent', 'text-slate-600', 'hover:text-blue-600');
 
-            function switchTab(tabName) {
-                Object.keys(tabButtons).forEach(key => {
-                    const isSelected = key === tabName;
-                    tabButtons[key].classList.toggle('active', isSelected);
-                    tabButtons[key].classList.toggle('border-transparent', !isSelected);
-                    tabContents[key].classList.toggle('hidden', !isSelected);
+                    tabContents.forEach(content => content.classList.add('hidden'));
+                    const targetTabId = button.id.replace('tab-btn-', 'tab-content-');
+                    document.getElementById(targetTabId).classList.remove('hidden');
                 });
-            }
-
-            Object.keys(tabButtons).forEach(key => {
-                tabButtons[key].addEventListener('click', () => switchTab(key));
             });
 
-            // Initialize with the first tab active
-            switchTab('time');
-
-            // --- Time Tab Specific Logic ---
-            const timeData = [
-                { label: '午夜', duration: 1 },
-                { label: '凌晨', duration: 4 },
-                { label: '清晨', duration: 1 },
-                { label: '早上', duration: 2 },
-                { label: '上午', duration: 3 },
-                { label: '中午', duration: 2 },
-                { label: '下午', duration: 5 },
-                { label: '傍晚', duration: 1 },
-                { label: '晚上', duration: 5 }
-            ];
-
+            // Day Cycle Chart
             const ctx = document.getElementById('dayCycleChart').getContext('2d');
             const dayCycleChart = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: timeData.map(d => `${d.label} (${d.duration}h)`),
+                    labels: ['子时 (Zǐshí) 23:00-01:00', '丑时 (Chǒushí) 01:00-03:00', '寅时 (Yínshí) 03:00-05:00', '卯时 (Mǎoshí) 05:00-07:00', '辰时 (Chénshí) 07:00-09:00', '巳时 (Sìshí) 09:00-11:00', '午时 (Wǔshí) 11:00-13:00', '未时 (Wèishí) 13:00-15:00', '申时 (Shēnshí) 15:00-17:00', '酉时 (Yǒushí) 17:00-19:00', '戌时 (Xūshí) 19:00-21:00', '亥时 (Hàishí) 21:00-23:00'],
                     datasets: [{
-                        label: '时长 (小时)',
-                        data: timeData.map(d => d.duration),
+                        data: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], // Each shichen is 2 hours
                         backgroundColor: [
-                            '#003f5c', '#2f4b7c', '#665191', '#a05195',
-                            '#d45087', '#f95d6a', '#ff7c43', '#ffa600', '#4b9e82'
+                            '#4A5568', '#2D3748', '#2C5282', '#2B6CB0',
+                            '#4299E1', '#63B3ED', '#90CDF4', '#BEE3F8',
+                            '#FEEBC8', '#FBD38D', '#F6AD55', '#ED8936'
                         ],
-                        borderColor: '#f8fafc',
-                        borderWidth: 4,
-                        hoverOffset: 15
+                        borderColor: '#ffffff',
+                        borderWidth: 2
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    animation: {
-                        animateScale: true,
-                        animateRotate: true
-                    },
                     plugins: {
                         legend: {
-                            position: 'bottom',
+                            position: 'right',
                             labels: {
+                                color: '#4A5568',
                                 font: {
-                                    size: 14,
-                                    family: "'Noto Sans SC', sans-serif"
-                                },
-                                color: '#333',
-                                padding: 20
+                                    size: 12
+                                }
                             }
                         },
                         tooltip: {
                             callbacks: {
-                                title: function(tooltipItems) {
-                                    const item = tooltipItems[0];
-                                    let label = item.chart.data.labels[item.dataIndex];
-                                    if (Array.isArray(label)) {
-                                      return label.join(' ');
-                                    } else {
-                                      return label;
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
                                     }
+                                    label += context.parsed + '小时 (hours)';
+                                    return label;
                                 }
-                            },
-                            titleFont: {
-                                size: 16,
-                                family: "'Noto Sans SC', sans-serif"
-                            },
-                            bodyFont: {
-                                size: 14,
-                                family: "'Noto Sans SC', sans-serif"
-                            },
-                            padding: 12,
-                            boxPadding: 4,
-                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                            titleColor: '#fff',
-                            bodyColor: '#fff',
+                            }
                         }
-                    },
-                    cutout: '45%'
+                    }
                 }
             });
 
-            // --- Calendar Tab Specific Logic ---
-            const comparisonData = {
-                basis: {
-                    title: '制定基础',
-                    lunar: '阴阳合历，同时考虑月相周期和太阳视运动。',
-                    gregorian: '阳历，纯粹以地球绕太阳公转的周期为基础。',
-                    lunar_en: 'A lunisolar calendar, considering both moon phase cycles and the sun\'s apparent movement.',
-                    gregorian_en: 'A solar calendar, purely based on Earth\'s revolution around the sun.',
-                },
-                month: {
-                    title: '月份长度',
-                    lunar: '29天或30天，根据月相变化。',
-                    gregorian: '固定为30天或31天（2月除外），与月相无关。',
-                    lunar_en: '29 or 30 days, based on moon phase changes.',
-                    gregorian_en: 'Fixed at 30 or 31 days (except February), independent of moon phases.',
-                },
-                year: {
-                    title: '年份长度',
-                    lunar: '平年12个月（约354天），闰年13个月（约384天）。',
-                    gregorian: '固定为365天（平年）或366天（闰年）。',
-                    lunar_en: '12 months in a common year (~354 days), 13 months in a leap year (~384 days).',
-                    gregorian_en: 'Fixed at 365 days (common year) or 366 days (leap year).',
-                },
-                leap: {
-                    title: '闰法',
-                    lunar: '设置闰月，使年份与回归年（季节）保持同步。',
-                    gregorian: '设置闰日（2月29日），使年份与回归年保持同步。',
-                    lunar_en: 'Adds leap months to synchronize the year with the tropical year (seasons).',
-                    gregorian_en: 'Adds a leap day (February 29th) to synchronize the year with the tropical year.',
-                },
-                season: {
-                    title: '与季节关系',
-                    lunar: '通过闰月和节气保持与季节的对应关系。',
-                    gregorian: '直接与季节变化对应，每年日期固定。',
-                    lunar_en: 'Maintains correspondence with seasons through leap months and solar terms.',
-                    gregorian_en: 'Directly corresponds to seasonal changes, with fixed dates each year.',
-                },
-                use: {
-                    title: '主要用途',
-                    lunar: '传统节日、农事指导、生肖命理、文化习俗。',
-                    gregorian: '国际通用历法，日常生活、商业、行政管理。',
-                    lunar_en: 'Traditional festivals, agricultural guidance, zodiac, cultural customs.',
-                    gregorian_en: 'Internationally used calendar for daily life, business, administration.',
-                },
-                origin: {
-                    title: '起源',
-                    lunar: '中国古代',
-                    gregorian: '古罗马历法演变而来，后由教皇格里高利十三世改革。',
-                    lunar_en: 'Ancient China',
-                    gregorian_en: 'Evolved from ancient Roman calendar, reformed by Pope Gregory XIII.',
-                }
-            };
-            
+            // Solar Terms Visualization (24 points around a circle)
+            const solarTerms = [
+                { zh: '立春', en: 'Lìchūn', angle: 0 }, { zh: '雨水', en: 'Yǔshuǐ', angle: 15 },
+                { zh: '惊蛰', en: 'Jīngzhé', angle: 30 }, { zh: '春分', en: 'Chūnfēn', angle: 45 },
+                { zh: '清明', en: 'Qīngmíng', angle: 60 }, { zh: '谷雨', en: 'Gǔyǔ', angle: 75 },
+                { zh: '立夏', en: 'Lìxià', angle: 90 }, { zh: '小满', en: 'Xiǎomǎn', angle: 105 },
+                { zh: '芒种', en: 'Mángzhòng', angle: 120 }, { zh: '夏至', en: 'Xiàzhì', angle: 135 },
+                { zh: '小暑', en: 'Xiǎoshǔ', angle: 150 }, { zh: '大暑', en: 'Dàshǔ', angle: 165 },
+                { zh: '立秋', en: 'Lìqiū', angle: 180 }, { zh: '处暑', en: 'Chǔshǔ', angle: 195 },
+                { zh: '白露', en: 'Báilù', angle: 210 }, { zh: '秋分', en: 'Qiūfēn', angle: 225 },
+                { zh: '寒露', en: 'Hánlù', angle: 240 }, { zh: '霜降', en: 'Shuāngjiàng', angle: 255 },
+                { zh: '立冬', en: 'Lìdōng', angle: 270 }, { zh: '小雪', en: 'Xiǎoxuě', angle: 285 },
+                { zh: '大雪', en: 'Dàxuě', angle: 300 }, { zh: '冬至', en: 'Dōngzhì', angle: 315 },
+                { zh: '小寒', en: 'Xiǎohán', angle: 330 }, { zh: '大寒', en: 'Dàhán', angle: 345 }
+            ];
+
+            const container = document.getElementById('solar-term-container');
+            const radius = container.offsetWidth / 2 - 30; // Adjust for item size
+
+            solarTerms.forEach(term => {
+                const item = document.createElement('div');
+                item.classList.add('solar-term-item', 'bg-blue-200', 'rounded-full', 'shadow-sm', 'hover:bg-blue-300', 'transition-colors', 'duration-200', 'cursor-default');
+                item.innerHTML = `<span class="font-medium text-blue-800">${term.zh}</span><br><span class="text-blue-600 text-xs">${term.en}</span>`;
+                item.setAttribute('data-zh-explanation', `${term.zh}`); // Placeholder, actual explanation might be longer
+                item.setAttribute('data-en-explanation', `${term.en}`); // Placeholder
+
+                const angleRad = (term.angle - 90) * (Math.PI / 180); // Adjust -90 to start from top
+                const x = radius * Math.cos(angleRad);
+                const y = radius * Math.sin(angleRad);
+
+                item.style.top = `${container.offsetHeight / 2 + y}px`;
+                item.style.left = `${container.offsetWidth / 2 + x}px`;
+
+                container.appendChild(item);
+            });
+
+            // Comparison functionality for Calendars tab
             const comparisonNav = document.getElementById('comparison-nav');
             const lunarDesc = document.getElementById('lunar-desc');
             const gregorianDesc = document.getElementById('gregorian-desc');
-            
-            Object.keys(comparisonData).forEach((key, index) => {
-                const data = comparisonData[key];
-                const button = document.createElement('button');
-                button.textContent = data.title;
-                button.dataset.key = key;
-                button.className = 'comparison-btn px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-full hover:bg-slate-100 transition-colors duration-200';
-                comparisonNav.appendChild(button);
 
-                if (index === 0) {
-                    updateComparison(key, button);
+            const comparisonData = {
+                'Principle': {
+                    lunar: '基于月相周期，同时兼顾太阳回归年。',
+                    lunar_en: 'Based on moon phases, while also considering the tropical year.',
+                    gregorian: '基于地球绕太阳公转周期。',
+                    gregorian_en: 'Based on Earth\'s revolution period around the sun.'
+                },
+                'Length': {
+                    lunar: '平年354天或355天，闰年383天或384天。',
+                    lunar_en: 'Regular year 354 or 355 days, leap year 383 or 384 days.',
+                    gregorian: '平年365天，闰年366天。',
+                    gregorian_en: 'Regular year 365 days, leap year 366 days.'
+                },
+                'Start': {
+                    lunar: '以立春或春节为岁首，日期不固定。',
+                    lunar_en: 'Starts with Lichun or Chinese New Year, date is not fixed.',
+                    gregorian: '以1月1日为岁首，日期固定。',
+                    gregorian_en: 'Starts with January 1st, date is fixed.'
+                },
+                'Application': {
+                    lunar: '主要用于传统节日、农事指导、命理等。',
+                    lunar_en: 'Mainly used for traditional festivals, agricultural guidance, fortune-telling, etc.',
+                    gregorian: '国际通用，用于公历日期、商业、国际交流等。',
+                    gregorian_en: 'Internationally used for Gregorian dates, business, international communication, etc.'
                 }
-            });
+            };
 
-            function updateComparison(key, activeButton) {
-                const data = comparisonData[key];
-                lunarDesc.innerHTML = `${data.lunar} <br><span class="text-sm">( ${data.lunar_en} )</span>`;
-                gregorianDesc.innerHTML = `${data.gregorian} <br><span class="text-sm">( ${data.gregorian_en} )</span>`;
-                
-                document.querySelectorAll('.comparison-btn').forEach(btn => {
-                    btn.classList.toggle('active', btn === activeButton);
-                });
+            for (const key in comparisonData) {
+                const button = document.createElement('button');
+                button.classList.add('comparison-btn', 'bg-blue-100', 'text-blue-800', 'py-2', 'px-4', 'rounded-lg', 'text-sm', 'font-medium', 'hover:bg-blue-200', 'transition-colors', 'duration-200');
+                button.textContent = `${key} ( ${key === 'Principle' ? '原理' : key === 'Length' ? '时长' : key === 'Start' ? '岁首' : '应用'} )`;
+                button.setAttribute('data-comparison', key);
+                comparisonNav.appendChild(button);
             }
 
             comparisonNav.addEventListener('click', (e) => {
-                if (e.target.matches('.comparison-btn')) {
-                    const key = e.target.dataset.key;
-                    updateComparison(key, e.target);
+                const target = e.target.closest('.comparison-btn');
+                if (target) {
+                    document.querySelectorAll('.comparison-btn').forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
+                    document.querySelectorAll('.comparison-btn').forEach(btn => btn.classList.add('bg-blue-100', 'text-blue-800'));
+                    target.classList.add('active', 'bg-blue-600', 'text-white');
+                    target.classList.remove('bg-blue-100', 'text-blue-800');
+
+                    const comparisonKey = target.getAttribute('data-comparison');
+                    lunarDesc.innerHTML = `<span class="font-bold">${comparisonData[comparisonKey].lunar}</span><br><span class="text-xs text-slate-500">${comparisonData[comparisonKey].lunar_en}</span>`;
+                    gregorianDesc.innerHTML = `<span class="font-bold">${comparisonData[comparisonKey].gregorian}</span><br><span class="text-xs text-slate-500">${comparisonData[comparisonKey].gregorian_en}</span>`;
                 }
             });
 
-            const solarTerms = [
-                "立春", "雨水", "惊蛰", "春分", "清明", "谷雨",
-                "立夏", "小满", "芒种", "夏至", "小暑", "大暑",
-                "立秋", "处暑", "白露", "秋分", "寒露", "霜降",
-                "立冬", "小雪", "大雪", "冬至", "小寒", "大寒"
-            ];
-
-            const solarTermContainer = document.getElementById('solar-term-container');
-            const radius = 130; 
-            const centerX = 160;
-            const centerY = 160;
-
-            solarTerms.forEach((term, i) => {
-                const angle = (i / solarTerms.length) * 2 * Math.PI - (Math.PI / 2);
-                const x = centerX + radius * Math.cos(angle);
-                const y = centerY + radius * Math.sin(angle);
-
-                const item = document.createElement('div');
-                item.className = 'solar-term-item';
-                item.textContent = term;
-                item.style.left = `${x}px`;
-                item.style.top = `${y}px`;
-                solarTermContainer.appendChild(item);
-            });
-
-            // --- Tooltip Logic for all relevant list items ---
+            // Tooltip for li items
+            const tooltip = document.getElementById('tooltip');
             document.querySelectorAll('li[data-zh-explanation]').forEach(item => {
                 item.addEventListener('mouseover', (e) => {
                     const zhExplanation = e.target.dataset.zhExplanation;
