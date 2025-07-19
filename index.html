@@ -39,8 +39,8 @@ Viz: HTML cards with Unicode icons. Interaction: Hover tooltips for detailed exp
         }
         .solar-term-circle {
             position: relative;
-            width: 320px;
-            height: 320px;
+            width: 400px; /* Increased width for more space */
+            height: 400px; /* Increased height for more space */
             border-radius: 50%;
             margin: 2rem auto;
             border: 4px solid #a7d9f8; /* Light blue border for circles */
@@ -48,8 +48,8 @@ Viz: HTML cards with Unicode icons. Interaction: Hover tooltips for detailed exp
         }
         .solar-term-item {
             position: absolute;
-            width: 70px; /* Slightly larger for better readability */
-            height: 70px;
+            width: 80px; /* Slightly larger for better readability */
+            height: 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -340,17 +340,7 @@ Thus, lunisolar months are either 29-day 'small months' or 30-day 'large months'
 It is deeply rooted in Chinese culture, influencing people's daily rhythms and customs.)</span></p>
                                 </div>
                             </div>
-
-                            <div class="mt-12">
-                                <h3 class="font-bold text-xl text-slate-800 mb-2 text-center">二十四节气 <br><span class="text-base font-normal text-slate-600">(The 24 Solar Terms)</span></h3>
-                                <p class="text-slate-600 mb-6 text-center max-w-3xl mx-auto">二十四节气是根据太阳在黄道上的位置来划分的，精确地反映了季节、气候和物候的变化，是指导古代农业生产和日常生活的“时间表”。 <br><span class="text-sm">(The 24 Solar Terms are divisions based on the sun's position on the ecliptic, accurately reflecting seasonal, climatic, and phenological changes, serving as a "time table" for ancient agricultural production and daily life.)</span></p>
-                                <div id="solar-term-container" class="solar-term-circle bg-blue-50 border-4 border-blue-100">
-                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-                                        <div class="text-5xl">☀️</div>
-                                        <div class="font-bold text-blue-800 mt-1">节气 <br><span class="text-sm">(Solar Term)</span></div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- The 24 Solar Terms chart section has been removed from here -->
                         </section>
 
                         <section id="calendar-comparison" class="mb-12">
@@ -562,7 +552,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                     <p class="text-sm text-slate-600" data-zh-explanation="阳光穿过空气中的水滴时，经过折射和反射形成的光学现象。" data-en-explanation="An optical phenomenon formed when sunlight passes through water droplets in the air, undergoing refraction and reflection.">阳光穿过水滴，形成七色弧线。</p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">极光 <br><span class="text-sm font-normal text-slate-600">(Jíguāng) - Aurora</span></h3>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">极光 <br><span class="text-sm font-normal text-slate-600">(Jíguāng) - Aurora</li>
                                     <p class="text-sm text-slate-600" data-zh-explanation="太阳风中的带电粒子进入地球磁场，与大气层中的气体原子碰撞发光。" data-en-explanation="Charged particles from solar winds enter Earth's magnetic field and collide with gas atoms in the atmosphere, emitting light.">太阳风粒子与大气碰撞发光，常见于两极。</p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
@@ -828,6 +818,8 @@ This section will guide you through Chinese vocabulary related to solar terms, w
             });
 
             // Solar Terms Visualization (24 points around a circle)
+            // This section and its associated CSS are now removed as per user request.
+            /*
             const solarTerms = [
                 { zh: '立春', en: 'Lìchūn', angle: 0 }, { zh: '雨水', en: 'Yǔshuǐ', angle: 15 },
                 { zh: '惊蛰', en: 'Jīngzhé', angle: 30 }, { zh: '春分', en: 'Chūnfēn', angle: 45 },
@@ -844,8 +836,8 @@ This section will guide you through Chinese vocabulary related to solar terms, w
             ];
 
             const solarTermContainer = document.getElementById('solar-term-container');
-            // Adjusted radius to ensure items are visually aligned on the circle
-            const solarTermRadius = (solarTermContainer.offsetWidth / 2) * 0.8; // Use 80% of container radius for item centers
+            // Adjusted radius and item size for better alignment and spacing
+            const solarTermRadius = (solarTermContainer.offsetWidth / 2) * 0.9; // Adjusted to 90% of container radius
             const solarTermCenterX = solarTermContainer.offsetWidth / 2;
             const solarTermCenterY = solarTermContainer.offsetHeight / 2;
 
@@ -865,6 +857,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
 
                 solarTermContainer.appendChild(item);
             });
+            */
 
             // Comparison functionality for Calendars tab
             const comparisonNav = document.getElementById('comparison-nav');
