@@ -12,7 +12,7 @@ This structure allows for clear categorization and easy navigation across distin
     <!-- Visualization & Content Choices: Time: Goal: Inform/Organize.
 Viz: Donut Chart for daily cycle, Styled HTML Cards for character etymology, Styled HTML List for other concepts.
 Interaction: Chart provides visual distribution; Cards offer structured info. | Calendars: Goal: Inform/Compare.
-Viz: Styled HTML Cards for lunar concepts, Side-by-side text blocks for comparison. Interaction: JS-powered content switching for comparisons. |
+Viz: Styled HTML Cards for lunisolar concepts, Side-by-side text blocks for comparison. Interaction: JS-powered content switching for comparisons. |
 Natural Phenomena: Goal: Inform/Organize. Viz: HTML lists and cards. Interaction: Hover tooltips for detailed explanations. | Festivals: Goal: Inform/Organize.
 Viz: HTML cards with Unicode icons. Interaction: Hover tooltips for detailed explanations.
 -> All sections use Vanilla JS & Tailwind CSS. -->
@@ -174,9 +174,6 @@ This section explores the daily cycle, character etymology, and unique tradition
                         <section id="character-analysis" class="mb-12">
                             <div class="text-center max-w-3xl mx-auto mb-8">
                                 <h2 class="text-2xl font-bold text-slate-800 mb-2">字源深解：光与影的描绘 <br><span class="text-base font-normal text-slate-600">(Etymology: Depicting Light and Shadow)</span></h2>
-                                <p class="text-slate-600">汉字不仅是符号，更是图画。关于时间的核心汉字，通过其结构生动地描绘了自然景象，反映了古人的哲学思考。每一个字，都是一个凝固的瞬间。 <br><span class="text-sm text-slate-500">(Chinese characters are not just symbols but also pictures.
-Core characters related to time vividly depict natural scenes through their structures, reflecting ancient philosophical thinking.
-Each character is a frozen moment.)</span></p>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
@@ -218,7 +215,7 @@ Due to dim light and blurred vision, it extends to meanings like "昏暗" (dim) 
                         <section id="other-concepts" class="mb-12">
                             <div class="text-center max-w-3xl mx-auto mb-8">
                                 <h2 class="text-2xl font-bold text-slate-800 mb-2">传统与历法相关词汇 <br><span class="text-base font-normal text-slate-600">(Traditional & Calendar-Related Vocabulary)</span></h2>
-                                <p class="text-slate-600">除了每日的时间流逝，中文里还有更宏大的时间概念，它们与古代计时方法、农历以及天体运行紧密相连，构成了独特的文化坐标。 <br><span class="text-sm text-slate-500">(Beyond the daily passage of time, Chinese also encompasses grander time concepts, closely linked to ancient timekeeping methods, the lunar calendar, and celestial movements, forming a unique cultural coordinate system.)</span></p>
+                                <p class="text-slate-600">除了每日的时间流逝，中文里还有更宏大的时间概念，它们与古代计时方法、农历以及天体运行紧密相连，构成了独特的文化坐标。 <br><span class="text-sm text-slate-500">(Beyond the daily passage of time, Chinese also encompasses grander time concepts, closely linked to ancient timekeeping methods, the lunisolar calendar, and celestial movements, forming a unique cultural coordinate system.)</span></p>
                             </div>
                             <div class="max-w-2xl mx-auto space-y-6">
                                 <div class="bg-slate-50 rounded-xl shadow-md p-6 flex items-center space-x-6 card-glow">
@@ -232,8 +229,8 @@ Due to dim light and blurred vision, it extends to meanings like "昏暗" (dim) 
                                     <div class="text-4xl text-blue-600">🌕</div>
                                     <div>
                                         <h4 class="text-xl font-bold text-slate-800">朔 <span class="text-base font-normal text-slate-600">(shuò)</span></h4>
-                                        <p class="text-slate-700">指农历每月初一，月球运行到地球和太阳之间，月亮完全不可见，代表新一轮月相的开始。 <br><span class="text-xs">(Refers to the first day of each lunar month, when the moon is positioned between the Earth and the sun, making it completely invisible, representing the start of a new lunar cycle.)</span></p>
-                                    </div>
+                                        <p class="text-slate-700">指农历每月初一，月球运行到地球和太阳之间，月亮完全不可见，代表新一轮月相的开始。 <br><span class="text-xs">(Refers to the first day of each lunisolar month, when the moon is positioned between the Earth and the sun, making it completely invisible, representing the start of a new lunar cycle.)</span></p>
+                                </div>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-md p-6 flex items-center space-x-6 card-glow">
                                     <div class="text-4xl text-blue-600">🗓️</div>
@@ -320,26 +317,26 @@ Often used in poetry and prose, it carries a sentiment of cherishing time and th
                 <div id="tab-content-calendar" class="hidden">
                     <div class="p-2">
                         <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">日历是人类记录时间、规划生活的重要工具。本节将深入探讨中国农历的独特之处，并将其与国际通用的阳历进行对比，帮助您理解不同历法系统的原理与应用。 <br><span class="text-sm text-slate-500">(Calendars are essential tools for humans to record time and plan life.
-This section delves into the unique aspects of the Chinese Lunar Calendar and compares it with the internationally used Gregorian Calendar, helping you understand the principles and applications of different calendar systems.)</span></p>
+This section delves into the unique aspects of the Chinese Lunisolar Calendar and compares it with the internationally used Gregorian Calendar, helping you understand the principles and applications of different calendar systems.)</span></p>
 
                         <section id="lunar-deep-dive" class="mb-12">
-                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">深入了解农历 <br><span class="text-base font-normal text-slate-600">(Deep Dive into Lunar Calendar)</span></h2>
+                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">深入了解中国农历 <br><span class="text-base font-normal text-slate-600">(Deep Dive into Chinese Lunisolar Calendar)</span></h2>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div class="bg-slate-50 rounded-lg p-6 text-center transition-shadow hover:shadow-md card-glow">
                                     <div class="text-5xl mb-4">🌕</div>
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">月相周期 <br><span class="text-sm font-normal text-slate-600">(Moon Phase Cycle)</span></h3>
-                                    <p class="text-sm text-slate-600">农历以月亮的盈亏周期（朔望月）为基础来划分月份，平均为29.53天。因此农历的月份分为29天的小月和30天的大月。 <br><span class="text-xs">(The Lunar Calendar divides months based on the moon's waxing and waning cycle (synodic month), averaging 29.53 days.
-Thus, lunar months are either 29-day 'small months' or 30-day 'large months'.)</span></p>
+                                    <p class="text-sm text-slate-600">农历以月亮的盈亏周期（朔望月）为基础来划分月份，平均为29.53天。因此农历的月份分为29天的小月和30天的大月。 <br><span class="text-xs">(The Lunisolar Calendar divides months based on the moon's waxing and waning cycle (synodic month), averaging 29.53 days.
+Thus, lunisolar months are either 29-day 'small months' or 30-day 'large months'.)</span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 text-center transition-shadow hover:shadow-md card-glow">
                                     <div class="text-5xl mb-4">🗓️</div>
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">闰月机制 <br><span class="text-sm font-normal text-slate-600">(Leap Month Mechanism)</span></h3>
-                                    <p class="text-sm text-slate-600">为解决12个朔望月与一个回归年约11天的差值，农历采用“19年7闰”法，通过增加闰月来与季节保持同步，确保春节总在冬末春初。 <br><span class="text-xs">(To account for the ~11-day difference between 12 synodic months and a tropical year, the Lunar Calendar uses a "7 leap months in 19 years" system, adding leap months to stay synchronized with seasons, ensuring Chinese New Year always falls in late winter/early spring.)</span></p>
+                                    <p class="text-sm text-slate-600">为解决12个朔望月与一个回归年约11天的差值，农历采用“19年7闰”法，通过增加闰月来与季节保持同步，确保春节总在冬末春初。 <br><span class="text-xs">(To account for the ~11-day difference between 12 synodic months and a tropical year, the Lunisolar Calendar uses a "7 leap months in 19 years" system, adding leap months to stay synchronized with seasons, ensuring Chinese New Year always falls in late winter/early spring.)</p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 text-center transition-shadow hover:shadow-md card-glow">
                                     <div class="text-5xl mb-4">🌱</div>
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">文化意义 <br><span class="text-sm font-normal text-slate-600">(Cultural Significance)</span></h3>
-                                    <p class="text-sm text-slate-600">许多重要的传统节日，如春节、端午节、中秋节等，都由农历确定。它深深植根于中华文化，影响着人们的生活节奏与习俗。 <br><span class="text-xs">(Many important traditional festivals, such as Chinese New Year, Dragon Boat Festival, and Mid-Autumn Festival, are determined by the Lunar Calendar.
+                                    <p class="text-sm text-slate-600">许多重要的传统节日，如春节、端午节、中秋节等，都由农历确定。它深深植根于中华文化，影响着人们的生活节奏与习俗。 <br><span class="text-xs">(Many important traditional festivals, such as Chinese New Year, Dragon Boat Festival, and Mid-Autumn Festival, are determined by the Lunisolar Calendar.
 It is deeply rooted in Chinese culture, influencing people's daily rhythms and customs.)</span></p>
                                 </div>
                             </div>
@@ -357,8 +354,8 @@ It is deeply rooted in Chinese culture, influencing people's daily rhythms and c
                         </section>
 
                         <section id="calendar-comparison" class="mb-12">
-                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">农历 vs. 阳历 <br><span class="text-base font-normal text-slate-600">(Lunar vs. Gregorian Calendars)</span></h2>
-                            <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">农历与国际通用的阳历（公历）在制定原理、结构和用途上存在显著差异。点击下方按钮，探索它们在不同方面的具体区别，更好地理解这两种历法系统。 <br><span class="text-sm text-slate-500">(The Lunar Calendar and the internationally used Gregorian Calendar differ significantly in their underlying principles, structure, and applications.
+                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">农历 vs. 阳历 <br><span class="text-base font-normal text-slate-600">(Lunisolar vs. Gregorian Calendars)</span></h2>
+                            <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">农历与国际通用的阳历（公历）在制定原理、结构和用途上存在显著差异。点击下方按钮，探索它们在不同方面的具体区别，更好地理解这两种历法系统。 <br><span class="text-sm text-slate-500">(The Lunisolar Calendar and the internationally used Gregorian Calendar differ significantly in their underlying principles, structure, and applications.
 Click the buttons below to explore their specific distinctions in various aspects, gaining a better understanding of these two calendar systems.)</span></p>
                             
                             <div class="flex flex-wrap justify-center gap-2 mb-8" id="comparison-nav">
@@ -367,15 +364,88 @@ Click the buttons below to explore their specific distinctions in various aspect
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
                                 <div class="p-6 bg-blue-50 rounded-lg">
-                                    <h4 class="font-bold text-lg text-blue-800 mb-3 text-center">农历 (Lunar Calendar)</h4>
-                                    <p id="lunar-desc" class="text-slate-700 text-center h-24 flex items-center justify-center">请选择一个对比项 <br><span class="text-sm">(Please select a comparison item)</span></p>
+                                    <h4 class="font-bold text-lg text-blue-800 mb-3 text-center">中国农历 (Chinese Lunisolar Calendar)</h4>
+                                    <p id="lunar-desc" class="text-slate-700 text-center flex flex-col justify-center"></p>
                                 </div>
                                 <div class="p-6 bg-green-50 rounded-lg">
                                     <h4 class="font-bold text-lg text-green-800 mb-3 text-center">阳历 (Gregorian Calendar)</h4>
-                                    <p id="gregorian-desc" class="text-slate-700 text-center h-24 flex items-center justify-center">Please select an item to compare</p>
+                                    <p id="gregorian-desc" class="text-slate-700 text-center flex flex-col justify-center"></p>
                                 </div>
                             </div>
                         </section>
+
+                        <!-- New Section: Age Calculation -->
+                        <section id="age-calculation" class="mb-12">
+                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">年龄计算方法：农历与公历 <br><span class="text-base font-normal text-slate-600">(Age Calculation Methods: Lunisolar vs. Solar Calendar)</span></h2>
+                            <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">在中国文化中，年龄的计算方式有两种主要方法，分别与公历和农历紧密相关。理解这两种计算方式对于理解传统习俗和现代生活都非常重要。 <br><span class="text-sm text-slate-500">(In Chinese culture, there are two main methods for calculating age, closely related to the Gregorian and Lunisolar calendars, respectively. Understanding these two calculation methods is very important for comprehending both traditional customs and modern life.)</span></p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-slate-50 rounded-lg p-6 card-glow">
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">✅ 周岁 (zhōu suì) – 实际/西式年龄 <br><span class="text-sm font-normal text-slate-600">(Actual / Western Age)</span></h3>
+                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                        <li data-zh-explanation="周岁是按照公历计算的年龄，与国际通行的年龄计算方法一致。" data-en-explanation="Zhou Sui is the age calculated according to the Gregorian calendar, consistent with internationally accepted age calculation methods.">计算方法：按照公历计算</li>
+                                        <li data-zh-explanation="出生时为0岁，每年生日当天增加1岁。" data-en-explanation="Starts at 0 years old at birth, increases by 1 year on each birthday.">起始：出生时为0岁</li>
+                                        <li data-zh-explanation="用途：现代社会普遍使用，用于法律文件、教育、医疗等正式场合。" data-en-explanation="Usage: Widely used in modern society for legal documents, education, medical purposes, and other formal occasions.">用途：现代社会普遍使用</li>
+                                    </ul>
+                                    <p class="text-slate-700 mt-4 font-bold">公式：<br><span class="text-xs font-normal text-slate-600">周岁 = 当前公历年份 - 出生公历年份 (如果生日已过) <br> 周岁 = 当前公历年份 - 出生公历年份 - 1 (如果生日未到)</span></p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-6 card-glow">
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">✅ 虚岁 (xū suì) – 虚名/传统年龄 <br><span class="text-sm font-normal text-slate-600">(Nominal / Traditional Age)</span></h3>
+                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                        <li data-zh-explanation="虚岁是按照农历计算的年龄，是中国传统的年龄计算方法。" data-en-explanation="Xu Sui is the age calculated according to the Lunisolar calendar, a traditional Chinese age calculation method.">计算方法：按照农历计算</li>
+                                        <li data-zh-explanation="出生时即为1岁，每年农历新年（春节）当天增加1岁，与生日无关。" data-en-explanation="Starts at 1 year old at birth, increases by 1 year on each Lunisolar New Year (Spring Festival), regardless of birthday.">起始：出生时即为1岁</li>
+                                        <li data-zh-explanation="用途：仍广泛用于传统习俗，如生肖、命理、传统医学、为长辈做寿等。" data-en-explanation="Usage: Still widely used in traditional customs, such as zodiac signs, fortune-telling, traditional medicine, celebrating elders' birthdays, etc.">用途：传统习俗中常见</li>
+                                    </ul>
+                                    <p class="text-slate-700 mt-4 font-bold">公式：<br><span class="text-xs font-normal text-slate-600">虚岁 = 当前农历年份 - 出生农历年份 + 1</span></p>
+                                </div>
+                            </div>
+
+                            <div class="mt-12">
+                                <h3 class="font-bold text-xl text-slate-800 mb-4 text-center">年龄计算示例 <br><span class="text-base font-normal text-slate-600">(Age Calculation Examples)</span></h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-slate-50 rounded-lg p-6 card-glow">
+                                        <h4 class="font-bold text-lg text-slate-800 mb-2">📅 示例 1 – 人物A: 2000年7月1日出生 <br><span class="text-sm font-normal text-slate-600">(Example 1 – Person A: Born on July 1, 2000)</span></h4>
+                                        <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                            <li>公历出生日期: 2000年7月1日</li>
+                                            <li>农历出生日期: 农历六月初一 (2000年)</li>
+                                            <li>当前日期: 2025年7月19日</li>
+                                            <li>当前农历日期: 农历六月十四 (2025年)</li>
+                                            <li class="mt-2 font-bold">周岁 (Actual Age): 25岁 (birthday passed in 2025)</li>
+                                            <li class="font-bold">虚岁 (Nominal Age): 2025 - 2000 + 1 = 26岁 (Chinese New Year 2025 passed)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-slate-50 rounded-lg p-6 card-glow">
+                                        <h4 class="font-bold text-lg text-slate-800 mb-2">📅 示例 2 – 人物B: 2001年1月15日出生 (春节前) <br><span class="text-sm font-normal text-slate-600">(Example 2 – Person B: Born on Jan 15, 2001 (Before Chinese New Year))</span></h4>
+                                        <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                            <li>公历出生日期: 2001年1月15日</li>
+                                            <li>农历出生日期: 农历腊月廿一 (2000年)</li>
+                                            <li>2001年春节: 1月24日</li>
+                                            <li>当前日期: 2025年7月19日</li>
+                                            <li class="mt-2 font-bold">周岁 (Actual Age): 24岁 (birthday passed in 2025)</li>
+                                            <li class="font-bold">虚岁 (Nominal Age): 2025 - 2001 + 1 = 25岁 (Chinese New Year 2025 passed)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-12 p-6 bg-blue-50 rounded-lg card-glow">
+                                <h3 class="font-bold text-xl text-slate-800 mb-4 text-center">🧠 关键提示 <br><span class="text-base font-normal text-slate-600">(Key Notes)</span></h3>
+                                <ul class="list-disc list-inside text-sm text-slate-700 space-y-2">
+                                    <li>出生在农历春节前的人，其虚岁可能比周岁大1-2岁。 <br><span class="text-xs text-slate-600">(People born just before Chinese New Year may be 1-2 years older in Xu Sui than in Zhou Sui.)</span></li>
+                                    <li>农历春节通常在公历1月21日至2月20日之间。 <br><span class="text-xs text-slate-600">(Chinese New Year usually falls between January 21 and February 20 in the Gregorian calendar.)</span></li>
+                                    <li>虚岁仍常用于：<br><span class="text-xs text-slate-600">(Xu Sui is still commonly used in:)</span>
+                                        <ul class="list-circle list-inside ml-4 mt-1">
+                                            <li>传统中医 (Traditional Chinese medicine)</li>
+                                            <li>算命、八字 (Fortune-telling, Eight Characters)</li>
+                                            <li>为长辈做寿 (Birthday celebrations for elders)</li>
+                                            <li>讣告和祭祖 (Obituary notices and ancestral rites)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <!-- End New Section: Age Calculation -->
+
                     </div>
                 </div>
 
@@ -413,7 +483,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">秋季节气 <br><span class="text-sm font-normal text-slate-600">(Autumn Solar Terms)</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="立秋标志着秋季的开始，天气逐渐转凉，降水减少。" data-en-explanation="Beginning of Autumn marks the start of autumn, with gradually cooler weather and reduced precipitation.">立秋 (Lìqiū) - Beginning of Autumn</li>
+                                        <li data-zh-explanation="立秋标志着秋季的开始，气温逐渐转凉，降水减少。" data-en-explanation="Beginning of Autumn marks the start of autumn, with gradually cooler weather and reduced precipitation.">立秋 (Lìqiū) - Beginning of Autumn</li>
                                         <li data-zh-explanation="处暑时节，暑气逐渐消退，但白天仍可能炎热。" data-en-explanation="End of Heat solar term, the summer heat gradually recedes, but it can still be hot during the day.">处暑 (Chǔshǔ) - End of Heat</li>
                                         <li data-zh-explanation="白露时节，气温下降明显，水汽在夜晚凝结成露珠，天气转凉。" data-en-explanation="White Dew solar term, temperatures drop significantly, water vapor condenses into dew at night, and the weather turns cooler.">白露 (Báilù) - White Dew</li>
                                         <li data-zh-explanation="秋分时，昼夜等长，秋高气爽，是作物成熟和收获的时节。" data-en-explanation="At Autumn Equinox, day and night are of equal length, the autumn sky is clear and refreshing, and it's a time for crops to mature and be harvested.">秋分 (Qiūfēn) - Autumn Equinox</li>
@@ -456,10 +526,10 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">季节词汇 <br><span class="text-sm font-normal text-slate-600">(Season Vocabulary)</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="春季：通常指农历正月到三月，万物复苏，生机勃勃。" data-en-explanation="Spring: Usually refers to the first to third lunar months, when all things revive and are full of vitality.">春季 (Chūnjì) - Spring</li>
-                                        <li data-zh-explanation="夏季：通常指农历四月到六月，炎热多雨，植物生长旺盛。" data-en-explanation="Summer: Usually refers to the fourth to sixth lunar months, hot and rainy, with vigorous plant growth.">夏季 (Xiàjì) - Summer</li>
-                                        <li data-zh-explanation="秋季：通常指农历七月到九月，天气凉爽，作物成熟。" data-en-explanation="Autumn: Usually refers to the seventh to ninth lunar months, cool weather, and crops mature.">秋季 (Qiūjì) - Autumn</li>
-                                        <li data-zh-explanation="冬季：通常指农历十月到十二月，天气寒冷，万物收藏。" data-en-explanation="Winter: Usually refers to the tenth to twelfth lunar months, cold weather, and all things are stored away.">冬季 (Dōngjì) - Winter</li>
+                                        <li data-zh-explanation="春季：通常指农历正月到三月，万物复苏，生机勃勃。" data-en-explanation="Spring: Usually refers to the first to third lunisolar months, when all things revive and are full of vitality.">春季 (Chūnjì) - Spring</li>
+                                        <li data-zh-explanation="夏季：通常指农历四月到六月，炎热多雨，植物生长旺盛。" data-en-explanation="Summer: Usually refers to the fourth to sixth lunisolar months, hot and rainy, with vigorous plant growth.">夏季 (Xiàjì) - Summer</li>
+                                        <li data-zh-explanation="秋季：通常指农历七月到九月，天气凉爽，作物成熟。" data-en-explanation="Autumn: Usually refers to the seventh to ninth lunisolar months, cool weather, and crops mature.">秋季 (Qiūjì) - Autumn</li>
+                                        <li data-zh-explanation="冬季：通常指农历十月到十二月，天气寒冷，万物收藏。" data-en-explanation="Winter: Usually refers to the tenth to twelfth lunisolar months, cold weather, and all things are stored away.">冬季 (Dōngjì) - Winter</li>
                                         <li data-zh-explanation="旱季：降水稀少，空气干燥的季节。" data-en-explanation="Dry season: A season with scarce precipitation and dry air.">旱季 (Hànjì) - Dry Season</li>
                                         <li data-zh-explanation="雨季：降水集中，空气湿润的季节。" data-en-explanation="Rainy season: A season with concentrated precipitation and humid air.">雨季 (Yǔjì) - Rainy Season</li>
                                     </ul>
@@ -475,7 +545,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                     <p class="text-sm text-slate-600" data-zh-explanation="月球运行到太阳与地球之间，遮挡太阳光线，使地球上的部分区域或完全看不到太阳。" data-en-explanation="When the moon passes between the sun and Earth, blocking the sun's light, causing parts of Earth to see a partial or total obscuration of the sun.">月球运行到太阳与地球之间，遮挡太阳光线。</p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">月食 <br><span class="text-sm font-normal text-slate-600">(Yuèshí) - Lunar Eclipse</span></h3>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">月食 <br><span class="text-sm font-normal text-slate-600">(Yuèshí) - Lunisolar Eclipse</span></h3>
                                     <p class="text-sm text-slate-600" data-zh-explanation="地球运行到太阳与月球之间，地球的影子遮挡月球，使月亮变暗或消失。" data-en-explanation="When the Earth passes between the sun and moon, casting a shadow on the moon, causing it to dim or disappear.">地球的影子遮挡月球，使月亮变暗。</p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
@@ -511,7 +581,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                     <div class="text-5xl mb-4">🧧</div>
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">春节 <br><span class="text-sm font-normal text-slate-600">(Chūn Jié) - Chinese New Year/Spring Festival</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历正月初一，中国最重要、最盛大的传统节日。" data-en-explanation="The first day of the first lunar month, China's most important and grandest traditional festival.">时间：农历正月初一</li>
+                                        <li data-zh-explanation="农历正月初一，中国最重要、最盛大的传统节日。" data-en-explanation="The first day of the first lunisolar month, China's most important and grandest traditional festival.">时间：农历正月初一</li>
                                         <li data-zh-explanation="贴春联、放鞭炮、拜年、吃饺子、看春晚。" data-en-explanation="Pasting Spring Festival couplets, setting off firecrackers, paying New Year calls, eating dumplings, watching the Spring Festival Gala.">习俗：贴春联、拜年、吃饺子</li>
                                         <li data-zh-explanation="阖家团圆、辞旧迎新、祈福纳祥。" data-en-explanation="Family reunion, bidding farewell to the old and ushering in the new, praying for blessings and good fortune.">意义：团圆、辞旧迎新</li>
                                     </ul>
@@ -520,7 +590,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                     <div class="text-5xl mb-4">🏮</div>
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">元宵节 <br><span class="text-sm font-normal text-slate-600">(Yuán Xiāo Jié) - Lantern Festival</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历正月十五，春节的最后一天，标志着春节假期的结束。" data-en-explanation="The fifteenth day of the first lunar month, the last day of the Spring Festival, marking the end of the Spring Festival holiday.">时间：农历正月十五</li>
+                                        <li data-zh-explanation="农历正月十五，春节的最后一天，标志着春节假期的结束。" data-en-explanation="The fifteenth day of the first lunisolar month, the last day of the Spring Festival, marking the end of the Spring Festival holiday.">时间：农历正月十五</li>
                                         <li data-zh-explanation="赏花灯、猜灯谜、吃元宵/汤圆。" data-en-explanation="Admiring lanterns, guessing lantern riddles, eating tangyuan (sweet glutinous rice balls).">习俗：赏花灯、吃元宵</li>
                                         <li data-zh-explanation="庆祝新年的延续，祈求团圆美满。" data-en-explanation="Celebrating the continuation of the New Year, praying for family reunion and happiness.">意义：团圆、喜庆</li>
                                     </ul>
@@ -529,7 +599,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                     <div class="text-5xl mb-4">🐉</div>
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">端午节 <br><span class="text-sm font-normal text-slate-600">(Duān Wǔ Jié) - Dragon Boat Festival</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历五月初五，纪念屈原，也是夏季的传统节日。" data-en-explanation="The fifth day of the fifth lunar month, commemorating Qu Yuan, and also a traditional summer festival.">时间：农历五月初五</li>
+                                        <li data-zh-explanation="农历五月初五，纪念屈原，也是夏季的传统节日。" data-en-explanation="The fifth day of the fifth lunisolar month, commemorating Qu Yuan, and also a traditional summer festival.">时间：农历五月初五</li>
                                         <li data-zh-explanation="赛龙舟、吃粽子、挂艾草和菖蒲、佩香囊。" data-en-explanation="Dragon boat racing, eating zongzi (glutinous rice dumplings), hanging mugwort and calamus, wearing sachets.">习俗：赛龙舟、吃粽子</li>
                                         <li data-zh-explanation="驱邪避灾、纪念先贤、祈求健康。" data-en-explanation="Expelling evil and warding off disasters, commemorating ancient sages, praying for health.">意义：健康、纪念</li>
                                     </ul>
@@ -538,7 +608,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                     <div class="text-5xl mb-4">🥮</div>
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">中秋节 <br><span class="text-sm font-normal text-slate-600">(Zhōng Qiū Jié) - Mid-Autumn Festival</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历八月十五，月亮最圆，象征团圆。" data-en-explanation="The fifteenth day of the eighth lunar month, when the moon is fullest, symbolizing reunion.">时间：农历八月十五</li>
+                                        <li data-zh-explanation="农历八月十五，月亮最圆，象征团圆。" data-en-explanation="The fifteenth day of the eighth lunisolar month, when the moon is fullest, symbolizing reunion.">时间：农历八月十五</li>
                                         <li data-zh-explanation="赏月、吃月饼、家人团聚。" data-en-explanation="Admiring the moon, eating mooncakes, family reunion.">习俗：赏月、吃月饼</li>
                                         <li data-zh-explanation="阖家团圆、丰收感恩、思念亲友。" data-en-explanation="Family reunion, expressing gratitude for harvest, missing relatives and friends.">意义：团圆、丰收</li>
                                     </ul>
@@ -547,7 +617,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                     <div class="text-5xl mb-4">🍂</div>
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">重阳节 <br><span class="text-sm font-normal text-slate-600">(Chóng Yáng Jié) - Double Ninth Festival</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历九月初九，因“九”为阳数，两九相重故称“重阳”。" data-en-explanation="The ninth day of the ninth lunar month, called 'Chongyang' because 'nine' is a yang number and two nines coincide.">时间：农历九月初九</li>
+                                        <li data-zh-explanation="农历九月初九，因“九”为阳数，两九相重故称“重阳”。" data-en-explanation="The ninth day of the ninth lunisolar month, called 'Chongyang' because 'nine' is a yang number and two nines coincide.">时间：农历九月初九</li>
                                         <li data-zh-explanation="登高、赏菊、饮菊花酒、吃重阳糕。" data-en-explanation="Climbing mountains (or high places), admiring chrysanthemums, drinking chrysanthemum wine, eating Chongyang cake.">习俗：登高、赏菊</li>
                                         <li data-zh-explanation="敬老爱老、祈福长寿、健身。" data-en-explanation="Respecting and loving the elderly, praying for longevity, and physical fitness.">意义：敬老、健身</li>
                                     </ul>
@@ -556,7 +626,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                     <div class="text-5xl mb-4">❄️</div>
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">冬至 <br><span class="text-sm font-normal text-slate-600">(Dōng Zhì) - Winter Solstice</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历十一月上半月，太阳直射南回归线，北半球白昼最短。" data-en-explanation="First half of the eleventh lunar month, when the sun is directly over the Tropic of Capricorn, and the Northern Hemisphere has the shortest day.">时间：农历十一月</li>
+                                        <li data-zh-explanation="农历十一月上半月，太阳直射南回归线，北半球白昼最短。" data-en-explanation="First half of the eleventh lunisolar month, when the sun is directly over the Tropic of Capricorn, and the Northern Hemisphere has the shortest day.">时间：农历十一月</li>
                                         <li data-zh-explanation="吃饺子或汤圆、祭祖、家庭聚餐。" data-en-explanation="Eating dumplings or tangyuan, ancestor worship, family dinners.">习俗：吃饺子/汤圆</li>
                                         <li data-zh-explanation="阴阳转换、阖家团圆、进补养生。" data-en-explanation="Yin-yang transition, family reunion, nourishing health.">意义：团圆、养生</li>
                                     </ul>
@@ -570,7 +640,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">腊八节 <br><span class="text-sm font-normal text-slate-600">(Là Bā Jié) - Laba Festival</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历十二月初八，是春节前的预热节日。" data-en-explanation="The eighth day of the twelfth lunar month, a warm-up festival before the Spring Festival.">时间：农历十二月初八</li>
+                                        <li data-zh-explanation="农历十二月初八，是春节前的预热节日。" data-en-explanation="The eighth day of the twelfth lunisolar month, a warm-up festival before the Spring Festival.">时间：农历十二月初八</li>
                                         <li data-zh-explanation="喝腊八粥、腌腊八蒜。" data-en-explanation="Drinking Laba porridge, pickling Laba garlic.">习俗：喝腊八粥</li>
                                         <li data-zh-explanation="祈求丰收、避邪、庆祝农闲。" data-en-explanation="Praying for good harvest, warding off evil, celebrating the slack farming season.">意义：丰收、祈福</li>
                                     </ul>
@@ -578,7 +648,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">小年 <br><span class="text-sm font-normal text-slate-600">(Xiǎo Nián) - Minor New Year/Little New Year</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历腊月二十三或二十四，是祭灶王、扫尘的节日。" data-en-explanation="The twenty-third or twenty-fourth day of the twelfth lunar month, a festival for worshipping the Kitchen God and cleaning.">时间：农历腊月廿三/廿四</li>
+                                        <li data-zh-explanation="农历腊月二十三或二十四，是祭灶王、扫尘的节日。" data-en-explanation="The twenty-third or twenty-fourth day of the twelfth lunisolar month, a festival for worshipping the Kitchen God and cleaning.">时间：农历腊月廿三/廿四</li>
                                         <li data-zh-explanation="祭灶、扫尘、剪窗花、备年货。" data-en-explanation="Worshipping the Kitchen God, sweeping away dust, cutting paper-cuts for windows, preparing New Year's goods.">习俗：祭灶、扫尘</li>
                                         <li data-zh-explanation="迎接春节、清洁房屋、祈求平安。" data-en-explanation="Welcoming the Spring Festival, cleaning the house, praying for peace.">意义：迎春、清洁</li>
                                     </ul>
@@ -762,39 +832,60 @@ This section will guide you through Chinese vocabulary related to solar terms, w
             const gregorianDesc = document.getElementById('gregorian-desc');
 
             const comparisonData = {
+                'Meaning': {
+                    lunar: '农历是一种阴阳合历，它结合了月亮的周期和太阳的回归年，使其在确定季节方面更加准确，特别适用于农业。在中文中，“农”字本身就意味着农业，因此农历是一种与农业目的紧密相关的历法。',
+                    lunar_en: 'The Chinese Lunisolar Calendar is a lunisolar calendar that combines lunar cycles with the solar year, making it more accurate for determining seasons, especially for agricultural purposes. In Chinese, the character "农" (nóng) itself means agricultural, indicating a calendar closely related to agricultural purposes.'
+                },
                 'Principle': {
                     lunar: '基于月相周期，同时兼顾太阳回归年。',
-                    lunar_en: 'Based on moon phases, while also considering the tropical year.',
-                    gregorian: '基于地球绕太阳公转周期。',
-                    gregorian_en: 'Based on Earth\'s revolution period around the sun.'
+                    lunar_en: 'Based on moon phases, while also considering the tropical year.'
                 },
                 'Length': {
                     lunar: '平年354天或355天，闰年383天或384天。',
-                    lunar_en: 'Regular year 354 or 355 days, leap year 383 or 384 days.',
-                    gregorian: '平年365天，闰年366天。',
-                    gregorian_en: 'Regular year 365 days, leap year 366 days.'
+                    lunar_en: 'Regular year 354 or 355 days, leap year 383 or 384 days.'
                 },
                 'Start': {
                     lunar: '以立春或春节为岁首，日期不固定。',
-                    lunar_en: 'Starts with Lichun or Chinese New Year, date is not fixed.',
-                    gregorian: '以1月1日为岁首，日期固定。',
-                    gregorian_en: 'Starts with January 1st, date is fixed.'
+                    lunar_en: 'Starts with Lichun or Chinese New Year, date is not fixed.'
                 },
                 'Application': {
                     lunar: '主要用于传统节日、农事指导、命理等。',
-                    lunar_en: 'Mainly used for traditional festivals, agricultural guidance, fortune-telling, etc.',
-                    gregorian: '国际通用，用于公历日期、商业、国际交流等。',
-                    gregorian_en: 'Internationally used for Gregorian dates, business, international communication, etc.'
+                    lunar_en: 'Mainly used for traditional festivals, agricultural guidance, fortune-telling, etc.'
                 }
             };
 
-            for (const key in comparisonData) {
+            // Function to set comparison content
+            function setComparisonContent(key) {
+                lunarDesc.innerHTML = `<span class="font-bold text-base">${comparisonData[key].lunar}</span><br><span class="text-xs text-slate-500 mt-2">${comparisonData[key].lunar_en}</span>`;
+                gregorianDesc.innerHTML = `<span class="font-bold text-base">${comparisonData[key].gregorian}</span><br><span class="text-xs text-slate-500 mt-2">${comparisonData[key].gregorian_en}</span>`;
+            }
+
+            // Populate comparison buttons and set default content
+            const comparisonKeysOrder = ['Meaning', 'Principle', 'Length', 'Start', 'Application']; // Define order
+            comparisonKeysOrder.forEach(key => {
                 const button = document.createElement('button');
                 button.classList.add('comparison-btn', 'bg-blue-100', 'text-blue-800', 'py-2', 'px-4', 'rounded-lg', 'text-sm', 'font-medium', 'hover:bg-blue-200', 'transition-colors', 'duration-200');
-                button.textContent = `${key} ( ${key === 'Principle' ? '原理' : key === 'Length' ? '时长' : key === 'Start' ? '岁首' : '应用'} )`;
+                
+                let buttonText;
+                if (key === 'Meaning') buttonText = '意义 (Meaning)';
+                else if (key === 'Principle') buttonText = '原理 (Principle)';
+                else if (key === 'Length') buttonText = '时长 (Length)';
+                else if (key === 'Start') buttonText = '岁首 (Start)';
+                else if (key === 'Application') buttonText = '应用 (Application)';
+                
+                button.textContent = buttonText;
                 button.setAttribute('data-comparison', key);
                 comparisonNav.appendChild(button);
+            });
+
+            // Set 'Meaning' as the default selected item on load
+            const defaultButton = document.querySelector('.comparison-btn[data-comparison="Meaning"]');
+            if (defaultButton) {
+                defaultButton.classList.add('active', 'bg-blue-600', 'text-white');
+                defaultButton.classList.remove('bg-blue-100', 'text-blue-800');
+                setComparisonContent('Meaning');
             }
+
 
             comparisonNav.addEventListener('click', (e) => {
                 const target = e.target.closest('.comparison-btn');
@@ -805,8 +896,7 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                     target.classList.remove('bg-blue-100', 'text-blue-800');
 
                     const comparisonKey = target.getAttribute('data-comparison');
-                    lunarDesc.innerHTML = `<span class="font-bold">${comparisonData[comparisonKey].lunar}</span><br><span class="text-xs text-slate-500">${comparisonData[comparisonKey].lunar_en}</span>`;
-                    gregorianDesc.innerHTML = `<span class="font-bold">${comparisonData[comparisonKey].gregorian}</span><br><span class="text-xs text-slate-500">${comparisonData[comparisonKey].gregorian_en}</span>`;
+                    setComparisonContent(comparisonKey);
                 }
             });
 
