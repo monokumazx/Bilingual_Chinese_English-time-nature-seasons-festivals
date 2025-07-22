@@ -114,6 +114,19 @@ Viz: HTML cards with Unicode icons. Interaction: Hover tooltips for detailed exp
             border-radius: 1rem; /* Match parent rounded-2xl */
             padding: 1rem; /* Adjust padding as needed */
         }
+        /* Style for the audio play button */
+        .audio-btn {
+            background: none;
+            border: none;
+            color: #3b82f6; /* Blue color for icon */
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+        .audio-btn:hover {
+            color: #1d4ed8; /* Darker blue on hover */
+        }
     </style>
 </head>
 <body class="text-slate-800">
@@ -178,36 +191,39 @@ This section explores the daily cycle, character etymology, and unique tradition
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">☀️</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">昼 <span class="text-lg font-normal text-slate-600">(zhòu)</span></h3>
-                                    <p class="text-slate-700">字形核心是“日”，代表太阳高悬于天空的时段。它与“白”组成“白昼”，强调光明显见，是生命活动与劳作的象征。 <br><span class="text-xs">(The core of the character form is "日" (sun), representing the period when the sun hangs high in the sky. It combines with "白" (white) to form "白昼" (daytime), emphasizing visible light, symbolizing life activities and labor.)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">
+                                        昼 <button class="audio-btn" onclick="playAudio('昼', 'zh')">🔊</button>
+                                        <span class="text-lg font-normal text-slate-600">(zhòu)</span>
+                                    </h3>
+                                    <p class="text-slate-700">字形核心是“日”，代表太阳高悬于天空的时段。它与“白”组成“白昼”，强调光明显见，是生命活动与劳作的象征。 <button class="audio-btn" onclick="playAudio('字形核心是“日”，代表太阳高悬于天空的时段。它与“白”组成“白昼”，强调光明显见，是生命活动与劳作的象征。', 'zh')">🔊</button><br><span class="text-xs">(The core of the character form is "日" (sun), representing the period when the sun hangs high in the sky. It combines with "白" (white) to form "白昼" (daytime), emphasizing visible light, symbolizing life activities and labor.) <button class="audio-btn" onclick="playAudio('The core of the character form is "日" (sun), representing the period when the sun hangs high in the sky. It combines with "白" (white) to form "白昼" (daytime), emphasizing visible light, symbolizing life activities and labor.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌙</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">夜 <span class="text-lg font-normal text-slate-600">(yè)</span></h3>
-                                    <p class="text-slate-700">字形核心是“夕”（月亮），描绘了月亮出现、太阳隐去的景象。它与“黑”组成“黑夜”，代表静谧与休憩，体现阴阳轮转。 <br><span class="text-xs">(The core of the character form is "夕" (moon), depicting the scene where the moon appears and the sun hides.
-It combines with "黑" (black) to form "黑夜" (night), representing tranquility and rest, embodying the cycle of Yin and Yang.)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">夜 <button class="audio-btn" onclick="playAudio('夜', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(yè)</span></h3>
+                                    <p class="text-slate-700">字形核心是“夕”（月亮），描绘了月亮出现、太阳隐去的景象。它与“黑”组成“黑夜”，代表静谧与休憩，体现阴阳轮转。 <button class="audio-btn" onclick="playAudio('字形核心是“夕”（月亮），描绘了月亮出现、太阳隐去的景象。它与“黑”组成“黑夜”，代表静谧与休憩，体现阴阳轮转。', 'zh')">🔊</button><br><span class="text-xs">(The core of the character form is "夕" (moon), depicting the scene where the moon appears and the sun hides.
+It combines with "黑" (black) to form "黑夜" (night), representing tranquility and rest, embodying the cycle of Yin and Yang.) <button class="audio-btn" onclick="playAudio('The core of the character form is "夕" (moon), depicting the scene where the moon appears and the sun hides. It combines with "黑" (black) to form "黑夜" (night), representing tranquility and rest, embodying the cycle of Yin and Yang.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌅</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">旦 <span class="text-lg font-normal text-slate-600">(dàn)</span></h3>
-                                    <p class="text-slate-700">一幅太阳(日)从地平线(一)升起的图画。本义即日出，象征一天的开始、新生与希望。如“元旦”便是一年之始。 <br><span class="text-xs">(A picture of the sun (日) rising from the horizon (一). Its original meaning is sunrise, symbolizing the beginning of a day, new life, and hope. For example, "元旦" (New Year's Day) is the beginning of a year.)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">旦 <button class="audio-btn" onclick="playAudio('旦', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(dàn)</span></h3>
+                                    <p class="text-slate-700">一幅太阳(日)从地平线(一)升起的图画。本义即日出，象征一天的开始、新生与希望。如“元旦”便是一年之始。 <button class="audio-btn" onclick="playAudio('一幅太阳(日)从地平线(一)升起的图画。本义即日出，象征一天的开始、新生与希望。如“元旦”便是一年之始。', 'zh')">🔊</button><br><span class="text-xs">(A picture of the sun (日) rising from the horizon (一). Its original meaning is sunrise, symbolizing the beginning of a day, new life, and hope. For example, "元旦" (New Year's Day) is the beginning of a year.) <button class="audio-btn" onclick="playAudio('A picture of the sun (日) rising from the horizon (一). Its original meaning is sunrise, symbolizing the beginning of a day, new life, and hope. For example, "元旦" (New Year\'s Day) is the beginning of a year.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌇</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">夕 <span class="text-lg font-normal text-slate-600">(xī)</span></h3>
-                                    <p class="text-slate-700">古字形为一弯新月，描绘日落后月亮初升的景象。本义是傍晚，带有一种结束、沉静、归于宁寂的色彩，如“除夕”。 <br><span class="text-xs">(The ancient character form is a crescent moon, depicting the scene of the moon rising after sunset.
-Its original meaning is evening, carrying a sense of ending, tranquility, and returning to stillness, such as "除夕" (Chinese New Year's Eve).)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">夕 <button class="audio-btn" onclick="playAudio('夕', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(xī)</span></h3>
+                                    <p class="text-slate-700">古字形为一弯新月，描绘日落后月亮初升的景象。本义是傍晚，带有一种结束、沉静、归于宁寂的色彩，如“除夕”。 <button class="audio-btn" onclick="playAudio('古字形为一弯新月，描绘日落后月亮初升的景象。本义是傍晚，带有一种结束、沉静、归于宁寂的色彩，如“除夕”。', 'zh')">🔊</button><br><span class="text-xs">(The ancient character form is a crescent moon, depicting the scene where the moon appears and the sun hides.
+It combines with "黑" (black) to form "黑夜" (night), representing tranquility and rest, embodying the cycle of Yin and Yang.) <button class="audio-btn" onclick="playAudio('The ancient character form is "夕" (moon), depicting the scene where the moon appears and the sun hides. It combines with "黑" (black) to form "黑夜" (night), representing tranquility and rest, embodying the cycle of Yin and Yang.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌄</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">晨 <span class="text-lg font-normal text-slate-600">(chén)</span></h3>
-                                    <p class="text-slate-700">古字与农具、劳作(“辰”)和太阳(“日”)相关，表示太阳升起、万物复苏、开始活动的时刻，充满生机与活力。 <br><span class="text-xs">(The ancient character is related to farm tools, labor ("辰"), and the sun ("日"), indicating the time when the sun rises, all things revive, and activities begin, full of vitality and vigor.)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">晨 <button class="audio-btn" onclick="playAudio('晨', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(chén)</span></h3>
+                                    <p class="text-slate-700">古字与农具、劳作(“辰”)和太阳(“日”)相关，表示太阳升起、万物复苏、开始活动的时刻，充满生机与活力。 <button class="audio-btn" onclick="playAudio('古字与农具、劳作(“辰”)和太阳(“日”)相关，表示太阳升起、万物复苏、开始活动的时刻，充满生机与活力。', 'zh')">🔊</button><br><span class="text-xs">(The ancient character is related to farm tools, labor ("辰"), and the sun ("日"), indicating the time when the sun rises, all things revive, and activities begin, full of vitality and vigor.) <button class="audio-btn" onclick="playAudio('The ancient character is related to farm tools, labor ("辰"), and the sun ("日"), indicating the time when the sun rises, all things revive, and activities begin, full of vitality and vigor.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌆</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">昏 <span class="text-lg font-normal text-slate-600">(hūn)</span></h3>
-                                    <p class="text-slate-700">描绘太阳落到地平线之下，天色变暗的情景。因光线暗淡、视野模糊，引申出“昏暗”、“昏迷”等含义。 <br><span class="text-xs">(Depicts the scene where the sun sets below the horizon and the sky darkens.
-Due to dim light and blurred vision, it extends to meanings like "昏暗" (dim) and "昏迷" (coma).)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">昏 <button class="audio-btn" onclick="playAudio('昏', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(hūn)</span></h3>
+                                    <p class="text-slate-700">描绘太阳落到地平线之下，天色变暗的情景。因光线暗淡、视野模糊，引申出“昏暗”、“昏迷”等含义。 <button class="audio-btn" onclick="playAudio('描绘太阳落到地平线之下，天色变暗的情景。因光线暗淡、视野模糊，引申出“昏暗”、“昏迷”等含义。', 'zh')">🔊</button><br><span class="text-xs">(Depicts the scene where the sun sets below the horizon and the sky darkens.
+Due to dim light and blurred vision, it extends to meanings like "昏暗" (dim) and "昏迷" (coma).) <button class="audio-btn" onclick="playAudio('Depicts the scene where the sun sets below the horizon and the sky darkens. Due to dim light and blurred vision, it extends to meanings like "昏暗" (dim) and "昏迷" (coma).', 'en')">🔊</button></span></p>
                                 </div>
                             </div>
                         </section>
@@ -221,30 +237,30 @@ Due to dim light and blurred vision, it extends to meanings like "昏暗" (dim) 
                                 <div class="bg-slate-50 rounded-xl shadow-md p-6 flex items-center space-x-6 card-glow">
                                     <div class="text-4xl text-blue-600">🕰️</div>
                                     <div>
-                                        <h4 class="text-xl font-bold text-slate-800">时辰 <span class="text-base font-normal text-slate-600">(shí chen)</span></h4>
-                                        <p class="text-slate-700">中国古代计时单位，一天分为十二时辰，一时辰等于现在的两小时。 <br><span class="text-xs">(An ancient Chinese unit of timekeeping, a day is divided into twelve 'shichen', with one 'shichen' equal to two modern hours.)</span></p>
+                                        <h4 class="text-xl font-bold text-slate-800">时辰 <button class="audio-btn" onclick="playAudio('时辰', 'zh')">🔊</button><span class="text-base font-normal text-slate-600">(shí chen)</span></h4>
+                                        <p class="text-slate-700">中国古代计时单位，一天分为十二时辰，一时辰等于现在的两小时。 <button class="audio-btn" onclick="playAudio('中国古代计时单位，一天分为十二时辰，一时辰等于现在的两小时。', 'zh')">🔊</button><br><span class="text-xs">(An ancient Chinese unit of timekeeping, a day is divided into twelve 'shichen', with one 'shichen' equal to two modern hours.) <button class="audio-btn" onclick="playAudio('An ancient Chinese unit of timekeeping, a day is divided into twelve shichen, with one shichen equal to two modern hours.', 'en')">🔊</button></span></p>
                                     </div>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-md p-6 flex items-center space-x-6 card-glow">
                                     <div class="text-4xl text-blue-600">🌕</div>
                                     <div>
-                                        <h4 class="text-xl font-bold text-slate-800">朔 <span class="text-base font-normal text-slate-600">(shuò)</span></h4>
-                                        <p class="text-slate-700">指农历每月初一，月球运行到地球和太阳之间，月亮完全不可见，代表新一轮月相的开始。 <br><span class="text-xs">(Refers to the first day of each lunisolar month, when the moon is positioned between the Earth and the sun, making it completely invisible, representing the start of a new lunar cycle.)</span></p>
+                                        <h4 class="text-xl font-bold text-slate-800">朔 <button class="audio-btn" onclick="playAudio('朔', 'zh')">🔊</button><span class="text-base font-normal text-slate-600">(shuò)</span></h4>
+                                        <p class="text-slate-700">指农历每月初一，月球运行到地球和太阳之间，月亮完全不可见，代表新一轮月相的开始。 <button class="audio-btn" onclick="playAudio('指农历每月初一，月球运行到地球和太阳之间，月亮完全不可见，代表新一轮月相的开始。', 'zh')">🔊</button><br><span class="text-xs">(Refers to the first day of each lunisolar month, when the moon is positioned between the Earth and the sun, making it completely invisible, representing the start of a new lunar cycle.) <button class="audio-btn" onclick="playAudio('Refers to the first day of each lunisolar month, when the moon is positioned between the Earth and the sun, making it completely invisible, representing the start of a new lunar cycle.', 'en')">🔊</button></span></p>
                                 </div>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-md p-6 flex items-center space-x-6 card-glow">
                                     <div class="text-4xl text-blue-600">🗓️</div>
                                     <div>
-                                        <h4 class="text-xl font-bold text-slate-800">闰年 <span class="text-base font-normal text-slate-600">(rùn nián)</span></h4>
-                                        <p class="text-slate-700">为弥补历法与地球公转周期的差异而设，公历中指2月有29天的一年。 <br><span class="text-xs">(A leap year is set to compensate for the difference between the calendar and Earth's orbital period;
-in the Gregorian calendar, it refers to a year with 29 days in February.)</span></p>
+                                        <h4 class="text-xl font-bold text-slate-800">闰年 <button class="audio-btn" onclick="playAudio('闰年', 'zh')">🔊</button><span class="text-base font-normal text-slate-600">(rùn nián)</span></h4>
+                                        <p class="text-slate-700">为弥补历法与地球公转周期的差异而设，公历中指2月有29天的一年。 <button class="audio-btn" onclick="playAudio('为弥补历法与地球公转周期的差异而设，公历中指2月有29天的一年。', 'zh')">🔊</button><br><span class="text-xs">(A leap year is set to compensate for the difference between the calendar and Earth's orbital period;
+in the Gregorian calendar, it refers to a year with 29 days in February.) <button class="audio-btn" onclick="playAudio('A leap year is set to compensate for the difference between the calendar and Earth\'s orbital period; in the Gregorian calendar, it refers to a year with 29 days in February.', 'en')">🔊</button></span></p>
                                     </div>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-md p-6 flex items-center space-x-6 card-glow">
                                     <div class="text-4xl text-blue-600">🔄</div>
                                     <div>
-                                        <h4 class="text-xl font-bold text-slate-800">甲子 <span class="text-base font-normal text-slate-600">(jiǎ zǐ)</span></h4>
-                                        <p class="text-slate-700">中国古代纪年法中的一个周期，由天干地支组合而成，每六十年一个循环，常用于纪年、纪月、纪日、纪时。 <br><span class="text-xs">(A cycle in ancient Chinese chronology, formed by combinations of Heavenly Stems and Earthly Branches, completing a cycle every sixty years, often used for recording years, months, days, and hours.)</span></p>
+                                        <h4 class="text-xl font-bold text-slate-800">甲子 <button class="audio-btn" onclick="playAudio('甲子', 'zh')">🔊</button><span class="text-base font-normal text-slate-600">(jiǎ zǐ)</span></h4>
+                                        <p class="text-slate-700">中国古代纪年法中的一个周期，由天干地支组合而成，每六十年一个循环，常用于纪年、纪月、纪日、纪时。 <button class="audio-btn" onclick="playAudio('中国古代纪年法中的一个周期，由天干地支组合而成，每六十年一个循环，常用于纪年、纪月、纪日、纪时。', 'zh')">🔊</button><br><span class="text-xs">(A cycle in ancient Chinese chronology, formed by combinations of Heavenly Stems and Earthly Branches, completing a cycle every sixty years, often used for recording years, months, days, and hours.) <button class="audio-btn" onclick="playAudio('A cycle in ancient Chinese chronology, formed by combinations of Heavenly Stems and Earthly Branches, completing a cycle every sixty years, often used for recording years, months, days, and hours.', 'en')">🔊</button></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -258,55 +274,55 @@ in the Gregorian calendar, it refers to a year with 29 days in February.)</span>
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">⏳</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">刹那 <span class="text-lg font-normal text-slate-600">(chà nà)</span></h3>
-                                    <p class="text-slate-700">源自梵语，指时间极短的一瞬间，常用来形容事物转瞬即逝，强调时间的微小与短暂。 <br><span class="text-xs">(Derived from Sanskrit, it refers to an extremely short instant of time, often used to describe things that pass in a flash, emphasizing the minuteness and brevity of time.)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">刹那 <button class="audio-btn" onclick="playAudio('刹那', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(chà nà)</span></h3>
+                                    <p class="text-slate-700">源自梵语，指时间极短的一瞬间，常用来形容事物转瞬即逝，强调时间的微小与短暂。 <button class="audio-btn" onclick="playAudio('源自梵语，指时间极短的一瞬间，常用来形容事物转瞬即逝，强调时间的微小与短暂。', 'zh')">🔊</button><br><span class="text-xs">(Derived from Sanskrit, it refers to an extremely short instant of time, often used to describe things that pass in a flash, emphasizing the minuteness and brevity of time.) <button class="audio-btn" onclick="playAudio('Derived from Sanskrit, it refers to an extremely short instant of time, often used to describe things that pass in a flash, emphasizing the minuteness and brevity of time.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌀</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">光阴 <span class="text-lg font-normal text-slate-600">(guāng yīn)</span></h3>
-                                    <p class="text-slate-700">“光”指日光，“阴”指月光，合指日月交替，引申为时间。常用于诗词歌赋，带有珍惜时间、岁月流逝的感慨。 <br><span class="text-xs">("光" refers to daylight, "阴" refers to moonlight;
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">光阴 <button class="audio-btn" onclick="playAudio('光阴', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(guāng yīn)</span></h3>
+                                    <p class="text-slate-700">“光”指日光，“阴”指月光，合指日月交替，引申为时间。常用于诗词歌赋，带有珍惜时间、岁月流逝的感慨。 <button class="audio-btn" onclick="playAudio('“光”指日光，“阴”指月光，合指日月交替，引申为时间。常用于诗词歌赋，带有珍惜时间、岁月流逝的感慨。', 'zh')">🔊</button><br><span class="text-xs">("光" refers to daylight, "阴" refers to moonlight;
 together they denote the alternation of sun and moon, extended to mean time.
-Often used in poetry and prose, it carries a sentiment of cherishing time and the passage of years.)</span></p>
+Often used in poetry and prose, it carries a sentiment of cherishing time and the passage of years.) <button class="audio-btn" onclick="playAudio('Guang refers to daylight, yin refers to moonlight; together they denote the alternation of sun and moon, extended to mean time. Often used in poetry and prose, it carries a sentiment of cherishing time and the passage of years.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🕰️</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">荏苒 <span class="text-lg font-normal text-slate-600">(rěn rǎn)</span></h3>
-                                    <p class="text-slate-700">形容时间渐渐逝去。多用于书面语，带有对时光流逝的感叹和无奈，强调其不经意间的消逝。 <br><span class="text-xs">(Describes time gradually passing away. Mostly used in written language, it carries a sigh of lament and helplessness over the fleeting years, emphasizing its imperceptible disappearance.)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">荏苒 <button class="audio-btn" onclick="playAudio('荏苒', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(rěn rǎn)</span></h3>
+                                    <p class="text-slate-700">形容时间渐渐逝去。多用于书面语，带有对时光流逝的感叹和无奈，强调其不经意间的消逝。 <button class="audio-btn" onclick="playAudio('形容时间渐渐逝去。多用于书面语，带有对时光流逝的感叹和无奈，强调其不经意间的消逝。', 'zh')">🔊</button><br><span class="text-xs">(Describes time gradually passing away. Mostly used in written language, it carries a sigh of lament and helplessness over the fleeting years, emphasizing its imperceptible disappearance.) <button class="audio-btn" onclick="playAudio('Describes time gradually passing away. Mostly used in written language, it carries a sigh of lament and helplessness over the fleeting years, emphasizing its imperceptible disappearance.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">⏳</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">须臾 <span class="text-lg font-normal text-slate-600">(xū yú)</span></h3>
-                                    <p class="text-slate-700">指极短的时间，片刻。与“刹那”类似，但更侧重于形容事情发生或结束得非常快。 <br><span class="text-xs">(Refers to an extremely short period of time, a moment. Similar to "刹那", but more focused on describing something happening or ending very quickly.)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">须臾 <button class="audio-btn" onclick="playAudio('须臾', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(xū yú)</span></h3>
+                                    <p class="text-slate-700">指极短的时间，片刻。与“刹那”类似，但更侧重于形容事情发生或结束得非常快。 <button class="audio-btn" onclick="playAudio('指极短的时间，片刻。与“刹那”类似，但更侧重于形容事情发生或结束得非常快。', 'zh')">🔊</button><br><span class="text-xs">(Refers to an extremely short period of time, a moment. Similar to "刹那", but more focused on describing something happening or ending very quickly.) <button class="audio-btn" onclick="playAudio('Refers to an extremely short period of time, a moment. Similar to "刹那", but more focused on describing something happening or ending very quickly.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🗓️</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">春秋 <span class="text-lg font-normal text-slate-600">(chūn qiū)</span></h3>
-                                    <p class="text-slate-700">原指春季和秋季，后引申为一年，再引申为岁月、年代。常用于表达历史悠久或时间漫长。 <br><span class="text-xs">(Originally referring to spring and autumn, it later extended to mean a year, and further to years and eras. Often used to express long history or a long period of time.)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">春秋 <button class="audio-btn" onclick="playAudio('春秋', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(chūn qiū)</span></h3>
+                                    <p class="text-slate-700">原指春季和秋季，后引申为一年，再引申为岁月、年代。常用于表达历史悠久或时间漫长。 <button class="audio-btn" onclick="playAudio('原指春季和秋季，后引申为一年，再引申为岁月、年代。常用于表达历史悠久或时间漫长。', 'zh')">🔊</button><br><span class="text-xs">(Originally referring to spring and autumn, it later extended to mean a year, and further to years and eras. Often used to express long history or a long period of time.) <button class="audio-btn" onclick="playAudio('Originally referring to spring and autumn, it later extended to mean a year, and further to years and eras. Often used to express long history or a long period of time.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌌</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">亘古 <span class="text-lg font-normal text-slate-600">(gèn gǔ)</span></h3>
-                                    <p class="text-slate-700">指远古至今，或指永远。形容时间极其久远，常用于描述永恒不变的事物或现象。 <br><span class="text-xs">(Refers to from ancient times to the present, or forever. Describes an extremely long period of time, often used to describe eternal and unchanging things or phenomena.)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">亘古 <button class="audio-btn" onclick="playAudio('亘古', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(gèn gǔ)</span></h3>
+                                    <p class="text-slate-700">指远古至今，或指永远。形容时间极其久远，常用于描述永恒不变的事物或现象。 <button class="audio-btn" onclick="playAudio('指远古至今，或指永远。形容时间极其久远，常用于描述永恒不变的事物或现象。', 'zh')">🔊</button><br><span class="text-xs">(Refers to from ancient times to the present, or forever. Describes an extremely long period of time, often used to describe eternal and unchanging things or phenomena.) <button class="audio-btn" onclick="playAudio('Refers to from ancient times to the present, or forever. Describes an extremely long period of time, often used to describe eternal and unchanging things or phenomena.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">⏳</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">流年 <span class="text-lg font-normal text-slate-600">(liú nián)</h3>
-                                    <p class="text-slate-700">指流逝的岁月，常带有对时间飞逝或世事变迁的感慨，也常用于命理学中指当年的运势。 <br><span class="text-xs">(Refers to the passing years, often with a sense of time flowing quickly or impermanence. Also commonly used in numerology to refer to the fortune of the current year.)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">流年 <button class="audio-btn" onclick="playAudio('流年', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(liú nián)</span></h3>
+                                    <p class="text-slate-700">指流逝的岁月，常带有对时间飞逝或世事变迁的感慨，也常用于命理学中指当年的运势。 <button class="audio-btn" onclick="playAudio('指流逝的岁月，常带有对时间飞逝或世事变迁的感慨，也常用于命理学中指当年的运势。', 'zh')">🔊</button><br><span class="text-xs">(Refers to the passing years, often with a sense of time flowing quickly or impermanence. Also commonly used in numerology to refer to the fortune of the current year.) <button class="audio-btn" onclick="playAudio('Refers to the passing years, often with a sense of time flowing quickly or impermanence. Also commonly used in numerology to refer to the fortune of the current year.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🗓️</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">岁月 <span class="text-lg font-normal text-slate-600">(suì yuè)</span></h3>
-                                    <p class="text-slate-700">指年和月，泛指时间，常用来表达对过去时光的追忆、感叹，或形容时间漫长。 <br><span class="text-xs">(Refers to years and months, broadly meaning time, often used to express reminiscence or lament over past times, or to describe a long period.)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">岁月 <button class="audio-btn" onclick="playAudio('岁月', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(suì yuè)</span></h3>
+                                    <p class="text-slate-700">指年和月，泛指时间，常用来表达对过去时光的追忆、感叹，或形容时间漫长。 <button class="audio-btn" onclick="playAudio('指年和月，泛指时间，常用来表达对过去时光的追忆、感叹，或形容时间漫长。', 'zh')">🔊</button><br><span class="text-xs">(Refers to years and months, broadly meaning time, often used to express reminiscence or lament over past times, or to describe a long period.) <button class="audio-btn" onclick="playAudio('Refers to years and months, broadly meaning time, often used to express reminiscence or lament over past times, or to describe a long period.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">🌅</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">朝夕 <span class="text-lg font-normal text-slate-600">(zhāo xī)</span></h3>
-                                    <p class="text-slate-700">指早晨和晚上，引申为短时间，或从早到晚，强调时间的短暂或持续性。 <br><span class="text-xs">(Refers to morning and evening, extended to mean a short period of time, or from morning till night, emphasizing the brevity or continuity of time.)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">朝夕 <button class="audio-btn" onclick="playAudio('朝夕', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(zhāo xī)</span></h3>
+                                    <p class="text-slate-700">指早晨和晚上，引申为短时间，或从早到晚，强调时间的短暂或持续性。 <button class="audio-btn" onclick="playAudio('指早晨和晚上，引申为短时间，或从早到晚，强调时间的短暂或持续性。', 'zh')">🔊</button><br><span class="text-xs">(Refers to morning and evening, extended to mean a short period of time, or from morning till night, emphasizing the brevity or continuity of time.) <button class="audio-btn" onclick="playAudio('Refers to morning and evening, extended to mean a short period of time, or from morning till night, emphasizing the brevity or continuity of time.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-xl shadow-lg p-6 text-center card-glow">
                                     <div class="text-5xl mb-4">⚡</div>
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">瞬息 <span class="text-lg font-normal text-slate-600">(shùn xī)</span></h3>
-                                    <p class="text-slate-700">指一眨眼或一呼吸的工夫，形容时间非常短促，转瞬即逝。 <br><span class="text-xs">(Refers to the blink of an eye or the duration of a breath, describing time as extremely short and fleeting.)</span></p>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2">瞬息 <button class="audio-btn" onclick="playAudio('瞬息', 'zh')">🔊</button><span class="text-lg font-normal text-slate-600">(shùn xī)</span></h3>
+                                    <p class="text-slate-700">指一眨眼或一呼吸的工夫，形容时间非常短促，转瞬即逝。 <button class="audio-btn" onclick="playAudio('指一眨眼或一呼吸的工夫，形容时间非常短促，转瞬即逝。', 'zh')">🔊</button><br><span class="text-xs">(Refers to the blink of an eye or the duration of a breath, describing time as extremely short and fleeting.) <button class="audio-btn" onclick="playAudio('Refers to the blink of an eye or the duration of a breath, describing time as extremely short and fleeting.', 'en')">🔊</button></span></p>
                                 </div>
                             </div>
                         </section>
@@ -324,23 +340,22 @@ This section delves into the unique aspects of the Chinese Lunisolar Calendar an
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div class="bg-slate-50 rounded-lg p-6 text-center transition-shadow hover:shadow-md card-glow">
                                     <div class="text-5xl mb-4">🌕</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">月相周期 <br><span class="text-sm font-normal text-slate-600">(Moon Phase Cycle)</span></h3>
-                                    <p class="text-sm text-slate-600">农历以月亮的盈亏周期（朔望月）为基础来划分月份，平均为29.53天。因此农历的月份分为29天的小月和30天的大月。 <br><span class="text-xs">(The Lunisolar Calendar divides months based on the moon's waxing and waning cycle (synodic month), averaging 29.53 days.
-Thus, lunisolar months are either 29-day 'small months' or 30-day 'large months'.)</span></p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">月相周期 <button class="audio-btn" onclick="playAudio('月相周期', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Moon Phase Cycle) <button class="audio-btn" onclick="playAudio('Moon Phase Cycle', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600">农历以月亮的盈亏周期（朔望月）为基础来划分月份，平均为29.53天。因此农历的月份分为29天的小月和30天的大月。 <button class="audio-btn" onclick="playAudio('农历以月亮的盈亏周期（朔望月）为基础来划分月份，平均为29.53天。因此农历的月份分为29天的小月和30天的大月。', 'zh')">🔊</button><br><span class="text-xs">(The Lunisolar Calendar divides months based on the moon's waxing and waning cycle (synodic month), averaging 29.53 days.
+Thus, lunisolar months are either 29-day 'small months' or 30-day 'large months'.) <button class="audio-btn" onclick="playAudio('The Lunisolar Calendar divides months based on the moon\'s waxing and waning cycle (synodic month), averaging 29.53 days. Thus, lunisolar months are either 29-day small months or 30-day large months.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 text-center transition-shadow hover:shadow-md card-glow">
                                     <div class="text-5xl mb-4">🗓️</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">闰月机制 <br><span class="text-sm font-normal text-slate-600">(Leap Month Mechanism)</span></h3>
-                                    <p class="text-sm text-slate-600">为解决12个朔望月与一个回归年约11天的差值，农历采用“19年7闰”法，通过增加闰月来与季节保持同步，确保春节总在冬末春初。 <br><span class="text-xs">(To account for the ~11-day difference between 12 synodic months and a tropical year, the Lunisolar Calendar uses a "7 leap months in 19 years" system, adding leap months to stay synchronized with seasons, ensuring Chinese New Year always falls in late winter/early spring.)</p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">闰月机制 <button class="audio-btn" onclick="playAudio('闰月机制', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Leap Month Mechanism) <button class="audio-btn" onclick="playAudio('Leap Month Mechanism', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600">为解决12个朔望月与一个回归年约11天的差值，农历采用“19年7闰”法，通过增加闰月来与季节保持同步，确保春节总在冬末春初。 <button class="audio-btn" onclick="playAudio('为解决12个朔望月与一个回归年约11天的差值，农历采用“19年7闰”法，通过增加闰月来与季节保持同步，确保春节总在冬末春初。', 'zh')">🔊</button><br><span class="text-xs">(To account for the ~11-day difference between 12 synodic months and a tropical year, the Lunisolar Calendar uses a "7 leap months in 19 years" system, adding leap months to stay synchronized with seasons, ensuring Chinese New Year always falls in late winter/early spring.) <button class="audio-btn" onclick="playAudio('To account for the ~11-day difference between 12 synodic months and a tropical year, the Lunisolar Calendar uses a "7 leap months in 19 years" system, adding leap months to stay synchronized with seasons, ensuring Chinese New Year always falls in late winter/early spring.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 text-center transition-shadow hover:shadow-md card-glow">
                                     <div class="text-5xl mb-4">🌱</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">文化意义 <br><span class="text-sm font-normal text-slate-600">(Cultural Significance)</span></h3>
-                                    <p class="text-sm text-slate-600">许多重要的传统节日，如春节、端午节、中秋节等，都由农历确定。它深深植根于中华文化，影响着人们的生活节奏与习俗。 <br><span class="text-xs">(Many important traditional festivals, such as Chinese New Year, Dragon Boat Festival, and Mid-Autumn Festival, are determined by the Lunisolar Calendar.
-It is deeply rooted in Chinese culture, influencing people's daily rhythms and customs.)</span></p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">文化意义 <button class="audio-btn" onclick="playAudio('文化意义', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Cultural Significance) <button class="audio-btn" onclick="playAudio('Cultural Significance', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600">许多重要的传统节日，如春节、端午节、中秋节等，都由农历确定。它深深植根于中华文化，影响着人们的生活节奏与习俗。 <button class="audio-btn" onclick="playAudio('许多重要的传统节日，如春节、端午节、中秋节等，都由农历确定。它深深植根于中华文化，影响着人们的生活节奏与习俗。', 'zh')">🔊</button><br><span class="text-xs">(Many important traditional festivals, such as Chinese New Year, Dragon Boat Festival, and Mid-Autumn Festival, are determined by the Lunisolar Calendar.
+It is deeply rooted in Chinese culture, influencing people's daily rhythms and customs.) <button class="audio-btn" onclick="playAudio('Many important traditional festivals, such as Chinese New Year, Dragon Boat Festival, and Mid-Autumn Festival, are determined by the Lunisolar Calendar. It is deeply rooted in Chinese culture, influencing people\'s daily rhythms and customs.', 'en')">🔊</button></span></p>
                                 </div>
                             </div>
-                            <!-- The 24 Solar Terms chart section has been removed from here -->
                         </section>
 
                         <section id="calendar-comparison" class="mb-12">
@@ -371,125 +386,106 @@ Click the buttons below to explore their specific distinctions in various aspect
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">✅ 周岁 (zhōu suì) – 实际/西式年龄 <br><span class="text-sm font-normal text-slate-600">(Actual / Western Age)</span></h3>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">✅ 周岁 (zhōu suì) – 实际/西式年龄 <button class="audio-btn" onclick="playAudio('周岁', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Actual / Western Age) <button class="audio-btn" onclick="playAudio('Actual / Western Age', 'en')">🔊</button></span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="周岁是按照公历计算的年龄，与国际通行的年龄计算方法一致。" data-en-explanation="Zhou Sui is the age calculated according to the Gregorian calendar, consistent with internationally accepted age calculation methods.">计算方法：按照公历计算</li>
-                                        <li data-zh-explanation="出生时为0岁，每年生日当天增加1岁。" data-en-explanation="Starts at 0 years old at birth, increases by 1 year on each birthday.">起始：出生时为1岁</li>
-                                        <li data-zh-explanation="用途：现代社会普遍使用，用于法律文件、教育、医疗等正式场合。" data-en-explanation="Usage: Widely used in modern society for legal documents, education, medical purposes, and other formal occasions.">用途：现代社会普遍使用</li>
+                                        <li data-zh-explanation="周岁是按照公历计算的年龄，与国际通行的年龄计算方法一致。" data-en-explanation="Zhou Sui is the age calculated according to the Gregorian calendar, consistent with internationally accepted age calculation methods.">计算方法：按照公历计算 <button class="audio-btn" onclick="playAudio('计算方法：按照公历计算', 'zh')">🔊</button></li>
+                                        <li data-zh-explanation="出生时为0岁，每年生日当天增加1岁。" data-en-explanation="Starts at 0 years old at birth, increases by 1 year on each birthday.">起始：出生时为1岁 <button class="audio-btn" onclick="playAudio('起始：出生时为1岁', 'zh')">🔊</button></li>
+                                        <li data-zh-explanation="用途：现代社会普遍使用，用于法律文件、教育、医疗等正式场合。" data-en-explanation="Usage: Widely used in modern society for legal documents, education, medical purposes, and other formal occasions.">用途：现代社会普遍使用 <button class="audio-btn" onclick="playAudio('用途：现代社会普遍使用', 'zh')">🔊</button></li>
                                     </ul>
-                                    <p class="text-slate-700 mt-4 font-bold">公式：<br><span class="text-xs font-normal text-slate-600">周岁 = 当前公历年份 - 出生公历年份 (如果生日已过) <br> 周岁 = 当前公历年份 - 出生公历年份 - 1 (如果生日未到)</span></p>
+                                    <p class="text-slate-700 mt-4 font-bold">公式：<br><span class="text-xs font-normal text-slate-600">周岁 = 当前公历年份 - 出生公历年份 (如果生日已过) <br> 周岁 = 当前公历年份 - 出生公历年份 - 1 (如果生日未到) <button class="audio-btn" onclick="playAudio('周岁 = 当前公历年份 - 出生公历年份 (如果生日已过) 周岁 = 当前公历年份 - 出生公历年份 - 1 (如果生日未到)', 'zh')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">✅ 虚岁 (xū suì) – 虚名/传统年龄 <br><span class="text-sm font-normal text-slate-600">(Nominal / Traditional Age)</span></h3>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">✅ 虚岁 (xū suì) – 虚名/传统年龄 <button class="audio-btn" onclick="playAudio('虚岁', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Nominal / Traditional Age) <button class="audio-btn" onclick="playAudio('Nominal / Traditional Age', 'en')">🔊</button></span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="虚岁是按照农历计算的年龄，是中国传统的年龄计算方法。" data-en-explanation="Xu Sui is the age calculated according to the Lunisolar calendar, a traditional Chinese age calculation method.">计算方法：按照农历计算</li>
-                                        <li data-zh-explanation="出生时即为1岁，每年农历新年（春节）当天增加1岁，与生日无关。" data-en-explanation="Starts at 1 year old at birth, increases by 1 year on each Lunisolar New Year (Spring Festival), regardless of birthday.">起始：出生时即为1岁</li>
-                                        <li data-zh-explanation="用途：仍广泛用于传统习俗，如生肖、命理、传统医学、为长辈做寿等。" data-en-explanation="Usage: Still widely used in traditional customs, such as zodiac signs, fortune-telling, traditional medicine, celebrating elders' birthdays, etc.">用途：传统习俗中常见</li>
+                                        <li data-zh-explanation="虚岁是按照农历计算的年龄，是中国传统的年龄计算方法。" data-en-explanation="Xu Sui is the age calculated according to the Lunisolar calendar, a traditional Chinese age calculation method.">计算方法：按照农历计算 <button class="audio-btn" onclick="playAudio('计算方法：按照农历计算', 'zh')">🔊</button></li>
+                                        <li data-zh-explanation="出生时即为1岁，每年农历新年（春节）当天增加1岁，与生日无关。" data-en-explanation="Starts at 1 year old at birth, increases by 1 year on each Lunisolar New Year (Spring Festival), regardless of birthday.">起始：出生时即为1岁 <button class="audio-btn" onclick="playAudio('起始：出生时即为1岁', 'zh')">🔊</button></li>
+                                        <li data-zh-explanation="用途：仍广泛用于传统习俗，如生肖、命理、传统医学、为长辈做寿等。" data-en-explanation="Usage: Still widely used in traditional customs, such as zodiac signs, fortune-telling, traditional medicine, celebrating elders' birthdays, etc.">用途：传统习俗中常见 <button class="audio-btn" onclick="playAudio('用途：传统习俗中常见', 'zh')">🔊</button></li>
                                     </ul>
-                                    <p class="text-slate-700 mt-4 font-bold">公式：<br><span class="text-xs font-normal text-slate-600">虚岁 = 当前农历年份 - 出生农历年份 + 1</span></p>
+                                    <p class="text-slate-700 mt-4 font-bold">公式：<br><span class="text-xs font-normal text-slate-600">虚岁 = 当前农历年份 - 出生农历年份 + 1 <button class="audio-btn" onclick="playAudio('虚岁 = 当前农历年份 - 出生农历年份 + 1', 'zh')">🔊</button></span></p>
                                 </div>
                             </div>
-
                             <div class="mt-12">
                                 <h3 class="font-bold text-xl text-slate-800 mb-4 text-center">年龄计算示例 <br><span class="text-base font-normal text-slate-600">(Age Calculation Examples)</span></h3>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                        <h4 class="font-bold text-lg text-slate-800 mb-2">📅 示例 1 – 人物A: 2000年7月1日出生 <br><span class="text-sm font-normal text-slate-600">(Example 1 – Person A: Born on July 1, 2000)</span></h4>
+                                        <h4 class="font-bold text-lg text-slate-800 mb-2">📅 示例 1 – 人物A: 2000年7月1日出生 <button class="audio-btn" onclick="playAudio('示例 1 – 人物A: 2000年7月1日出生', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Example 1 – Person A: Born on July 1, 2000) <button class="audio-btn" onclick="playAudio('Example 1 – Person A: Born on July 1, 2000', 'en')">🔊</button></span></h4>
                                         <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                            <li>公历出生日期: 2000年7月1日</li>
-                                            <li>农历出生日期: 农历六月初一 (2000年)</li>
-                                            <li>当前日期: 2025年7月19日</li>
-                                            <li>当前农历日期: 农历六月十四 (2025年)</li>
-                                            <li class="mt-2 font-bold">周岁 (Actual Age): 25岁 (birthday passed in 2025)</li>
-                                            <li class="font-bold">虚岁 (Nominal Age): 2025 - 2000 + 1 = 26岁 (Chinese New Year 2025 passed)</li>
+                                            <li>公历出生日期: 2000年7月1日 <button class="audio-btn" onclick="playAudio('公历出生日期: 2000年7月1日', 'zh')">🔊</button></li>
+                                            <li>农历出生日期: 农历六月初一 (2000年) <button class="audio-btn" onclick="playAudio('农历出生日期: 农历六月初一 (2000年)', 'zh')">🔊</button></li>
+                                            <li>当前日期: 2025年7月19日 <button class="audio-btn" onclick="playAudio('当前日期: 2025年7月19日', 'zh')">🔊</button></li>
+                                            <li>当前农历日期: 农历六月十四 (2025年) <button class="audio-btn" onclick="playAudio('当前农历日期: 农历六月十四 (2025年)', 'zh')">🔊</button></li>
+                                            <li class="mt-2 font-bold">周岁 (Actual Age): 25岁 (birthday passed in 2025) <button class="audio-btn" onclick="playAudio('周岁 (Actual Age): 25岁 (birthday passed in 2025)', 'zh')">🔊</button></li>
+                                            <li class="font-bold">虚岁 (Nominal Age): 2025 - 2000 + 1 = 26岁 (Chinese New Year 2025 passed) <button class="audio-btn" onclick="playAudio('虚岁 (Nominal Age): 2025 - 2000 + 1 = 26岁 (Chinese New Year 2025 passed)', 'zh')">🔊</button></li>
                                         </ul>
                                     </div>
                                     <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                        <h4 class="font-bold text-lg text-slate-800 mb-2">📅 示例 2 – 人物B: 2001年1月15日出生 (春节前) <br><span class="text-sm font-normal text-slate-600">(Example 2 – Person B: Born on Jan 15, 2001 (Before Chinese New Year))</span></h4>
+                                        <h4 class="font-bold text-lg text-slate-800 mb-2">📅 示例 2 – 人物B: 2001年1月15日出生 (春节前) <button class="audio-btn" onclick="playAudio('示例 2 – 人物B: 2001年1月15日出生 (春节前)', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Example 2 – Person B: Born on Jan 15, 2001 (Before Chinese New Year)) <button class="audio-btn" onclick="playAudio('Example 2 – Person B: Born on Jan 15, 2001 (Before Chinese New Year)', 'en')">🔊</button></span></h4>
                                         <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                            <li>公历出生日期: 2001年1月15日</li>
-                                            <li>农历出生日期: 农历腊月廿一 (2000年)</li>
-                                            <li>2001年春节: 1月24日</li>
-                                            <li>当前日期: 2025年7月19日</li>
-                                            <li class="mt-2 font-bold">周岁 (Actual Age): 24岁 (birthday passed in 2025)</li>
-                                            <li class="font-bold">虚岁 (Nominal Age): 2025 - 2001 + 1 = 25岁 (Chinese New Year 2025 passed)</li>
+                                            <li>公历出生日期: 2001年1月15日 <button class="audio-btn" onclick="playAudio('公历出生日期: 2001年1月15日', 'zh')">🔊</button></li>
+                                            <li>农历出生日期: 农历十二月廿一 (2000年) <button class="audio-btn" onclick="playAudio('农历出生日期: 农历十二月廿一 (2000年)', 'zh')">🔊</button></li>
+                                            <li>当前日期: 2025年7月19日 <button class="audio-btn" onclick="playAudio('当前日期: 2025年7月19日', 'zh')">🔊</button></li>
+                                            <li>当前农历日期: 农历六月十四 (2025年) <button class="audio-btn" onclick="playAudio('当前农历日期: 农历六月十四 (2025年)', 'zh')">🔊</button></li>
+                                            <li class="mt-2 font-bold">周岁 (Actual Age): 24岁 (birthday not yet passed in 2025) <button class="audio-btn" onclick="playAudio('周岁 (Actual Age): 24岁 (birthday not yet passed in 2025)', 'zh')">🔊</button></li>
+                                            <li class="font-bold">虚岁 (Nominal Age): 2025 - 2000 + 1 = 26岁 (Chinese New Year 2025 passed, born in Lunisolar 2000) <button class="audio-btn" onclick="playAudio('虚岁 (Nominal Age): 2025 - 2000 + 1 = 26岁 (Chinese New Year 2025 passed, born in Lunisolar 2000)', 'zh')">🔊</button></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="mt-12 p-6 bg-blue-50 rounded-lg card-glow">
-                                <h3 class="font-bold text-xl text-slate-800 mb-4 text-center">🧠 关键提示 <br><span class="text-base font-normal text-slate-600">(Key Notes)</span></h3>
-                                <ul class="list-disc list-inside text-sm text-slate-700 space-y-2">
-                                    <li>出生在农历春节前的人，其虚岁可能比周岁大1-2岁。 <br><span class="text-xs text-slate-600">(People born just before Chinese New Year may be 1-2 years older in Xu Sui than in Zhou Sui.)</span></li>
-                                    <li>农历春节通常在公历1月21日至2月20日之间。 <br><span class="text-xs text-slate-600">(Chinese New Year usually falls between January 21 and February 20 in the Gregorian calendar.)</span></li>
-                                    <li>虚岁仍常用于：<br><span class="text-xs text-slate-600">(Xu Sui is still commonly used in:)</span>
-                                        <ul class="list-circle list-inside ml-4 mt-1">
-                                            <li>传统中医 (Traditional Chinese medicine)</li>
-                                            <li>算命、八字 (Fortune-telling, Eight Characters)</li>
-                                            <li>为长辈做寿 (Birthday celebrations for elders)</li>
-                                            <li>讣告和祭祖 (Obituary notices and ancestral rites)</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
                         </section>
-                        <!-- End New Section: Age Calculation -->
-
                     </div>
                 </div>
 
                 <!-- Tab 3: Natural Phenomena -->
                 <div id="tab-content-natural" class="hidden">
                     <div class="p-2">
-                        <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">自然现象是自然界中发生的各种事件和过程，它们或壮丽，或神秘，展现着大自然的力量与美丽。本节将带您探索节气、天气、季节、气候以及各种天象和自然现象的中文词汇。 <br><span class="text-sm text-slate-500">(Natural phenomena are various events and processes occurring in nature, which can be magnificent or mysterious, showcasing the power and beauty of the natural world.
-This section will guide you through Chinese vocabulary related to solar terms, weather, seasons, climate, and various celestial and natural phenomena.)</span></p>
+                        <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">自然现象在中国文化中具有深远的象征意义，常与节气、农事和哲学思想相结合。本节将带您探索一系列与自然相关的词汇及其文化内涵。 <br><span class="text-sm text-slate-500">(Natural phenomena hold profound symbolic meaning in Chinese culture, often integrated with solar terms, agricultural practices, and philosophical thought.
+This section explores a range of nature-related vocabulary and their cultural connotations.)</span></p>
 
                         <section id="solar-terms-list" class="mb-12">
                             <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">二十四节气 <br><span class="text-base font-normal text-slate-600">(The 24 Solar Terms)</span></h2>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">春季节气 <br><span class="text-sm font-normal text-slate-600">(Spring Solar Terms)</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="立春是二十四节气中的第一个节气，标志着春天的开始，万物复苏。" data-en-explanation="Lichun is the first of the 24 solar terms, marking the beginning of spring and the revival of all things.">立春 (Lìchūn) - Beginning of Spring</li>
-                                        <li data-zh-explanation="雨水节气，降水开始增多，气温回升，冰雪融化。" data-en-explanation="Rain Water solar term, precipitation begins to increase, temperatures rise, and ice and snow melt.">雨水 (Yǔshuǐ) - Rain Water</li>
-                                        <li data-zh-explanation="惊蛰时节，天气转暖，春雷始鸣，冬眠的动物被惊醒。" data-en-explanation="Awakening of Insects solar term, the weather warms up, spring thunder begins, and hibernating animals are awakened.">惊蛰 (Jīngzhé) - Awakening of Insects</li>
-                                        <li data-zh-explanation="春分时，昼夜等长，春意盎然，是春耕的重要时节。" data-en-explanation="At Spring Equinox, day and night are of equal length, spring is in full swing, and it's an important time for spring plowing.">春分 (Chūnfēn) - Spring Equinox</li>
-                                        <li data-zh-explanation="清明节气，天气晴朗，气温升高，是祭祖和踏青的时节。" data-en-explanation="Clear and Bright solar term, the weather is clear, temperatures rise, and it's a time for ancestor worship and spring outings.">清明 (Qīngmíng) - Clear and Bright</li>
-                                        <li data-zh-explanation="谷雨时节，雨水充沛，有利于谷物生长，是播种移苗的好时机。" data-en-explanation="Grain Rain solar term, abundant rainfall, beneficial for grain growth, a good time for sowing and transplanting seedlings.">谷雨 (Gǔyǔ) - Grain Rain</li>
+                                        <li data-zh-explanation="立春是二十四节气中的第一个节气，标志着春天的开始，万物复苏。" data-en-explanation="Lichun is the first of the 24 solar terms, marking the beginning of spring and the revival of all things.">立春 <button class="audio-btn" onclick="playAudio('立春', 'zh')">🔊</button>(Lìchūn) - Beginning of Spring <button class="audio-btn" onclick="playAudio('Beginning of Spring', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="雨水节气，降水开始增多，气温回升，冰雪融化。" data-en-explanation="Rain Water solar term, precipitation begins to increase, temperatures rise, and ice and snow melt.">雨水 <button class="audio-btn" onclick="playAudio('雨水', 'zh')">🔊</button>(Yǔshuǐ) - Rain Water <button class="audio-btn" onclick="playAudio('Rain Water', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="惊蛰时节，天气转暖，春雷始鸣，冬眠的动物被惊醒。" data-en-explanation="Awakening of Insects solar term, the weather warms up, spring thunder begins, and hibernating animals are awakened.">惊蛰 <button class="audio-btn" onclick="playAudio('惊蛰', 'zh')">🔊</button>(Jīngzhé) - Awakening of Insects <button class="audio-btn" onclick="playAudio('Awakening of Insects', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="春分时，昼夜等长，春意盎然，是春耕的重要时节。" data-en-explanation="At Spring Equinox, day and night are of equal length, spring is in full swing, and it's an important time for spring plowing.">春分 <button class="audio-btn" onclick="playAudio('春分', 'zh')">🔊</button>(Chūnfēn) - Spring Equinox <button class="audio-btn" onclick="playAudio('Spring Equinox', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="清明节气，天气晴朗，气温升高，是祭祖和踏青的时节。" data-en-explanation="Clear and Bright solar term, the weather is clear, temperatures rise, and it's a time for ancestor worship and spring outings.">清明 <button class="audio-btn" onclick="playAudio('清明', 'zh')">🔊</button>(Qīngmíng) - Clear and Bright <button class="audio-btn" onclick="playAudio('Clear and Bright', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="谷雨时节，雨水充沛，有利于谷物生长，是播种移苗的好时机。" data-en-explanation="Grain Rain solar term, abundant rainfall, beneficial for grain growth, a good time for sowing and transplanting seedlings.">谷雨 <button class="audio-btn" onclick="playAudio('谷雨', 'zh')">🔊</button>(Gǔyǔ) - Grain Rain <button class="audio-btn" onclick="playAudio('Grain Rain', 'en')">🔊</button></li>
                                     </ul>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">夏季节气 <br><span class="text-sm font-normal text-slate-600">(Summer Solar Terms)</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="立夏标志着夏季的开始，气温显著升高，雷雨增多。" data-en-explanation="Beginning of Summer marks the start of summer, with significant temperature increases and more thunderstorms.">立夏 (Lìxià) - Beginning of Summer</li>
-                                        <li data-zh-explanation="小满时节，麦类等夏熟作物籽粒开始灌浆，但尚未饱满。" data-en-explanation="Lesser Fullness solar term, grains of summer-ripening crops like wheat begin to fill, but are not yet plump.">小满 (Xiǎomǎn) - Lesser Fullness</li>
-                                        <li data-zh-explanation="芒种时节，有芒的麦子可以收割，晚稻可以播种，农事繁忙。" data-en-explanation="Grain in Ear solar term, bearded wheat can be harvested, and late rice can be sown; agricultural activities are busy.">芒种 (Mángzhòng) - Grain in Ear</li>
-                                        <li data-zh-explanation="夏至是北半球白昼最长的一天，标志着盛夏的来临。" data-en-explanation="Summer Solstice is the longest day in the Northern Hemisphere, marking the arrival of mid-summer.">夏至 (Xiàzhì) - Summer Solstice</li>
-                                        <li data-zh-explanation="小暑时节，天气开始炎热，但尚未达到最热。" data-en-explanation="Lesser Heat solar term, the weather begins to get hot, but has not yet reached its peak heat.">小暑 (Xiǎoshǔ) - Lesser Heat</li>
-                                        <li data-zh-explanation="大暑是一年中最热的节气，高温酷热，雷阵雨频繁。" data-en-explanation="Greater Heat is the hottest solar term of the year, with scorching temperatures and frequent thunderstorms.">大暑 (Dàshǔ) - Greater Heat</li>
+                                        <li data-zh-explanation="立夏标志着夏季的开始，气温显著升高，雷雨增多。" data-en-explanation="Beginning of Summer marks the start of summer, with significant temperature increases and more thunderstorms.">立夏 <button class="audio-btn" onclick="playAudio('立夏', 'zh')">🔊</button>(Lìxià) - Beginning of Summer <button class="audio-btn" onclick="playAudio('Beginning of Summer', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="小满时节，麦类等夏熟作物籽粒开始灌浆，但尚未饱满。" data-en-explanation="Lesser Fullness solar term, grains of summer-ripening crops like wheat begin to fill, but are not yet plump.">小满 <button class="audio-btn" onclick="playAudio('小满', 'zh')">🔊</button>(Xiǎomǎn) - Lesser Fullness <button class="audio-btn" onclick="playAudio('Lesser Fullness', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="芒种时节，有芒的麦子可以收割，晚稻可以播种，农事繁忙。" data-en-explanation="Grain in Ear solar term, bearded wheat can be harvested, and late rice can be sown; agricultural activities are busy.">芒种 <button class="audio-btn" onclick="playAudio('芒种', 'zh')">🔊</button>(Mángzhòng) - Grain in Ear <button class="audio-btn" onclick="playAudio('Grain in Ear', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="夏至是北半球白昼最长的一天，标志着盛夏的来临。" data-en-explanation="Summer Solstice is the longest day in the Northern Hemisphere, marking the arrival of mid-summer.">夏至 <button class="audio-btn" onclick="playAudio('夏至', 'zh')">🔊</button>(Xiàzhì) - Summer Solstice <button class="audio-btn" onclick="playAudio('Summer Solstice', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="小暑时节，天气开始炎热，但尚未达到最热。" data-en-explanation="Lesser Heat solar term, the weather begins to get hot, but has not yet reached its peak heat.">小暑 <button class="audio-btn" onclick="playAudio('小暑', 'zh')">🔊</button>(Xiǎoshǔ) - Lesser Heat <button class="audio-btn" onclick="playAudio('Lesser Heat', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="大暑是一年中最热的节气，高温酷热，雷阵雨频繁。" data-en-explanation="Greater Heat is the hottest solar term of the year, with scorching temperatures and frequent thunderstorms.">大暑 <button class="audio-btn" onclick="playAudio('大暑', 'zh')">🔊</button>(Dàshǔ) - Greater Heat <button class="audio-btn" onclick="playAudio('Greater Heat', 'en')">🔊</button></li>
                                     </ul>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">秋季节气 <br><span class="text-sm font-normal text-slate-600">(Autumn Solar Terms)</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="立秋标志着秋季的开始，气温逐渐转凉，降水减少。" data-en-explanation="Beginning of Autumn marks the start of autumn, with gradually cooler weather and reduced precipitation.">立秋 (Lìqiū) - Beginning of Autumn</li>
-                                        <li data-zh-explanation="处暑时节，暑气逐渐消退，但白天仍可能炎热。" data-en-explanation="End of Heat solar term, the summer heat gradually recedes, but it can still be hot during the day.">处暑 (Chǔshǔ) - End of Heat</li>
-                                        <li data-zh-explanation="白露时节，气温下降明显，水汽在夜晚凝结成露珠，天气转凉。" data-en-explanation="White Dew solar term, temperatures drop significantly, water vapor condenses into dew at night, and the weather turns cooler.">白露 (Báilù) - White Dew</li>
-                                        <li data-zh-explanation="秋分时，昼夜等长，秋高气爽，是作物成熟和收获的时节。" data-en-explanation="At Autumn Equinox, day and night are of equal length, the autumn sky is clear and refreshing, and it's a time for crops to mature and be harvested.">秋分 (Qiūfēn) - Autumn Equinox</li>
-                                        <li data-zh-explanation="寒露时节，气温继续下降，露水更冷，即将凝结成霜。" data-en-explanation="Cold Dew solar term, temperatures continue to drop, dew becomes colder, and is about to condense into frost.">寒露 (Hánlù) - Cold Dew</li>
-                                        <li data-zh-explanation="霜降时节，天气渐冷，开始出现霜冻，标志着深秋的到来。" data-en-explanation="Frost's Descent solar term, the weather gradually turns cold, frost begins to appear, marking the arrival of late autumn.">霜降 (Shuāngjiàng) - Frost's Descent</li>
+                                        <li data-zh-explanation="立秋标志着秋季的开始，气温逐渐转凉，降水减少。" data-en-explanation="Beginning of Autumn marks the start of autumn, with gradually cooler weather and reduced precipitation.">立秋 <button class="audio-btn" onclick="playAudio('立秋', 'zh')">🔊</button>(Lìqiū) - Beginning of Autumn <button class="audio-btn" onclick="playAudio('Beginning of Autumn', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="处暑时节，暑气逐渐消退，但白天仍可能炎热。" data-en-explanation="End of Heat solar term, the summer heat gradually recedes, but it can still be hot during the day.">处暑 <button class="audio-btn" onclick="playAudio('处暑', 'zh')">🔊</button>(Chǔshǔ) - End of Heat <button class="audio-btn" onclick="playAudio('End of Heat', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="白露时节，气温下降明显，水汽在夜晚凝结成露珠，天气转凉。" data-en-explanation="White Dew solar term, temperatures drop significantly, water vapor condenses into dew at night, and the weather turns cooler.">白露 <button class="audio-btn" onclick="playAudio('白露', 'zh')">🔊</button>(Báilù) - White Dew <button class="audio-btn" onclick="playAudio('White Dew', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="秋分时，昼夜等长，秋高气爽，是作物成熟和收获的时节。" data-en-explanation="At Autumn Equinox, day and night are of equal length, the autumn sky is clear and refreshing, and it's a time for crops to mature and be harvested.">秋分 <button class="audio-btn" onclick="playAudio('秋分', 'zh')">🔊</button>(Qiūfēn) - Autumn Equinox <button class="audio-btn" onclick="playAudio('Autumn Equinox', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="寒露时节，气温继续下降，露水更冷，即将凝结成霜。" data-en-explanation="Cold Dew solar term, temperatures continue to drop, dew becomes colder, and is about to condense into frost.">寒露 <button class="audio-btn" onclick="playAudio('寒露', 'zh')">🔊</button>(Hánlù) - Cold Dew <button class="audio-btn" onclick="playAudio('Cold Dew', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="霜降时节，天气渐冷，开始出现霜冻，标志着深秋的到来。" data-en-explanation="Frost's Descent solar term, the weather gradually turns cold, frost begins to appear, marking the arrival of late autumn.">霜降 <button class="audio-btn" onclick="playAudio('霜降', 'zh')">🔊</button>(Shuāngjiàng) - Frost's Descent <button class="audio-btn" onclick="playAudio('Frosts Descent', 'en')">🔊</button></li>
                                     </ul>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">冬季节气 <br><span class="text-sm font-normal text-slate-600">(Winter Solar Terms)</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="立冬标志着冬季的开始，气温骤降，作物收割完毕。" data-en-explanation="Beginning of Winter marks the start of winter, with a sharp drop in temperatures and crops harvested.">立冬 (Lìdōng) - Beginning of Winter</li>
-                                        <li data-zh-explanation="小雪时节，气温持续降低，开始降雪，但量通常不大。" data-en-explanation="Lesser Snow solar term, temperatures continue to drop, and light snow begins to fall, but the amount is usually not large.">小雪 (Xiǎoxuě) - Lesser Snow</li>
-                                        <li data-zh-explanation="大雪时节，气温更低，降雪量增多，大地被积雪覆盖。" data-en-explanation="Greater Snow solar term, temperatures are lower, snowfall increases, and the earth is covered by accumulated snow.">大雪 (Dàxuě) - Greater Snow</li>
-                                        <li data-zh-explanation="冬至是北半球白昼最短的一天，标志着寒冬的到来。" data-en-explanation="Winter Solstice is the shortest day in the Northern Hemisphere, marking the arrival of deep winter.">冬至 (Dōngzhì) - Winter Solstice</li>
-                                        <li data-zh-explanation="小寒时节，天气严寒，进入一年中最冷的时段之一。" data-en-explanation="Lesser Cold solar term, the weather is severely cold, entering one of the coldest periods of the year.">小寒 (Xiǎohán) - Lesser Cold</li>
-                                        <li data-zh-explanation="大寒是一年中最冷的节气，严寒刺骨，冰天雪地。" data-en-explanation="Greater Cold is the coldest solar term of the year, with biting cold and icy, snowy conditions.">大寒 (Dàhán) - Greater Cold</li>
+                                        <li data-zh-explanation="立冬标志着冬季的开始，气温骤降，作物收割完毕。" data-en-explanation="Beginning of Winter marks the start of winter, with a sharp drop in temperatures and crops harvested.">立冬 <button class="audio-btn" onclick="playAudio('立冬', 'zh')">🔊</button>(Lìdōng) - Beginning of Winter <button class="audio-btn" onclick="playAudio('Beginning of Winter', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="小雪时节，气温持续降低，开始降雪，但量通常不大。" data-en-explanation="Lesser Snow solar term, temperatures continue to drop, and light snow begins to fall, but the amount is usually not large.">小雪 <button class="audio-btn" onclick="playAudio('小雪', 'zh')">🔊</button>(Xiǎoxuě) - Lesser Snow <button class="audio-btn" onclick="playAudio('Lesser Snow', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="大雪时节，气温更低，降雪量增多，大地被积雪覆盖。" data-en-explanation="Greater Snow solar term, temperatures are lower, snowfall increases, and the earth is covered by accumulated snow.">大雪 <button class="audio-btn" onclick="playAudio('大雪', 'zh')">🔊</button>(Dàxuě) - Greater Snow <button class="audio-btn" onclick="playAudio('Greater Snow', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="冬至是北半球白昼最短的一天，标志着寒冬的到来。" data-en-explanation="Winter Solstice is the shortest day in the Northern Hemisphere, marking the arrival of deep winter.">冬至 <button class="audio-btn" onclick="playAudio('冬至', 'zh')">🔊</button>(Dōngzhì) - Winter Solstice <button class="audio-btn" onclick="playAudio('Winter Solstice', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="小寒时节，天气严寒，进入一年中最冷的时段之一。" data-en-explanation="Lesser Cold solar term, the weather is severely cold, entering one of the coldest periods of the year.">小寒 <button class="audio-btn" onclick="playAudio('小寒', 'zh')">🔊</button>(Xiǎohán) - Lesser Cold <button class="audio-btn" onclick="playAudio('Lesser Cold', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="大寒是一年中最冷的节气，严寒刺骨，冰天雪地。" data-en-explanation="Greater Cold is the coldest solar term of the year, with biting cold and icy, snowy conditions.">大寒 <button class="audio-btn" onclick="playAudio('大寒', 'zh')">🔊</button>(Dàhán) - Greater Cold <button class="audio-btn" onclick="playAudio('Greater Cold', 'en')">🔊</button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -501,30 +497,30 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">天气词汇 <br><span class="text-sm font-normal text-slate-600">(Weather Vocabulary)</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="晴朗：天空无云，阳光充足。" data-en-explanation="Clear: Cloudless sky, abundant sunshine.">晴朗 (Qínglǎng) - Clear/Sunny</li>
-                                        <li data-zh-explanation="多云：天空云量较多，阳光时隐时现。" data-en-explanation="Cloudy: More clouds in the sky, sun appears and disappears.">多云 (Duōyún) - Cloudy</li>
-                                        <li data-zh-explanation="阴天：天空被云层完全覆盖，没有阳光。" data-en-explanation="Overcast: Sky completely covered by clouds, no sunshine.">阴天 (Yīntiān) - Overcast</li>
-                                        <li data-zh-explanation="小雨：降水量较小，持续时间可能较短。" data-en-explanation="Light rain: Small amount of precipitation, possibly short duration.">小雨 (Xiǎoyǔ) - Light Rain</li>
-                                        <li data-zh-explanation="大雨：降水量较大，可能伴有雷电。" data-en-explanation="Heavy rain: Large amount of precipitation, possibly accompanied by thunder and lightning.">大雨 (Dàyǔ) - Heavy Rain</li>
-                                        <li data-zh-explanation="雷阵雨：伴有雷电的局部性、短时阵雨。" data-en-explanation="Thunderstorm: Localized, short-duration showers with thunder and lightning.">雷阵雨 (Léizhènyǔ) - Thunderstorm</li>
-                                        <li data-zh-explanation="雪：固态降水，温度低于冰点时形成。" data-en-explanation="Snow: Solid precipitation, forms when temperature is below freezing.">雪 (Xuě) - Snow</li>
-                                        <li data-zh-explanation="雾：空气中悬浮的微小水滴，能见度降低。" data-en-explanation="Fog: Tiny water droplets suspended in the air, reducing visibility.">雾 (Wù) - Fog</li>
-                                        <li data-zh-explanation="风：空气流动形成的自然现象。" data-en-explanation="Wind: Natural phenomenon formed by air movement.">风 (Fēng) - Wind</li>
-                                        <li data-zh-explanation="摄氏度：温度单位，冰点为0°C，沸点为100°C。" data-en-explanation="Degrees Celsius: A unit of temperature, with the freezing point at 0°C and the boiling point at 100°C.">摄氏度 (Shèshìdù) - Degrees Celsius</li>
-                                        <li data-zh-explanation="华氏度：温度单位，冰点为32°F，沸点为212°F。" data-en-explanation="Degrees Fahrenheit: A unit of temperature, with the freezing point at 32°F and the boiling point at 212°F.">华氏度 (Huáshìdù) - Degrees Fahrenheit</li>
-                                        <li data-zh-explanation="霜：水蒸气在温度低于冰点时直接凝华在物体表面形成的白色冰晶。" data-en-explanation="Frost: A deposit of small white ice crystals formed on the ground or other surfaces when the temperature falls below freezing point.">霜 (Shuāng) - Frost</li>
-                                        <li data-zh-explanation="露水：夜晚空气中的水蒸气遇冷凝结在物体表面形成的水珠。" data-en-explanation="Dew: Tiny drops of water that form on cool surfaces at night when atmospheric vapor condenses.">露水 (Lùshuǐ) - Dew</li>
+                                        <li data-zh-explanation="晴朗：天空无云，阳光充足。" data-en-explanation="Clear: Cloudless sky, abundant sunshine.">晴朗 <button class="audio-btn" onclick="playAudio('晴朗', 'zh')">🔊</button>(Qínglǎng) - Clear/Sunny <button class="audio-btn" onclick="playAudio('Clear/Sunny', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="多云：天空云量较多，阳光时隐时现。" data-en-explanation="Cloudy: More clouds in the sky, sun appears and disappears.">多云 <button class="audio-btn" onclick="playAudio('多云', 'zh')">🔊</button>(Duōyún) - Cloudy <button class="audio-btn" onclick="playAudio('Cloudy', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="阴天：天空被云层完全覆盖，没有阳光。" data-en-explanation="Overcast: Sky completely covered by clouds, no sunshine.">阴天 <button class="audio-btn" onclick="playAudio('阴天', 'zh')">🔊</button>(Yīntiān) - Overcast <button class="audio-btn" onclick="playAudio('Overcast', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="小雨：降水量较小，持续时间可能较短。" data-en-explanation="Light rain: Small amount of precipitation, possibly short duration.">小雨 <button class="audio-btn" onclick="playAudio('小雨', 'zh')">🔊</button>(Xiǎoyǔ) - Light Rain <button class="audio-btn" onclick="playAudio('Light Rain', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="大雨：降水量较大，可能伴有雷电。" data-en-explanation="Heavy rain: Large amount of precipitation, possibly accompanied by thunder and lightning.">大雨 <button class="audio-btn" onclick="playAudio('大雨', 'zh')">🔊</button>(Dàyǔ) - Heavy Rain <button class="audio-btn" onclick="playAudio('Heavy Rain', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="雷阵雨：伴有雷电的局部性、短时阵雨。" data-en-explanation="Thunderstorm: Localized, short-duration showers with thunder and lightning.">雷阵雨 <button class="audio-btn" onclick="playAudio('雷阵雨', 'zh')">🔊</button>(Léizhènyǔ) - Thunderstorm <button class="audio-btn" onclick="playAudio('Thunderstorm', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="雪：固态降水，温度低于冰点时形成。" data-en-explanation="Snow: Solid precipitation, forms when temperature is below freezing.">雪 <button class="audio-btn" onclick="playAudio('雪', 'zh')">🔊</button>(Xuě) - Snow <button class="audio-btn" onclick="playAudio('Snow', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="雾：空气中悬浮的微小水滴，能见度降低。" data-en-explanation="Fog: Tiny water droplets suspended in the air, reducing visibility.">雾 <button class="audio-btn" onclick="playAudio('雾', 'zh')">🔊</button>(Wù) - Fog <button class="audio-btn" onclick="playAudio('Fog', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="风：空气流动形成的自然现象。" data-en-explanation="Wind: Natural phenomenon formed by air movement.">风 <button class="audio-btn" onclick="playAudio('风', 'zh')">🔊</button>(Fēng) - Wind <button class="audio-btn" onclick="playAudio('Wind', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="摄氏度：温度单位，冰点为0°C，沸点为100°C。" data-en-explanation="Degrees Celsius: A unit of temperature, with the freezing point at 0°C and the boiling point at 100°C.">摄氏度 <button class="audio-btn" onclick="playAudio('摄氏度', 'zh')">🔊</button>(Shèshìdù) - Degrees Celsius <button class="audio-btn" onclick="playAudio('Degrees Celsius', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="华氏度：温度单位，冰点为32°F，沸点为212°F。" data-en-explanation="Degrees Fahrenheit: A unit of temperature, with the freezing point at 32°F and the boiling point at 212°F.">华氏度 <button class="audio-btn" onclick="playAudio('华氏度', 'zh')">🔊</button>(Huáshìdù) - Degrees Fahrenheit <button class="audio-btn" onclick="playAudio('Degrees Fahrenheit', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="霜：水蒸气在温度低于冰点时直接凝华在物体表面形成的白色冰晶。" data-en-explanation="Frost: A deposit of small white ice crystals formed on the ground or other surfaces when the temperature falls below freezing point.">霜 <button class="audio-btn" onclick="playAudio('霜', 'zh')">🔊</button>(Shuāng) - Frost <button class="audio-btn" onclick="playAudio('Frost', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="露水：夜晚空气中的水蒸气遇冷凝结在物体表面形成的水珠。" data-en-explanation="Dew: Tiny drops of water that form on cool surfaces at night when atmospheric vapor condenses.">露水 <button class="audio-btn" onclick="playAudio('露水', 'zh')">🔊</button>(Lùshuǐ) - Dew <button class="audio-btn" onclick="playAudio('Dew', 'en')">🔊</button></li>
                                     </ul>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
                                     <h3 class="font-bold text-lg text-slate-800 mb-2">季节词汇 <br><span class="text-sm font-normal text-slate-600">(Season Vocabulary)</span></h3>
                                     <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="春季：通常指农历正月到三月，万物复苏，生机勃勃。" data-en-explanation="Spring: Usually refers to the first to third lunisolar months, when all things revive and are full of vitality.">春季 (Chūnjì) - Spring</li>
-                                        <li data-zh-explanation="夏季：通常指农历四月到六月，炎热多雨，植物生长旺盛。" data-en-explanation="Summer: Usually refers to the fourth to sixth lunisolar months, hot and rainy, with vigorous plant growth.">夏季 (Xiàjì) - Summer</li>
-                                        <li data-zh-explanation="秋季：通常指农历七月到九月，天气凉爽，作物成熟。" data-en-explanation="Autumn: Usually refers to the seventh to ninth lunisolar months, cool weather, and crops mature.">秋季 (Qiūjì) - Autumn</li>
-                                        <li data-zh-explanation="冬季：通常指农历十月到十二月，天气寒冷，万物收藏。" data-en-explanation="Winter: Usually refers to the tenth to twelfth lunisolar months, cold weather, and all things are stored away.">冬季 (Dōngjì) - Winter</li>
-                                        <li data-zh-explanation="旱季：降水稀少，空气干燥的季节。" data-en-explanation="Dry season: A season with scarce precipitation and dry air.">旱季 (Hànjì) - Dry Season</li>
-                                        <li data-zh-explanation="雨季：降水集中，空气湿润的季节。" data-en-explanation="Rainy season: A season with concentrated precipitation and humid air.">雨季 (Yǔjì) - Rainy Season</li>
+                                        <li data-zh-explanation="春季：通常指农历正月到三月，万物复苏，生机勃勃。" data-en-explanation="Spring: Usually refers to the first to third lunisolar months, when all things revive and are full of vitality.">春季 <button class="audio-btn" onclick="playAudio('春季', 'zh')">🔊</button>(Chūnjì) - Spring <button class="audio-btn" onclick="playAudio('Spring', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="夏季：通常指农历四月到六月，炎热多雨，植物生长旺盛。" data-en-explanation="Summer: Usually refers to the fourth to sixth lunisolar months, hot and rainy, with vigorous plant growth.">夏季 <button class="audio-btn" onclick="playAudio('夏季', 'zh')">🔊</button>(Xiàjì) - Summer <button class="audio-btn" onclick="playAudio('Summer', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="秋季：通常指农历七月到九月，天气凉爽，作物成熟。" data-en-explanation="Autumn: Usually refers to the seventh to ninth lunisolar months, cool weather, and crops mature.">秋季 <button class="audio-btn" onclick="playAudio('秋季', 'zh')">🔊</button>(Qiūjì) - Autumn <button class="audio-btn" onclick="playAudio('Autumn', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="冬季：通常指农历十月到十二月，天气寒冷，万物收藏。" data-en-explanation="Winter: Usually refers to the tenth to twelfth lunisolar months, cold weather, and all things are stored away.">冬季 <button class="audio-btn" onclick="playAudio('冬季', 'zh')">🔊</button>(Dōngjì) - Winter <button class="audio-btn" onclick="playAudio('Winter', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="旱季：降水稀少，空气干燥的季节。" data-en-explanation="Dry season: A season with scarce precipitation and dry air.">旱季 <button class="audio-btn" onclick="playAudio('旱季', 'zh')">🔊</button>(Hànjì) - Dry Season <button class="audio-btn" onclick="playAudio('Dry Season', 'en')">🔊</button></li>
+                                        <li data-zh-explanation="雨季：降水集中，空气湿润的季节。" data-en-explanation="Rainy season: A season with concentrated precipitation and humid air.">雨季 <button class="audio-btn" onclick="playAudio('雨季', 'zh')">🔊</button>(Yǔjì) - Rainy Season <button class="audio-btn" onclick="playAudio('Rainy Season', 'en')">🔊</button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -534,51 +530,89 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                             <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">天象与自然现象 <br><span class="text-base font-normal text-slate-600">(Celestial & Natural Phenomena)</span></h2>
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">日食 (天狗) <br><span class="text-sm font-normal text-slate-600">(Rìshí (Tiāngǒu)) - Solar Eclipse</span></h3>
-                                    <p class="text-sm text-slate-600" data-zh-explanation="月球运行到太阳与地球之间，遮挡太阳光线，使地球上的部分区域或完全看不到太阳。在中国古代，日食常被认为是“天狗食日”。" data-en-explanation="When the moon passes between the sun and Earth, blocking the sun's light, causing parts of Earth to see a partial or total obscuration of the sun. In ancient China, a solar eclipse was often believed to be 'Heavenly Dog eating the sun'.">月球运行到太阳与地球之间，遮挡太阳光线。</p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">日食 <button class="audio-btn" onclick="playAudio('日食', 'zh')">🔊</button>(天狗) <br><span class="text-sm font-normal text-slate-600">(Rìshí (Tiāngǒu)) - Solar Eclipse <button class="audio-btn" onclick="playAudio('Solar Eclipse', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="月球运行到太阳与地球之间，遮挡太阳光线，使地球上的部分区域或完全看不到太阳。在中国古代，日食常被认为是“天狗食日”。" data-en-explanation="When the moon passes between the sun and Earth, blocking the sun's light, causing parts of Earth to see a partial or total obscuration of the sun. In ancient China, a solar eclipse was often believed to be 'Heavenly Dog eating the sun'.">月球运行到太阳与地球之间，遮挡太阳光线。 <button class="audio-btn" onclick="playAudio('月球运行到太阳与地球之间，遮挡太阳光线。', 'zh')">🔊</button><span class="text-xs">(When the moon passes between the sun and Earth, blocking the sun's light, causing parts of Earth to see a partial or total obscuration of the sun. In ancient China, a solar eclipse was often believed to be 'Heavenly Dog eating the sun'.) <button class="audio-btn" onclick="playAudio('When the moon passes between the sun and Earth, blocking the sun\'s light, causing parts of Earth to see a partial or total obscuration of the sun. In ancient China, a solar eclipse was often believed to be \'Heavenly Dog eating the sun\'.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">月食 <br><span class="text-sm font-normal text-slate-600">(Yuèshí) - Lunisolar Eclipse</span></h3>
-                                    <p class="text-sm text-slate-600" data-zh-explanation="地球运行到太阳与月球之间，地球的影子遮挡月球，使月亮变暗或消失。" data-en-explanation="When the Earth passes between the sun and moon, casting a shadow on the moon, causing it to dim or disappear.">地球的影子遮挡月球，使月亮变暗。</p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">月食 <button class="audio-btn" onclick="playAudio('月食', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Yuèshí) - Lunisolar Eclipse <button class="audio-btn" onclick="playAudio('Lunisolar Eclipse', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="地球运行到太阳与月球之间，地球的影子遮挡月球，使月亮变暗或消失。" data-en-explanation="When the Earth passes between the sun and moon, casting a shadow on the moon, causing it to dim or disappear.">地球的影子遮挡月球，使月亮变暗。 <button class="audio-btn" onclick="playAudio('地球的影子遮挡月球，使月亮变暗。', 'zh')">🔊</button><span class="text-xs">(When the Earth passes between the sun and moon, casting a shadow on the moon, causing it to dim or disappear.) <button class="audio-btn" onclick="playAudio('When the Earth passes between the sun and moon, casting a shadow on the moon, causing it to dim or disappear.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">彩虹 <br><span class="text-sm font-normal text-slate-600">(Cǎihóng) - Rainbow</span></h3>
-                                    <p class="text-sm text-slate-600" data-zh-explanation="阳光穿过空气中的水滴时，经过折射和反射形成的光学现象。" data-en-explanation="An optical phenomenon formed when sunlight passes through water droplets in the air, undergoing refraction and reflection.">阳光穿过水滴，形成七色弧线。</p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">彩虹 <button class="audio-btn" onclick="playAudio('彩虹', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Cǎihóng) - Rainbow <button class="audio-btn" onclick="playAudio('Rainbow', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="阳光穿过空气中的水滴时，经过折射和反射形成的光学现象。" data-en-explanation="An optical phenomenon formed when sunlight passes through water droplets in the air, undergoing refraction and reflection.">阳光穿过水滴，形成七色弧线。 <button class="audio-btn" onclick="playAudio('阳光穿过水滴，形成七色弧线。', 'zh')">🔊</button><span class="text-xs">(An optical phenomenon formed when sunlight passes through water droplets in the air, undergoing refraction and reflection.) <button class="audio-btn" onclick="playAudio('An optical phenomenon formed when sunlight passes through water droplets in the air, undergoing refraction and reflection.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">极光 <br><span class="text-sm font-normal text-slate-600">(Jíguāng) - Aurora</li>
-                                    <p class="text-sm text-slate-600" data-zh-explanation="太阳风中的带电粒子进入地球磁场，与大气层中的气体原子碰撞发光。" data-en-explanation="Charged particles from solar winds enter Earth's magnetic field and collide with gas atoms in the atmosphere, emitting light.">太阳风粒子与大气碰撞发光，常见于两极。</p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">极光 <button class="audio-btn" onclick="playAudio('极光', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Jíguāng) - Aurora <button class="audio-btn" onclick="playAudio('Aurora', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="太阳风中的带电粒子进入地球磁场，与大气层中的气体原子碰撞发光。" data-en-explanation="Charged particles from solar winds enter Earth's magnetic field and collide with gas atoms in the atmosphere, emitting light.">太阳风粒子与大气碰撞发光，常见于两极。 <button class="audio-btn" onclick="playAudio('太阳风粒子与大气碰撞发光，常见于两极。', 'zh')">🔊</button><span class="text-xs">(Charged particles from solar winds enter Earth's magnetic field and collide with gas atoms in the atmosphere, emitting light.) <button class="audio-btn" onclick="playAudio('Charged particles from solar winds enter Earth\'s magnetic field and collide with gas atoms in the atmosphere, emitting light.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">海啸 <br><span class="text-sm font-normal text-slate-600">(Hǎixiào) - Tsunami</span></h3>
-                                    <p class="text-sm text-slate-600" data-zh-explanation="海底地震、火山爆发或滑坡等引起的海水剧烈波动，形成巨大波浪。" data-en-explanation="Giant ocean waves caused by drastic disturbances of seawater due to undersea earthquakes, volcanic eruptions, or landslides.">海底地震或火山爆发引起的海水巨浪。</p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">海啸 <button class="audio-btn" onclick="playAudio('海啸', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Hǎixiào) - Tsunami <button class="audio-btn" onclick="playAudio('Tsunami', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="海底地震、火山爆发或滑坡等引起的海水剧烈波动，形成巨大波浪。" data-en-explanation="Giant ocean waves caused by drastic disturbances of seawater due to undersea earthquakes, volcanic eruptions, or landslides.">海底地震或火山爆发引起的海水巨浪。 <button class="audio-btn" onclick="playAudio('海底地震或火山爆发引起的海水巨浪。', 'zh')">🔊</button><span class="text-xs">(Giant ocean waves caused by drastic disturbances of seawater due to undersea earthquakes, volcanic eruptions, or landslides.) <button class="audio-btn" onclick="playAudio('Giant ocean waves caused by drastic disturbances of seawater due to undersea earthquakes, volcanic eruptions, or landslides.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">地震 <br><span class="text-sm font-normal text-slate-600">(Dìzhèn) - Earthquake</span></h3>
-                                    <p class="text-sm text-slate-600" data-zh-explanation="地球内部岩石破裂和错动引起的地表震动。" data-en-explanation="Shaking of the Earth's surface caused by the rupture and displacement of rocks within the Earth's interior.">地球内部岩石破裂引起地表震动。</p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">地震 <button class="audio-btn" onclick="playAudio('地震', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Dìzhèn) - Earthquake <button class="audio-btn" onclick="playAudio('Earthquake', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="地球内部岩石破裂和错动引起的地表震动。" data-en-explanation="Shaking of the Earth's surface caused by the rupture and displacement of rocks within the Earth's interior.">地球内部岩石破裂引起地表震动。 <button class="audio-btn" onclick="playAudio('地球内部岩石破裂引起地表震动。', 'zh')">🔊</button><span class="text-xs">(Shaking of the Earth's surface caused by the rupture and displacement of rocks within the Earth's interior.) <button class="audio-btn" onclick="playAudio('Shaking of the Earth\'s surface caused by the rupture and displacement of rocks within the Earth\'s interior.', 'en')">🔊</button></span></p>
                                 </div>
                                 <!-- New items added here -->
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">沙尘暴 <br><span class="text-sm font-normal text-slate-600">(Shāchénbào) - Sandstorm</span></h3>
-                                    <p class="text-sm text-slate-600" data-zh-explanation="强风将大量沙尘吹起，使能见度降低的现象。" data-en-explanation="A strong wind carrying clouds of sand, especially in a desert, reducing visibility.">强风将大量沙尘吹起，能见度降低。</p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">沙尘暴 <button class="audio-btn" onclick="playAudio('沙尘暴', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Shāchénbào) - Sandstorm <button class="audio-btn" onclick="playAudio('Sandstorm', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="强风将大量沙尘吹起，使能见度降低的现象。" data-en-explanation="A strong wind carrying clouds of sand, especially in a desert, reducing visibility.">强风将大量沙尘吹起，能见度降低。 <button class="audio-btn" onclick="playAudio('强风将大量沙尘吹起，使能见度降低的现象。', 'zh')">🔊</button><span class="text-xs">(A strong wind carrying clouds of sand, especially in a desert, reducing visibility.) <button class="audio-btn" onclick="playAudio('A strong wind carrying clouds of sand, especially in a desert, reducing visibility.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">泥石流 <br><span class="text-sm font-normal text-slate-600">(Níshíliú) - Mudslide</span></h3>
-                                    <p class="text-sm text-slate-600" data-zh-explanation="山体滑坡或泥土、石块与水混合形成的快速流动。" data-en-explanation="A rapidly flowing mass of mud and rock down a mountainside or slope, often triggered by heavy rainfall.">山体滑坡或泥土、石块与水混合形成的快速流动。</p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">泥石流 <button class="audio-btn" onclick="playAudio('泥石流', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Níshíliú) - Mudslide <button class="audio-btn" onclick="playAudio('Mudslide', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="山体滑坡或泥土、石块与水混合形成的快速流动。" data-en-explanation="A rapidly flowing mass of mud and rock down a mountainside or slope, often triggered by heavy rainfall.">山体滑坡或泥土、石块与水混合形成的快速流动。 <button class="audio-btn" onclick="playAudio('山体滑坡或泥土、石块与水混合形成的快速流动。', 'zh')">🔊</button><span class="text-xs">(A rapidly flowing mass of mud and rock down a mountainside or slope, often triggered by heavy rainfall.) <button class="audio-btn" onclick="playAudio('A rapidly flowing mass of mud and rock down a mountainside or slope, often triggered by heavy rainfall.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">冰雹 <br><span class="text-sm font-normal text-slate-600">(Bīngbáo) - Hail</span></h3>
-                                    <p class="text-sm text-slate-600" data-zh-explanation="从积雨云中降落的固态冰块。" data-en-explanation="Solid ice chunks falling from cumulobimbus clouds.">从积雨云中降落的固态冰块。</p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">冰雹 <button class="audio-btn" onclick="playAudio('冰雹', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Bīngbáo) - Hail <button class="audio-btn" onclick="playAudio('Hail', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="从积雨云中降落的固态冰块。" data-en-explanation="Solid ice chunks falling from cumulobimbus clouds.">从积雨云中降落的固态冰块。 <button class="audio-btn" onclick="playAudio('从积雨云中降落的固态冰块。', 'zh')">🔊</button><span class="text-xs">(Solid ice chunks falling from cumulobimbus clouds.) <button class="audio-btn" onclick="playAudio('Solid ice chunks falling from cumulobimbus clouds.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">洪水 <br><span class="text-sm font-normal text-slate-600">(Hóngshuǐ) - Flood</span></h3>
-                                    <p class="text-sm text-slate-600" data-zh-explanation="由于降水过多或河水泛滥导致的水位上涨，淹没陆地。" data-en-explanation="The overflowing of a large amount of water beyond its normal confines, especially over what is normally dry land, due to excessive rainfall or river overflow.">降水过多或河水泛滥导致的水位上涨。</p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">洪水 <button class="audio-btn" onclick="playAudio('洪水', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Hóngshuǐ) - Flood <button class="audio-btn" onclick="playAudio('Flood', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="由于降水过多或河水泛滥导致的水位上涨，淹没陆地。" data-en-explanation="The overflowing of a large amount of water beyond its normal confines, especially over what is normally dry land, due to excessive rainfall or river overflow.">降水过多或河水泛滥导致的水位上涨。 <button class="audio-btn" onclick="playAudio('降水过多或河水泛滥导致的水位上涨。', 'zh')">🔊</button><span class="text-xs">(The overflowing of a large amount of water beyond its normal confines, especially over what is normally dry land, due to excessive rainfall or river overflow.) <button class="audio-btn" onclick="playAudio('The overflowing of a large amount of water beyond its normal confines, especially over what is normally dry land, due to excessive rainfall or river overflow.', 'en')">🔊</button></span></p>
                                 </div>
                                 <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">台风 <br><span class="text-sm font-normal text-slate-600">(Táifēng) - Typhoon</span></h3>
-                                    <p class="text-sm text-slate-600" data-zh-explanation="热带气旋，伴有强风和暴雨。" data-en-explanation="A tropical cyclone accompanied by strong winds and heavy rain.">热带气旋，伴有强风和暴雨。</p>
+                                    <h3 class="font-bold text-lg text-slate-800 mb-2">台风 <button class="audio-btn" onclick="playAudio('台风', 'zh')">🔊</button><br><span class="text-sm font-normal text-slate-600">(Táifēng) - Typhoon <button class="audio-btn" onclick="playAudio('Typhoon', 'en')">🔊</button></span></h3>
+                                    <p class="text-sm text-slate-600" data-zh-explanation="热带气旋，伴有强风和暴雨。" data-en-explanation="A tropical cyclone accompanied by strong winds and heavy rain.">热带气旋，伴有强风和暴雨。 <button class="audio-btn" onclick="playAudio('热带气旋，伴有强风和暴雨。', 'zh')">🔊</button><span class="text-xs">(A tropical cyclone accompanied by strong winds and heavy rain.) <button class="audio-btn" onclick="playAudio('A tropical cyclone accompanied by strong winds and heavy rain.', 'en')">🔊</button></span></p>
                                 </div>
                                 <!-- End of new items -->
+                            </div>
+                        </section>
+
+                        <section id="traditional-beliefs" class="mb-12">
+                            <div class="text-center max-w-3xl mx-auto mb-8">
+                                <h2 class="text-2xl font-bold text-slate-800 mb-2">自然与传统文化：信仰与象征 <br><span class="text-base font-normal text-slate-600">(Nature and Traditional Culture: Beliefs & Symbols)</span></h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
+                                    <div class="text-5xl mb-4">🐉</div>
+                                    <h3 class="font-bold text-xl text-slate-800 mb-2">龙 <button class="audio-btn" onclick="playAudio('龙', 'zh')">🔊</button><span class="text-base font-normal text-slate-600">(lóng)</span></h3>
+                                    <p class="text-sm text-slate-700">中华文化中象征祥瑞、权力、智慧的神话生物，与水和云密切相关。 <button class="audio-btn" onclick="playAudio('中华文化中象征祥瑞、权力、智慧的神话生物，与水和云密切相关。', 'zh')">🔊</button><br><span class="text-xs">(In Chinese culture, a mythical creature symbolizing auspiciousness, power, and wisdom, closely associated with water and clouds.) <button class="audio-btn" onclick="playAudio('In Chinese culture, a mythical creature symbolizing auspiciousness, power, and wisdom, closely associated with water and clouds.', 'en')">🔊</button></span></p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
+                                    <div class="text-5xl mb-4">🐅</div>
+                                    <h3 class="font-bold text-xl text-slate-800 mb-2">虎 <button class="audio-btn" onclick="playAudio('虎', 'zh')">🔊</button><span class="text-base font-normal text-slate-600">(hǔ)</span></h3>
+                                    <p class="text-sm text-slate-700">象征勇猛、力量，常被视为辟邪的神兽。 <button class="audio-btn" onclick="playAudio('象征勇猛、力量，常被视为辟邪的神兽。', 'zh')">🔊</button><br><span class="text-xs">(Symbolizes bravery and strength, often regarded as a divine beast that wards off evil.) <button class="audio-btn" onclick="playAudio('Symbolizes bravery and strength, often regarded as a divine beast that wards off evil.', 'en')">🔊</button></span></p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
+                                    <div class="text-5xl mb-4">🌳</div>
+                                    <h3 class="font-bold text-xl text-slate-800 mb-2">松 <button class="audio-btn" onclick="playAudio('松', 'zh')">🔊</button><span class="text-base font-normal text-slate-600">(sōng)</span></h3>
+                                    <p class="text-sm text-slate-700">象征坚韧不拔和长寿，常与梅、竹并称“岁寒三友”。 <button class="audio-btn" onclick="playAudio('象征坚韧不拔和长寿，常与梅、竹并称“岁寒三友”。', 'zh')">🔊</button><br><span class="text-xs">(Symbolizes tenacity and longevity, often referred to as one of the "Three Friends of Winter" alongside plum and bamboo.) <button class="audio-btn" onclick="playAudio('Symbolizes tenacity and longevity, often referred to as one of the "Three Friends of Winter" alongside plum and bamboo.', 'en')">🔊</button></span></p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
+                                    <div class="text-5xl mb-4">🌸</div>
+                                    <h3 class="font-bold text-xl text-slate-800 mb-2">梅 <button class="audio-btn" onclick="playAudio('梅', 'zh')">🔊</button><span class="text-base font-normal text-slate-600">(méi)</span></h3>
+                                    <p class="text-sm text-slate-700">象征坚韧、不畏严寒，常与兰、竹、菊并称“四君子”。 <button class="audio-btn" onclick="playAudio('象征坚韧、不畏严寒，常与兰、竹、菊并称“四君子”。', 'zh')">🔊</button><br><span class="text-xs">(Symbolizes resilience and defiance of severe cold, often referred to as one of the "Four Gentlemen" alongside orchid, bamboo, and chrysanthemum.) <button class="audio-btn" onclick="playAudio('Symbolizes resilience and defiance of severe cold, often referred to as one of the "Four Gentlemen" alongside orchid, bamboo, and chrysanthemum.', 'en')">🔊</button></span></p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
+                                    <div class="text-5xl mb-4">🎋</div>
+                                    <h3 class="font-bold text-xl text-slate-800 mb-2">竹 <button class="audio-btn" onclick="playAudio('竹', 'zh')">🔊</button><span class="text-base font-normal text-slate-600">(zhú)</span></h3>
+                                    <p class="text-sm text-slate-700">象征高洁、正直、虚心，是文人墨客的喜爱之物。 <button class="audio-btn" onclick="playAudio('象征高洁、正直、虚心，是文人墨客的喜爱之物。', 'zh')">🔊</button><br><span class="text-xs">(Symbolizes noble integrity and humility, a favorite subject of scholars and artists.) <button class="audio-btn" onclick="playAudio('Symbolizes noble integrity and humility, a favorite subject of scholars and artists.', 'en')">🔊</button></span></p>
+                                </div>
+                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
+                                    <div class="text-5xl mb-4">🌼</div>
+                                    <h3 class="font-bold text-xl text-slate-800 mb-2">菊 <button class="audio-btn" onclick="playAudio('菊', 'zh')">🔊</button><span class="text-base font-normal text-slate-600">(jú)</span></h3>
+                                    <p class="text-sm text-slate-700">象征高洁、长寿，常在秋季盛开，有“花中君子”之称。 <button class="audio-btn" onclick="playAudio('象征高洁、长寿，常在秋季盛开，有“花中君子”之称。', 'zh')">🔊</button><br><span class="text-xs">(Symbolizes noble purity and longevity, often blooming in autumn, known as the "Gentleman of Flowers.") <button class="audio-btn" onclick="playAudio('Symbolizes noble purity and longevity, often blooming in autumn, known as the "Gentleman of Flowers".', 'en')">🔊</button></span></p>
+                                </div>
                             </div>
                         </section>
                     </div>
@@ -587,174 +621,149 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                 <!-- Tab 4: Festivals -->
                 <div id="tab-content-festivals" class="hidden">
                     <div class="p-2">
-                        <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">中国传统节日是中华民族悠久历史和灿烂文化的重要组成部分，它们承载着丰富的民俗习惯、神话传说和道德观念。本节将带您探索一些主要的中国传统节日，了解它们的起源、习俗和文化意义。 <br><span class="text-sm text-slate-500">(Chinese traditional festivals are an important part of the long history and brilliant culture of the Chinese nation. They carry rich folk customs, myths and legends, and moral concepts. This section will guide you to explore some major Chinese traditional festivals, understand their origins, customs, and cultural significance.)</span></p>
+                        <p class="text-slate-600 mb-8 text-center max-w-3xl mx-auto">中国传统节日是中华文化的重要组成部分，它们不仅是庆祝和团聚的时刻，更是承载着丰富历史、神话和风俗的文化瑰宝。本节将带您探索一些最重要的中国传统节日。 <br><span class="text-sm text-slate-500">(Chinese traditional festivals are an important part of Chinese culture. They are not only times for celebration and reunion but also cultural treasures carrying rich history, myths, and customs.
+This section will guide you through some of the most important Chinese traditional festivals.)</span></p>
                         
-                        <section id="major-festivals" class="mb-12">
-                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">主要传统节日 <br><span class="text-base font-normal text-slate-600">(Major Traditional Festivals)</span></h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                    <div class="text-5xl mb-4">🧧</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">春节 <br><span class="text-sm font-normal text-slate-600">(Chūn Jié) - Chinese New Year/Spring Festival</span></h3>
-                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历正月初一，中国最重要、最盛大的传统节日。" data-en-explanation="The first day of the first lunisolar month, China's most important and grandest traditional festival.">时间：农历正月初一</li>
-                                        <li data-zh-explanation="贴春联、放鞭炮、拜年、吃饺子、看春晚。" data-en-explanation="Pasting Spring Festival couplets, setting off firecrackers, paying New Year calls, eating dumplings, watching the Spring Festival Gala.">习俗：贴春联、拜年、吃饺子</li>
-                                        <li data-zh-explanation="阖家团圆、辞旧迎新、祈福纳祥。" data-en-explanation="Family reunion, bidding farewell to the old and ushering in the new, praying for blessings and good fortune.">意义：团圆、辞旧迎新</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                    <div class="text-5xl mb-4">🏮</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">元宵节 <br><span class="text-sm font-normal text-slate-600">(Yuán Xiāo Jié) - Lantern Festival</span></h3>
-                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历正月十五，春节的最后一天，标志着春节假期的结束。" data-en-explanation="The fifteenth day of the first lunisolar month, the last day of the Spring Festival, marking the end of the Spring Festival holiday.">时间：农历正月十五</li>
-                                        <li data-zh-explanation="赏花灯、猜灯谜、吃元宵/汤圆。" data-en-explanation="Admiring lanterns, guessing lantern riddles, eating tangyuan (sweet glutinous rice balls).">习俗：赏花灯、吃元宵</li>
-                                        <li data-zh-explanation="庆祝新年的延续，祈求团圆美满。" data-en-explanation="Celebrating the continuation of the New Year, praying for family reunion and happiness.">意义：团圆、喜庆</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                    <div class="text-5xl mb-4">🐉</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">端午节 <br><span class="text-sm font-normal text-slate-600">(Duān Wǔ Jié) - Dragon Boat Festival</span></h3>
-                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历五月初五，纪念屈原，也是夏季的传统节日。" data-en-explanation="The fifth day of the fifth lunisolar month, commemorating Qu Yuan, and also a traditional summer festival.">时间：农历五月初五</li>
-                                        <li data-zh-explanation="赛龙舟、吃粽子、挂艾草和菖蒲、佩香囊。" data-en-explanation="Dragon boat racing, eating zongzi (glutinous rice dumplings), hanging mugwort and calamus, wearing sachets.">习俗：赛龙舟、吃粽子</li>
-                                        <li data-zh-explanation="驱邪避灾、纪念先贤、祈求健康。" data-en-explanation="Expelling evil and warding off disasters, commemorating ancient sages, praying for health.">意义：健康、纪念</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                    <div class="text-5xl mb-4">🥮</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">中秋节 <br><span class="text-sm font-normal text-slate-600">(Zhōng Qiū Jié) - Mid-Autumn Festival</span></h3>
-                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历八月十五，月亮最圆，象征团圆。" data-en-explanation="The fifteenth day of the eighth lunisolar month, when the moon is fullest, symbolizing reunion.">时间：农历八月十五</li>
-                                        <li data-zh-explanation="赏月、吃月饼、家人团聚。" data-en-explanation="Admiring the moon, eating mooncakes, family reunion.">习俗：赏月、吃月饼</li>
-                                        <li data-zh-explanation="阖家团圆、丰收感恩、思念亲友。" data-en-explanation="Family reunion, expressing gratitude for harvest, missing relatives and friends.">意义：团圆、丰收</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                    <div class="text-5xl mb-4">🍂</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">重阳节 <br><span class="text-sm font-normal text-slate-600">(Chóng Yáng Jié) - Double Ninth Festival</span></h3>
-                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历九月初九，因“九”为阳数，两九相重故称“重阳”。" data-en-explanation="The ninth day of the ninth lunisolar month, called 'Chongyang' because 'nine' is a yang number and two nines coincide.">时间：农历九月初九</li>
-                                        <li data-zh-explanation="登高、赏菊、饮菊花酒、吃重阳糕。" data-en-explanation="Climbing mountains (or high places), admiring chrysanthemums, drinking chrysanthemum wine, eating Chongyang cake.">习俗：登高、赏菊</li>
-                                        <li data-zh-explanation="敬老爱老、祈福长寿、健身。" data-en-explanation="Respecting and loving the elderly, praying for longevity, and physical fitness.">意义：敬老、健身</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                    <div class="text-5xl mb-4">❄️</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">冬至 <br><span class="text-sm font-normal text-slate-600">(Dōng Zhì) - Winter Solstice</span></h3>
-                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历十一月上半月，太阳直射南回归线，北半球白昼最短。" data-en-explanation="First half of the eleventh lunisolar month, when the sun is directly over the Tropic of Capricorn, and the Northern Hemisphere has the shortest day.">时间：农历十一月</li>
-                                        <li data-zh-explanation="吃饺子或汤圆、祭祖、家庭聚餐。" data-en-explanation="Eating dumplings or tangyuan, ancestor worship, family dinners.">习俗：吃饺子/汤圆</li>
-                                        <li data-zh-explanation="阴阳转换、阖家团圆、进补养生。" data-en-explanation="Yin-yang transition, family reunion, nourishing health.">意义：团圆、养生</li>
-                                    </ul>
-                                </div>
-                                <!-- New Festival: Qingming Festival -->
-                                <div class="bg-slate-50 rounded-lg p-6 text-center card-glow">
-                                    <div class="text-5xl mb-4">🌿</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">清明节 <br><span class="text-sm font-normal text-slate-600">(Qīngmíng Jié) - Clear and Bright Festival</span></h3>
-                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="公历4月4日或5日，二十四节气之一，也是重要的祭祀节日。" data-en-explanation="Around April 4th or 5th in the Gregorian calendar, one of the 24 solar terms, and an important memorial festival.">时间：公历4月4日/5日</li>
-                                        <li data-zh-explanation="扫墓祭祖、踏青、放风筝、吃青团。" data-en-explanation="Sweeping tombs and worshipping ancestors, spring outings, flying kites, eating Qingtuan (green glutinous rice balls).">习俗：扫墓、踏青</li>
-                                        <li data-zh-explanation="缅怀先人、亲近自然、传承孝道。" data-en-explanation="Honoring ancestors, connecting with nature, passing on filial piety.">意义：祭祖、感恩</li>
-                                    </ul>
-                                </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Spring Festival -->
+                            <div class="bg-white rounded-lg shadow-lg p-6 card-glow">
+                                <div class="text-5xl mb-4 text-center">🏮</div>
+                                <h3 class="font-bold text-xl text-slate-800 mb-2 text-center">春节 <button class="audio-btn" onclick="playAudio('春节', 'zh')">🔊</button><br><span class="text-base font-normal text-slate-600">(Chūn Jié) - Chinese New Year <button class="audio-btn" onclick="playAudio('Chinese New Year', 'en')">🔊</button></span></h3>
+                                <p class="text-sm text-slate-700 mb-2">中国最重要的传统节日，标志着农历新年的开始。 <button class="audio-btn" onclick="playAudio('中国最重要的传统节日，标志着农历新年的开始。', 'zh')">🔊</button><br><span class="text-xs">(The most important traditional Chinese festival, marking the beginning of the lunisolar new year.) <button class="audio-btn" onclick="playAudio('The most important traditional Chinese festival, marking the beginning of the lunisolar new year.', 'en')">🔊</button></span></p>
+                                <ul class="list-disc list-inside text-xs text-slate-600">
+                                    <li>日期: 农历正月初一 <button class="audio-btn" onclick="playAudio('农历正月初一', 'zh')">🔊</button><span class="text-slate-500"> (1st day of 1st lunisolar month) <button class="audio-btn" onclick="playAudio('1st day of 1st lunisolar month', 'en')">🔊</button></span></li>
+                                    <li>习俗: 贴春联、放鞭炮、吃年夜饭、拜年、发红包 <button class="audio-btn" onclick="playAudio('贴春联、放鞭炮、吃年夜饭、拜年、发红包', 'zh')">🔊</button><span class="text-slate-500"> (pasting spring couplets, setting off firecrackers, reunion dinner, New Year greetings, giving red envelopes) <button class="audio-btn" onclick="playAudio('pasting spring couplets, setting off firecrackers, reunion dinner, New Year greetings, giving red envelopes', 'en')">🔊</button></span></li>
+                                    <li>象征: 辞旧迎新、团圆、吉祥 <button class="audio-btn" onclick="playAudio('辞旧迎新、团圆、吉祥', 'zh')">🔊</button><span class="text-slate-500"> (bidding farewell to the old and ushering in the new, reunion, auspiciousness) <button class="audio-btn" onclick="playAudio('bidding farewell to the old and ushering in the new, reunion, auspiciousness', 'en')">🔊</button></span></li>
+                                </ul>
                             </div>
-                        </section>
-
-                        <section id="other-festivals" class="mb-12">
-                            <h2 class="text-2xl font-bold text-slate-800 mb-4 text-center">其他重要节日 <br><span class="text-base font-normal text-slate-600">(Other Important Festivals)</span></h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">腊八节 <br><span class="text-sm font-normal text-slate-600">(Là Bā Jié) - Laba Festival</span></h3>
-                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历十二月初八，是春节前的预热节日。" data-en-explanation="The eighth day of the twelfth lunisolar month, a warm-up festival before the Spring Festival.">时间：农历十二月初八</li>
-                                        <li data-zh-explanation="喝腊八粥、腌腊八蒜。" data-en-explanation="Drinking Laba porridge, pickling Laba garlic.">习俗：喝腊八粥</li>
-                                        <li data-zh-explanation="祈求丰收、避邪、庆祝农闲。" data-en-explanation="Praying for good harvest, warding off evil, celebrating the slack farming season.">意义：丰收、祈福</li>
-                                    </ul>
-                                </div>
-                                <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">小年 <br><span class="text-sm font-normal text-slate-600">(Xiǎo Nián) - Minor New Year/Little New Year</span></h3>
-                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历腊月二十三或二十四，是祭灶王、扫尘的节日。" data-en-explanation="The twenty-third or twenty-fourth day of the twelfth lunisolar month, a festival for worshipping the Kitchen God and cleaning.">时间：农历腊月廿三/廿四</li>
-                                        <li data-zh-explanation="祭灶、扫尘、剪窗花、备年货。" data-en-explanation="Worshipping the Kitchen God, sweeping away dust, cutting paper-cuts for windows, preparing New Year's goods.">习俗：祭灶、扫尘</li>
-                                        <li data-zh-explanation="迎接春节、清洁房屋、祈求平安。" data-en-explanation="Welcoming the Spring Festival, cleaning the house, praying for peace.">意义：迎春、清洁</li>
-                                    </ul>
-                                </div>
-                                <!-- New Festival: Qixi Festival -->
-                                <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <div class="text-5xl mb-4">💖</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">七夕节 <br><span class="text-sm font-normal text-slate-600">(Qīxī Jié) - Qixi Festival</span></h3>
-                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历七月初七，源自牛郎织女的爱情传说，又称“乞巧节”。" data-en-explanation="The seventh day of the seventh lunisolar month, originating from the love story of the Cowherd and the Weaver Girl, also known as 'Qiqiao Festival'.">时间：农历七月初七</li>
-                                        <li data-zh-explanation="穿针乞巧、拜织女、吃巧果、观星。" data-en-explanation="Threading needles to beg for skills, worshipping the Weaver Girl, eating Qiaoguo (skill-begging pastries), stargazing.">习俗：乞巧、观星</li>
-                                        <li data-zh-explanation="祈求心灵手巧、爱情美满、家庭幸福。" data-en-explanation="Praying for dexterity, happy love, and family happiness.">意义：爱情、祈愿</li>
-                                    </ul>
-                                </div>
-                                <!-- New Festival: Chinese New Year's Eve -->
-                                <div class="bg-slate-50 rounded-lg p-6 card-glow">
-                                    <div class="text-5xl mb-4">🎆</div>
-                                    <h3 class="font-bold text-lg text-slate-800 mb-2">除夕 <br><span class="text-sm font-normal text-slate-600">(Chúxī) - Chinese New Year's Eve</span></h3>
-                                    <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
-                                        <li data-zh-explanation="农历十二月二十九或三十，春节前夜，辞旧迎新。" data-en-explanation="The twenty-ninth or thirtieth day of the twelfth lunisolar month, the night before Chinese New Year, bidding farewell to the old and ushering in the new.">时间：农历腊月廿九/卅</li>
-                                        <li data-zh-explanation="吃年夜饭、守岁、发红包、看春晚。" data-en-explanation="Having reunion dinner, staying up late, giving red envelopes, watching the Spring Festival Gala.">习俗：年夜饭、守岁</li>
-                                        <li data-zh-explanation="阖家团圆、感恩过去、展望未来、驱邪纳福。" data-en-explanation="Family reunion, gratitude for the past, looking forward to the future, expelling evil and inviting blessings.">意义：团圆、祈福</li>
-                                    </ul>
-                                </div>
+                            <!-- Lantern Festival -->
+                            <div class="bg-white rounded-lg shadow-lg p-6 card-glow">
+                                <div class="text-5xl mb-4 text-center">💡</div>
+                                <h3 class="font-bold text-xl text-slate-800 mb-2 text-center">元宵节 <button class="audio-btn" onclick="playAudio('元宵节', 'zh')">🔊</button><br><span class="text-base font-normal text-slate-600">(Yuán Xiāo Jié) - Lantern Festival <button class="audio-btn" onclick="playAudio('Lantern Festival', 'en')">🔊</button></span></h3>
+                                <p class="text-sm text-slate-700 mb-2">春节后的第一个重要节日，标志着春节假期的结束。 <button class="audio-btn" onclick="playAudio('春节后的第一个重要节日，标志着春节假期的结束。', 'zh')">🔊</button><br><span class="text-xs">(The first important traditional Chinese festival, marking the end of the Spring Festival holiday.) <button class="audio-btn" onclick="playAudio('The first important traditional Chinese festival, marking the end of the Spring Festival holiday.', 'en')">🔊</button></span></p>
+                                <ul class="list-disc list-inside text-xs text-slate-600">
+                                    <li>日期: 农历正月十五 <button class="audio-btn" onclick="playAudio('农历正月十五', 'zh')">🔊</button><span class="text-slate-500"> (15th day of 1st lunisolar month) <button class="audio-btn" onclick="playAudio('15th day of 1st lunisolar month', 'en')">🔊</button></span></li>
+                                    <li>习俗: 赏花灯、猜灯谜、吃元宵/汤圆 <button class="audio-btn" onclick="playAudio('赏花灯、猜灯谜、吃元宵/汤圆', 'zh')">🔊</button><span class="text-slate-500"> (admiring lanterns, guessing lantern riddles, eating tangyuan/yuanxiao) <button class="audio-btn" onclick="playAudio('admiring lanterns, guessing lantern riddles, eating tangyuan/yuanxiao', 'en')">🔊</button></span></li>
+                                    <li>象征: 团圆、光明、欢乐 <button class="audio-btn" onclick="playAudio('团圆、光明、欢乐', 'zh')">🔊</button><span class="text-slate-500"> (reunion, brightness, joy) <button class="audio-btn" onclick="playAudio('reunion, brightness, joy', 'en')">🔊</button></span></li>
+                                </ul>
                             </div>
-                        </section>
+                            <!-- Qingming Festival -->
+                            <div class="bg-white rounded-lg shadow-lg p-6 card-glow">
+                                <div class="text-5xl mb-4 text-center">🌿</div>
+                                <h3 class="font-bold text-xl text-slate-800 mb-2 text-center">清明节 <button class="audio-btn" onclick="playAudio('清明节', 'zh')">🔊</button><br><span class="text-base font-normal text-slate-600">(Qīng Míng Jié) - Qingming Festival / Tomb-Sweeping Day <button class="audio-btn" onclick="playAudio('Qingming Festival / Tomb-Sweeping Day', 'en')">🔊</button></span></h3>
+                                <p class="text-sm text-slate-700 mb-2">祭祖扫墓、踏青郊游的节日。 <button class="audio-btn" onclick="playAudio('祭祖扫墓、踏青郊游的节日。', 'zh')">🔊</button><br><span class="text-xs">(A festival for sweeping tombs and spring outings.) <button class="audio-btn" onclick="playAudio('A festival for sweeping tombs and spring outings.', 'en')">🔊</button></span></p>
+                                <ul class="list-disc list-inside text-xs text-slate-600">
+                                    <li>日期: 公历4月4日或5日 <button class="audio-btn" onclick="playAudio('公历4月4日或5日', 'zh')">🔊</button><span class="text-slate-500"> (April 4th or 5th of Gregorian calendar) <button class="audio-btn" onclick="playAudio('April 4th or 5th of Gregorian calendar', 'en')">🔊</button></span></li>
+                                    <li>习俗: 扫墓、祭奠祖先、踏青、放风筝 <button class="audio-btn" onclick="playAudio('扫墓、祭奠祖先、踏青、放风筝', 'zh')">🔊</button><span class="text-slate-500"> (tomb-sweeping, offering sacrifices to ancestors, spring outing, flying kites) <button class="audio-btn" onclick="playAudio('tomb-sweeping, offering sacrifices to ancestors, spring outing, flying kites', 'en')">🔊</button></span></li>
+                                    <li>象征: 追思故人、亲近自然 <button class="audio-btn" onclick="playAudio('追思故人、亲近自然', 'zh')">🔊</button><span class="text-slate-500"> (remembering the deceased, connecting with nature) <button class="audio-btn" onclick="playAudio('remembering the deceased, connecting with nature', 'en')">🔊</button></span></li>
+                                </ul>
+                            </div>
+                            <!-- Dragon Boat Festival -->
+                            <div class="bg-white rounded-lg shadow-lg p-6 card-glow">
+                                <div class="text-5xl mb-4 text-center">🛶</div>
+                                <h3 class="font-bold text-xl text-slate-800 mb-2 text-center">端午节 <button class="audio-btn" onclick="playAudio('端午节', 'zh')">🔊</button><br><span class="text-base font-normal text-slate-600">(Duān Wǔ Jié) - Dragon Boat Festival <button class="audio-btn" onclick="playAudio('Dragon Boat Festival', 'en')">🔊</button></span></h3>
+                                <p class="text-sm text-slate-700 mb-2">纪念屈原的节日，有赛龙舟、吃粽子的习俗。 <button class="audio-btn" onclick="playAudio('纪念屈原的节日，有赛龙舟、吃粽子的习俗。', 'zh')">🔊</button><br><span class="text-xs">(A festival commemorating Qu Yuan, with customs of dragon boat racing and eating zongzi.) <button class="audio-btn" onclick="playAudio('A festival commemorating Qu Yuan, with customs of dragon boat racing and eating zongzi.', 'en')">🔊</button></span></p>
+                                <ul class="list-disc list-inside text-xs text-slate-600">
+                                    <li>日期: 农历五月初五 <button class="audio-btn" onclick="playAudio('农历五月初五', 'zh')">🔊</button><span class="text-slate-500"> (5th day of 5th lunisolar month) <button class="audio-btn" onclick="playAudio('5th day of 5th lunisolar month', 'en')">🔊</button></span></li>
+                                    <li>习俗: 赛龙舟、吃粽子、挂艾草、佩香囊 <button class="audio-btn" onclick="playAudio('赛龙舟、吃粽子、挂艾草、佩香囊', 'zh')">🔊</button><span class="text-slate-500"> (dragon boat racing, eating zongzi, hanging mugwort, wearing scented sachets) <button class="audio-btn" onclick="playAudio('dragon boat racing, eating zongzi, hanging mugwort, wearing scented sachets', 'en')">🔊</button></span></li>
+                                    <li>象征: 驱邪避灾、纪念屈原 <button class="audio-btn" onclick="playAudio('驱邪避灾、纪念屈原', 'zh')">🔊</button><span class="text-slate-500"> (warding off evil, commemorating Qu Yuan) <button class="audio-btn" onclick="playAudio('warding off evil, commemorating Qu Yuan', 'en')">🔊</button></span></li>
+                                </ul>
+                            </div>
+                            <!-- Mid-Autumn Festival -->
+                            <div class="bg-white rounded-lg shadow-lg p-6 card-glow">
+                                <div class="text-5xl mb-4 text-center">🌕</div>
+                                <h3 class="font-bold text-xl text-slate-800 mb-2 text-center">中秋节 <button class="audio-btn" onclick="playAudio('中秋节', 'zh')">🔊</button><br><span class="text-base font-normal text-slate-600">(Zhōng Qiū Jié) - Mid-Autumn Festival <button class="audio-btn" onclick="playAudio('Mid-Autumn Festival', 'en')">🔊</button></span></h3>
+                                <p class="text-sm text-slate-700 mb-2">家人团聚、赏月、吃月饼的节日。 <button class="audio-btn" onclick="playAudio('家人团聚、赏月、吃月饼的节日。', 'zh')">🔊</button><br><span class="text-xs">(A festival for family reunion, moon gazing, and eating mooncakes.) <button class="audio-btn" onclick="playAudio('A festival for family reunion, moon gazing, and eating mooncakes.', 'en')">🔊</button></span></p>
+                                <ul class="list-disc list-inside text-xs text-slate-600">
+                                    <li>日期: 农历八月十五 <button class="audio-btn" onclick="playAudio('农历八月十五', 'zh')">🔊</button><span class="text-slate-500"> (15th day of 8th lunisolar month) <button class="audio-btn" onclick="playAudio('15th day of 8th lunisolar month', 'en')">🔊</button></span></li>
+                                    <li>习俗: 赏月、吃月饼、家人团聚 <button class="audio-btn" onclick="playAudio('赏月、吃月饼、家人团聚', 'zh')">🔊</button><span class="text-slate-500"> (moon gazing, eating mooncakes, family reunion) <button class="audio-btn" onclick="playAudio('moon gazing, eating mooncakes, family reunion', 'en')">🔊</button></span></li>
+                                    <li>象征: 团圆、丰收、思念 <button class="audio-btn" onclick="playAudio('团圆、丰收、思念', 'zh')">🔊</button><span class="text-slate-500"> (reunion, harvest, longing) <button class="audio-btn" onclick="playAudio('reunion, harvest, longing', 'en')">🔊</button></span></li>
+                                </ul>
+                            </div>
+                            <!-- Double Ninth Festival -->
+                            <div class="bg-white rounded-lg shadow-lg p-6 card-glow">
+                                <div class="text-5xl mb-4 text-center">🍂</div>
+                                <h3 class="font-bold text-xl text-slate-800 mb-2 text-center">重阳节 <button class="audio-btn" onclick="playAudio('重阳节', 'zh')">🔊</button><br><span class="text-base font-normal text-slate-600">(Chóng Yáng Jié) - Double Ninth Festival <button class="audio-btn" onclick="playAudio('Double Ninth Festival', 'en')">🔊</button></span></h3>
+                                <p class="text-sm text-slate-700 mb-2">登高望远、佩茱萸、吃重阳糕的节日，也是敬老节。 <button class="audio-btn" onclick="playAudio('登高望远、佩茱萸、吃重阳糕的节日，也是敬老节。', 'zh')">🔊</button><br><span class="text-xs">(A festival for climbing mountains, wearing dogwood, and eating Double Ninth Cake, also a Senior Citizens' Day.) <button class="audio-btn" onclick="playAudio('A festival for climbing mountains, wearing dogwood, and eating Double Ninth Cake, also a Senior Citizens\' Day.', 'en')">🔊</button></span></p>
+                                <ul class="list-disc list-inside text-xs text-slate-600">
+                                    <li>日期: 农历九月初九 <button class="audio-btn" onclick="playAudio('农历九月初九', 'zh')">🔊</button><span class="text-slate-500"> (9th day of 9th lunisolar month) <button class="audio-btn" onclick="playAudio('9th day of 9th lunisolar month', 'en')">🔊</button></span></li>
+                                    <li>习俗: 登高、赏菊、饮菊花酒、吃重阳糕 <button class="audio-btn" onclick="playAudio('登高、赏菊、饮菊花酒、吃重阳糕', 'zh')">🔊</button><span class="text-slate-500"> (mountain climbing, appreciating chrysanthemums, drinking chrysanthemum wine, eating Double Ninth Cake) <button class="audio-btn" onclick="playAudio('mountain climbing, appreciating chrysanthemums, drinking chrysanthemum wine, eating Double Ninth Cake', 'en')">🔊</button></span></li>
+                                    <li>象征: 辟邪、长寿、敬老 <button class="audio-btn" onclick="playAudio('辟邪、长寿、敬老', 'zh')">🔊</button><span class="text-slate-500"> (warding off evil, longevity, respecting elders) <button class="audio-btn" onclick="playAudio('warding off evil, longevity, respecting elders', 'en')">🔊</button></span></li>
+                                </ul>
+                            </div>
+                            <!-- Winter Solstice -->
+                            <div class="bg-white rounded-lg shadow-lg p-6 card-glow">
+                                <div class="text-5xl mb-4 text-center">❄️</div>
+                                <h3 class="font-bold text-xl text-slate-800 mb-2 text-center">冬至 <button class="audio-btn" onclick="playAudio('冬至', 'zh')">🔊</button><br><span class="text-base font-normal text-slate-600">(Dōng Zhì) - Winter Solstice <button class="audio-btn" onclick="playAudio('Winter Solstice', 'en')">🔊</button></span></h3>
+                                <p class="text-sm text-slate-700 mb-2">北半球白昼最短、黑夜最长的一天，传统上是家庭团聚、吃饺子或汤圆的日子。 <button class="audio-btn" onclick="playAudio('北半球白昼最短、黑夜最长的一天，传统上是家庭团聚、吃饺子或汤圆的日子。', 'zh')">🔊</button><br><span class="text-xs">(The shortest day and longest night in the Northern Hemisphere, traditionally a day for family reunion and eating dumplings or tangyuan.) <button class="audio-btn" onclick="playAudio('The shortest day and longest night in the Northern Hemisphere, traditionally a day for family reunion and eating dumplings or tangyuan.', 'en')">🔊</button></span></p>
+                                <ul class="list-disc list-inside text-xs text-slate-600">
+                                    <li>日期: 公历12月21日或22日 <button class="audio-btn" onclick="playAudio('公历12月21日或22日', 'zh')">🔊</button><span class="text-slate-500"> (December 21st or 22nd of Gregorian calendar) <button class="audio-btn" onclick="playAudio('December 21st or 22nd of Gregorian calendar', 'en')">🔊</button></span></li>
+                                    <li>习俗: 吃饺子/汤圆、家庭聚餐 <button class="audio-btn" onclick="playAudio('吃饺子/汤圆、家庭聚餐', 'zh')">🔊</button><span class="text-slate-500"> (eating dumplings/tangyuan, family gathering) <button class="audio-btn" onclick="playAudio('eating dumplings/tangyuan, family gathering', 'en')">🔊</button></span></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
-
         </div>
+
+        <div class="tooltip" role="tooltip"></div>
 
     </div>
 
-    <div id="tooltip" class="tooltip"></div>
-
     <script>
+        // Global variable to hold the current speech synthesis utterance
+        let currentUtterance = null;
+
         document.addEventListener('DOMContentLoaded', () => {
             // Tab functionality
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('main > div');
+            const tabs = document.querySelectorAll('.tab-btn');
+            const tabContents = {
+                'tab-btn-time': 'tab-content-time',
+                'tab-btn-calendar': 'tab-content-calendar',
+                'tab-btn-natural': 'tab-content-natural',
+                'tab-btn-festivals': 'tab-content-festivals'
+            };
 
-            tabButtons.forEach(button => {
+            tabs.forEach(button => {
                 button.addEventListener('click', () => {
-                    tabButtons.forEach(btn => btn.classList.remove('active', 'border-blue-600', 'text-blue-600'));
-                    tabButtons.forEach(btn => btn.classList.add('border-transparent', 'text-slate-600', 'hover:text-blue-600'));
-                    button.classList.add('active', 'border-blue-600', 'text-blue-600');
-                    button.classList.remove('border-transparent', 'text-slate-600', 'hover:text-blue-600');
+                    // Deactivate all tabs and hide all content
+                    tabs.forEach(btn => btn.classList.remove('active'));
+                    Object.values(tabContents).forEach(id => document.getElementById(id).classList.add('hidden'));
 
-                    tabContents.forEach(content => content.classList.add('hidden'));
-                    const targetTabId = button.id.replace('tab-btn-', 'tab-content-');
-                    document.getElementById(targetTabId).classList.remove('hidden');
+                    // Activate clicked tab and show its content
+                    button.classList.add('active');
+                    document.getElementById(tabContents[button.id]).classList.remove('hidden');
                 });
             });
 
-            // --- Daily Period Donut Chart ---
-            const dailyPeriodsData = [
-                { zh: '午夜', en: 'Midnight', duration: 1 },
-                { zh: '凌晨', en: 'Early Morning', duration: 4 },
-                { zh: '清晨', en: 'Dawn', duration: 1 },
-                { zh: '早上', en: 'Morning', duration: 2 },
-                { zh: '上午', en: 'Late Morning', duration: 3 },
-                { zh: '中午', en: 'Noon', duration: 2 },
-                { zh: '下午', en: 'Afternoon', duration: 5 },
-                { zh: '傍晚', en: 'Dusk', duration: 1 },
-                { zh: '晚上', en: 'Evening', duration: 5 }
-            ];
-
+            // Chart.js - Daily Period Chart (Example data - replace with actual data)
             const dailyPeriodCtx = document.getElementById('dailyPeriodChart').getContext('2d');
             const dailyPeriodChart = new Chart(dailyPeriodCtx, {
                 type: 'doughnut',
                 data: {
-                    labels: dailyPeriodsData.map(d => `${d.zh} (${d.duration}h)`),
+                    labels: ['早晨 (Morning)', '上午 (Forenoon)', '中午 (Noon)', '下午 (Afternoon)', '傍晚 (Dusk)', '夜晚 (Night)', '凌晨 (Pre-dawn)'],
                     datasets: [{
-                        data: dailyPeriodsData.map(d => d.duration),
+                        data: [4, 4, 2, 6, 2, 4, 2], // Example hours for each period
                         backgroundColor: [
-                            '#003f5c', '#2f4b7c', '#665191', '#a05195',
-                            '#d45087', '#f95d6a', '#ff7c43', '#ffa600', '#4b9e82'
+                            'rgba(255, 205, 86, 0.8)', // Morning (Yellow)
+                            'rgba(75, 192, 192, 0.8)', // Forenoon (Teal)
+                            'rgba(153, 102, 255, 0.8)', // Noon (Purple)
+                            'rgba(255, 99, 132, 0.8)', // Afternoon (Red)
+                            'rgba(54, 162, 235, 0.8)', // Dusk (Blue)
+                            'rgba(201, 203, 207, 0.8)', // Night (Gray)
+                            'rgba(255, 159, 64, 0.8)' // Pre-dawn (Orange)
                         ],
-                        borderColor: '#ffffff',
-                        borderWidth: 2
+                        borderColor: [
+                            'rgba(255, 205, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(201, 203, 207, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -763,12 +772,10 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                     plugins: {
                         legend: {
                             position: 'right',
-                            labels: {
-                                color: '#4A5568',
-                                font: {
-                                    size: 12
-                                }
-                            }
+                        },
+                        title: {
+                            display: true,
+                            text: '每日时间段分布 (Daily Time Periods Distribution)'
                         },
                         tooltip: {
                             callbacks: {
@@ -777,7 +784,9 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                                     if (label) {
                                         label += ': ';
                                     }
-                                    label += context.parsed + '小时 (hours)';
+                                    if (context.parsed !== null) {
+                                        label += context.parsed + ' 小时 (hours)';
+                                    }
                                     return label;
                                 }
                             }
@@ -786,22 +795,56 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                 }
             });
 
-
-            // Day Cycle Chart (original 12 shichen chart)
-            const ctx = document.getElementById('dayCycleChart').getContext('2d');
-            const dayCycleChart = new Chart(ctx, {
+            // Chart.js - Day Cycle Chart (Twelve Shichen)
+            const dayCycleCtx = document.getElementById('dayCycleChart').getContext('2d');
+            const dayCycleChart = new Chart(dayCycleCtx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['子时 (Zǐshí) 23:00-01:00', '丑时 (Chǒushí) 01:00-03:00', '寅时 (Yínshí) 03:00-05:00', '卯时 (Mǎoshí) 05:00-07:00', '辰时 (Chénshí) 07:00-09:00', '巳时 (Sìshí) 09:00-11:00', '午时 (Wǔshí) 11:00-13:00', '未时 (Wèishí) 13:00-15:00', '申时 (Shēnshí) 15:00-17:00', '酉时 (Yǒushí) 17:00-19:00', '戌时 (Xūshí) 19:00-21:00', '亥时 (Hàishí) 21:00-23:00'],
+                    labels: [
+                        '子时 (Zǐ Shí): 23:00 - 01:00',
+                        '丑时 (Chǒu Shí): 01:00 - 03:00',
+                        '寅时 (Yín Shí): 03:00 - 05:00',
+                        '卯时 (Mǎo Shí): 05:00 - 07:00',
+                        '辰时 (Chén Shí): 07:00 - 09:00',
+                        '巳时 (Sì Shí): 09:00 - 11:00',
+                        '午时 (Wǔ Shí): 11:00 - 13:00',
+                        '未时 (Wèi Shí): 13:00 - 15:00',
+                        '申时 (Shēn Shí): 15:00 - 17:00',
+                        '酉时 (Yǒu Shí): 17:00 - 19:00',
+                        '戌时 (Xū Shí): 19:00 - 21:00',
+                        '亥时 (Hài Shí): 21:00 - 23:00'
+                    ],
                     datasets: [{
-                        data: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], // Each shichen is 2 hours
+                        data: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], // 2 hours per shichen
                         backgroundColor: [
-                            '#4A5568', '#2D3748', '#2C5282', '#2B6CB0',
-                            '#4299E1', '#63B3ED', '#90CDF4', '#BEE3F8',
-                            '#FEEBC8', '#FBD38D', '#F6AD55', '#ED8936'
+                            'rgba(255, 99, 132, 0.8)',
+                            'rgba(255, 159, 64, 0.8)',
+                            'rgba(255, 205, 86, 0.8)',
+                            'rgba(75, 192, 192, 0.8)',
+                            'rgba(54, 162, 235, 0.8)',
+                            'rgba(153, 102, 255, 0.8)',
+                            'rgba(201, 203, 207, 0.8)',
+                            'rgba(255, 99, 132, 0.8)',
+                            'rgba(255, 159, 64, 0.8)',
+                            'rgba(255, 205, 86, 0.8)',
+                            'rgba(75, 192, 192, 0.8)',
+                            'rgba(54, 162, 235, 0.8)'
                         ],
-                        borderColor: '#ffffff',
-                        borderWidth: 2
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 205, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(201, 203, 207, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 205, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(54, 162, 235, 1)'
+                        ],
+                        borderWidth: 1
                     }]
                 },
                 options: {
@@ -810,21 +853,18 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                     plugins: {
                         legend: {
                             position: 'right',
-                            labels: {
-                                color: '#4A5568',
-                                font: {
-                                    size: 12
-                                }
-                            }
+                        },
+                        title: {
+                            display: true,
+                            text: '中国十二时辰分布 (Distribution of Twelve Chinese Shichen)'
                         },
                         tooltip: {
                             callbacks: {
                                 label: function(context) {
                                     let label = context.label || '';
                                     if (label) {
-                                        label += ': ';
+                                        label += '';
                                     }
-                                    label += context.parsed + '小时 (hours)';
                                     return label;
                                 }
                             }
@@ -833,135 +873,9 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                 }
             });
 
-            // Solar Terms Visualization (24 points around a circle)
-            // This section and its associated CSS are now removed as per user request.
-            /*
-            const solarTerms = [
-                { zh: '立春', en: 'Lìchūn', angle: 0 }, { zh: '雨水', en: 'Yǔshuǐ', angle: 15 },
-                { zh: '惊蛰', en: 'Jīngzhé', angle: 30 }, { zh: '春分', en: 'Chūnfēn', angle: 45 },
-                { zh: '清明', en: 'Qīngmíng', angle: 60 }, { zh: '谷雨', en: 'Gǔyǔ', angle: 75 },
-                { zh: '立夏', en: 'Lìxià', angle: 90 }, { zh: '小满', en: 'Xiǎomǎn', angle: 105 },
-                { zh: '芒种', en: 'Mángzhòng', angle: 120 }, { zh: '夏至', en: 'Xiàzhì', angle: 135 },
-                { zh: '小暑', en: 'Xiǎoshǔ', angle: 150 }, { zh: '大暑', en: 'Dàshǔ', angle: 165 },
-                { zh: '立秋', en: 'Lìqiū', angle: 180 }, { zh: '处暑', en: 'Chǔshǔ', angle: 195 },
-                { zh: '白露', en: 'Báilù', angle: 210 }, { zh: '秋分', en: 'Qiūfēn', angle: 225 },
-                { zh: '寒露', en: 'Hánlù', angle: 240 }, { zh: '霜降', en: 'Shuāngjiàng', angle: 255 },
-                { zh: '立冬', en: 'Lìdōng', angle: 270 }, { zh: '小雪', en: 'Xiǎoxuě', angle: 285 },
-                { zh: '大雪', en: 'Dàxuě', angle: 300 }, { zh: '冬至', en: 'Dōngzhì', angle: 315 },
-                { zh: '小寒', en: 'Xiǎohán', angle: 330 }, { zh: '大寒', en: 'Dàhán', angle: 345 }
-            ];
-
-            const solarTermContainer = document.getElementById('solar-term-container');
-            // Adjusted radius and item size for better alignment and spacing
-            const solarTermRadius = (solarTermContainer.offsetWidth / 2) * 0.9; // Adjusted to 90% of container radius
-            const solarTermCenterX = solarTermContainer.offsetWidth / 2;
-            const solarTermCenterY = solarTermContainer.offsetHeight / 2;
-
-            solarTerms.forEach(term => {
-                const item = document.createElement('div');
-                item.classList.add('solar-term-item');
-                item.innerHTML = `<span class="font-medium text-blue-800">${term.zh}</span><br><span class="text-blue-600 text-xs">${term.en}</span>`;
-                item.setAttribute('data-zh-explanation', `${term.zh}`); // Placeholder, actual explanation might be longer
-                item.setAttribute('data-en-explanation', `${term.en}`); // Placeholder
-
-                const angleRad = (term.angle - 90) * (Math.PI / 180); // Adjust -90 to start from top
-                const x = solarTermCenterX + solarTermRadius * Math.cos(angleRad);
-                const y = solarTermCenterY + solarTermRadius * Math.sin(angleRad);
-
-                item.style.top = `${y}px`;
-                item.style.left = `${x}px`;
-
-                solarTermContainer.appendChild(item);
-            });
-            */
-
-            // Comparison functionality for Calendars tab
-            const comparisonNav = document.getElementById('comparison-nav');
-            const lunarDesc = document.getElementById('lunar-desc');
-            const gregorianDesc = document.getElementById('gregorian-desc');
-
-            const comparisonData = {
-                'Meaning': {
-                    lunar: '农历是一种阴阳合历，它结合了月亮的周期和太阳的回归年，使其在确定季节方面更加准确，特别适用于农业。在中文中，“农”字本身就意味着农业，因此农历是一种与农业目的紧密相关的历法。',
-                    lunar_en: 'The Chinese Lunisolar Calendar is a lunisolar calendar that combines lunar cycles with the solar year, making it more accurate for determining seasons, especially for agricultural purposes. In Chinese, the character "农" (nóng) itself means agricultural, indicating a calendar closely related to agricultural purposes.',
-                    gregorian: '阳历是一种纯粹的太阳历，它基于地球绕太阳公转的周期，是国际通用的民用历法。',
-                    gregorian_en: 'The Gregorian calendar is a purely solar calendar based on the Earth\'s orbit around the sun, serving as the internationally used civil calendar.'
-                },
-                'Principle': {
-                    lunar: '基于月相周期，同时兼顾太阳回归年。',
-                    lunar_en: 'Based on moon phases, while also considering the tropical year.',
-                    gregorian: '基于地球绕太阳公转周期，通过闰日调整以保持与回归年一致。',
-                    gregorian_en: 'Based on Earth\'s revolution period around the sun, adjusted with leap days to stay consistent with the tropical year.'
-                },
-                'Length': {
-                    lunar: '平年354天或355天，闰年383天或384天。',
-                    lunar_en: 'Regular year 354 or 355 days, leap year 383 or 384 days.',
-                    gregorian: '平年365天，闰年366天。',
-                    gregorian_en: 'Regular year has 365 days, with a leap year of 366 days occurring approximately every four years.'
-                },
-                'Start': {
-                    lunar: '以立春或春节为岁首，日期不固定。',
-                    lunar_en: 'Starts with Lichun or Chinese New Year, date is not fixed.',
-                    gregorian: '以1月1日为岁首，日期固定。',
-                    gregorian_en: 'Starts with January 1st as the beginning of the year, and the date is fixed annually.'
-                },
-                'Application': {
-                    lunar: '主要用于传统节日、农事指导、命理等。',
-                    lunar_en: 'Mainly used for traditional festivals, agricultural guidance, fortune-telling, etc.',
-                    gregorian: '国际通用，用于公历日期、商业、国际交流等。',
-                    gregorian_en: 'Internationally used for civil dates, commerce, international communication, and general daily life.'
-                }
-            };
-
-            // Function to set comparison content
-            function setComparisonContent(key) {
-                lunarDesc.innerHTML = `<span class="font-bold text-base">${comparisonData[key].lunar}</span><br><span class="text-xs text-slate-500 mt-2">${comparisonData[key].lunar_en}</span>`;
-                gregorianDesc.innerHTML = `<span class="font-bold text-base">${comparisonData[key].gregorian}</span><br><span class="text-xs text-slate-500 mt-2">${comparisonData[key].gregorian_en}</span>`;
-            }
-
-            // Populate comparison buttons and set default content
-            const comparisonKeysOrder = ['Meaning', 'Principle', 'Length', 'Start', 'Application']; // Define order
-            comparisonKeysOrder.forEach(key => {
-                const button = document.createElement('button');
-                button.classList.add('comparison-btn', 'bg-blue-100', 'text-blue-800', 'py-2', 'px-4', 'rounded-lg', 'text-sm', 'font-medium', 'hover:bg-blue-200', 'transition-colors', 'duration-200');
-                
-                let buttonText;
-                if (key === 'Meaning') buttonText = '意义 (Meaning)';
-                else if (key === 'Principle') buttonText = '原理 (Principle)';
-                else if (key === 'Length') buttonText = '时长 (Length)';
-                else if (key === 'Start') buttonText = '岁首 (Start)';
-                else if (key === 'Application') buttonText = '应用 (Application)';
-                
-                button.textContent = buttonText;
-                button.setAttribute('data-comparison', key);
-                comparisonNav.appendChild(button);
-            });
-
-            // Set 'Meaning' as the default selected item on load
-            const defaultButton = document.querySelector('.comparison-btn[data-comparison="Meaning"]');
-            if (defaultButton) {
-                defaultButton.classList.add('active', 'bg-blue-600', 'text-white');
-                defaultButton.classList.remove('bg-blue-100', 'text-blue-800');
-                setComparisonContent('Meaning');
-            }
-
-
-            comparisonNav.addEventListener('click', (e) => {
-                const target = e.target.closest('.comparison-btn');
-                if (target) {
-                    document.querySelectorAll('.comparison-btn').forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
-                    document.querySelectorAll('.comparison-btn').forEach(btn => btn.classList.add('bg-blue-100', 'text-blue-800'));
-                    target.classList.add('active', 'bg-blue-600', 'text-white');
-                    target.classList.remove('bg-blue-100', 'text-blue-800');
-
-                    const comparisonKey = target.getAttribute('data-comparison');
-                    setComparisonContent(comparisonKey);
-                }
-            });
-
-            // Tooltip for li items and new circular items
-            const tooltip = document.getElementById('tooltip');
-            document.querySelectorAll('li[data-zh-explanation], .solar-term-item').forEach(item => { // Removed .daily-period-item from here as it's now a chart
+            // Tooltip for natural phenomena and festivals
+            const tooltip = document.querySelector('.tooltip');
+            document.querySelectorAll('[data-zh-explanation]').forEach(item => {
                 item.addEventListener('mouseover', (e) => {
                     const zhExplanation = e.target.dataset.zhExplanation || e.target.querySelector('span:first-child')?.textContent;
                     const enExplanation = e.target.dataset.enExplanation || e.target.querySelector('span:last-child')?.textContent;
@@ -991,6 +905,97 @@ This section will guide you through Chinese vocabulary related to solar terms, w
                     tooltip.classList.remove('show');
                 });
             });
+
+            // Comparison data for Calendars tab
+            const comparisonData = {
+                principle: {
+                    lunar: "以月亮的盈亏周期为主，并结合太阳的运行周期调整，属于阴阳合历。",
+                    gregorian: "以地球绕太阳公转的周期为主，属于阳历。"
+                },
+                length: {
+                    lunar: "平年12个月（354或355天），闰年13个月（383或384天）。",
+                    gregorian: "一年固定12个月，平年365天，闰年366天。"
+                },
+                start: {
+                    lunar: "以农历正月初一（春节）为一年之始，日期在公历1月21日至2月20日之间浮动。",
+                    gregorian: "以公历1月1日为一年之始。"
+                },
+                usage: {
+                    lunar: "主要用于指导传统节日、农事活动、生肖、命理等。",
+                    gregorian: "全球通用，用于日常生活、国际交流、经济活动、法律文件等。"
+                },
+                accuracy: {
+                    lunar: "在兼顾月相和季节方面表现优秀，但日期推算相对复杂。",
+                    gregorian: "与回归年周期高度吻合，日期推算简单直观。"
+                }
+            };
+
+            const comparisonNav = document.getElementById('comparison-nav');
+            const lunarDesc = document.getElementById('lunar-desc');
+            const gregorianDesc = document.getElementById('gregorian-desc');
+
+            const comparisonCategories = {
+                "principle": "制定原理 (Principle)",
+                "length": "年长短 (Year Length)",
+                "start": "一年之始 (Year Start)",
+                "usage": "主要用途 (Main Usage)",
+                "accuracy": "精度与推算 (Accuracy & Calculation)"
+            };
+
+            // Initialize comparison buttons and display first category
+            let firstCategoryKey = Object.keys(comparisonCategories)[0];
+            for (const key in comparisonCategories) {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = `comparison-btn bg-slate-200 text-slate-700 py-2 px-4 rounded-full text-sm hover:bg-blue-100 transition-colors duration-200 ${key === firstCategoryKey ? 'active' : ''}`;
+                button.textContent = comparisonCategories[key];
+                button.dataset.category = key;
+                button.addEventListener('click', () => {
+                    // Update active state
+                    document.querySelectorAll('.comparison-btn').forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    // Update descriptions
+                    lunarDesc.innerHTML = `${comparisonData[key].lunar} <button class="audio-btn" onclick="playAudio('${comparisonData[key].lunar}', 'zh')">🔊</button>`;
+                    gregorianDesc.innerHTML = `${comparisonData[key].gregorian} <button class="audio-btn" onclick="playAudio('${comparisonData[key].gregorian}', 'en')">🔊</button>`;
+                });
+                comparisonNav.appendChild(button);
+            }
+
+            // Set initial content for comparison
+            lunarDesc.innerHTML = `${comparisonData[firstCategoryKey].lunar} <button class="audio-btn" onclick="playAudio('${comparisonData[firstCategoryKey].lunar}', 'zh')">🔊</button>`;
+            gregorianDesc.innerHTML = `${comparisonData[firstCategoryKey].gregorian} <button class="audio-btn" onclick="playAudio('${comparisonData[firstCategoryKey].gregorian}', 'en')">🔊</button>`;
+
+            // Function to play or stop audio
+            function playAudio(text, lang) {
+                if ('speechSynthesis' in window) {
+                    // If an utterance is currently speaking, stop it
+                    if (window.speechSynthesis.speaking && currentUtterance) {
+                        window.speechSynthesis.cancel();
+                        currentUtterance = null; // Clear the reference
+                        // If the same text is clicked again, it means stop
+                        if (currentUtterance && currentUtterance.text === text) {
+                            return;
+                        }
+                    }
+
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    if (lang === 'zh') {
+                        utterance.lang = 'zh-CN';
+                    } else if (lang === 'en') {
+                        utterance.lang = 'en-US';
+                    }
+                    window.speechSynthesis.speak(utterance);
+                    currentUtterance = utterance; // Store the current utterance
+
+                    // Clear currentUtterance when speaking ends
+                    utterance.onend = () => {
+                        currentUtterance = null;
+                    };
+                } else {
+                    alert('Text-to-speech not supported in this browser. You would need to integrate a TTS API or provide audio files.');
+                }
+            }
+            window.playAudio = playAudio; // Make the function globally accessible
         });
     </script>
 </body>
