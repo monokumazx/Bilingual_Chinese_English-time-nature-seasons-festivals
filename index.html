@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自然与时间探索导航 | Nature & Time Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .lang-en {
+            display: block;
+            font-size: 0.875rem;
+            color: #64748b;
+            font-weight: 400;
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+<body class="p-6">
+
+    <div class="max-w-5xl w-full">
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-800 mb-2">
+                自然与时间百科
+                <span class="block text-xl md:text-2xl font-light text-slate-500 mt-1">Nature & Time Encyclopedia</span>
+            </h1>
+            <p class="text-slate-600 mt-4 max-w-2xl mx-auto">
+                探索四季的韵律、月相的变化与节庆的魅力<br>
+                <span class="italic text-sm">Explore the rhythm of seasons, moon phases, and the charm of festivals.</span>
+            </p>
+        </header>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Card 1: Time & Festivals -->
+            <a href="time_nature_festival.html" class="group block">
+                <div class="glass-card rounded-3xl p-8 h-full flex flex-col items-center text-center">
+                    <div class="icon-circle bg-amber-100 text-amber-600 group-hover:scale-110 transition-transform">
+                        ⏳
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-800">
+                        时间与节庆
+                        <span class="lang-en text-amber-700">Time & Festivals</span>
+                    </h2>
+                    <div class="mt-4 mb-6 space-y-2">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            深入了解二十四节气、传统节日以及古老的历法系统。探索时间流转中的文化精髓。
+                        </p>
+                        <p class="text-slate-400 text-xs italic leading-relaxed">
+                            Delve into the 24 solar terms, traditional festivals, and ancient calendar systems.
+                        </p>
+                    </div>
+                    <span class="mt-auto px-8 py-2.5 bg-amber-500 text-white rounded-full font-medium hover:bg-amber-600 transition-colors shadow-lg shadow-amber-200">
+                        立即探索 | Explore →
+                    </span>
+                </div>
+            </a>
+
+            <!-- Card 2: Weather & Moon -->
+            <a href="weather_moon.html" class="group block">
+                <div class="glass-card rounded-3xl p-8 h-full flex flex-col items-center text-center">
+                    <div class="icon-circle bg-blue-100 text-blue-600 group-hover:scale-110 transition-transform">
+                        🌙
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-800">
+                        天气与月相
+                        <span class="lang-en text-blue-700">Weather & Moon Phases</span>
+                    </h2>
+                    <div class="mt-4 mb-6 space-y-2">
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            学习气象术语的中英对照，观察月球阴晴圆缺的规律。掌握大自然的气候密码。
+                        </p>
+                        <p class="text-slate-400 text-xs italic leading-relaxed">
+                            Study bilingual weather terminology and observe the cycle of the moon phases.
+                        </p>
+                    </div>
+                    <span class="mt-auto px-8 py-2.5 bg-blue-500 text-white rounded-full font-medium hover:bg-blue-600 transition-colors shadow-lg shadow-blue-200">
+                        立即查看 | View Now →
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        <footer class="mt-16 text-center">
+            <div class="h-px bg-slate-300 w-24 mx-auto mb-6"></div>
+            <p class="text-slate-500 text-sm font-medium">© 2025 自然与时间探索 | Nature Explorer Portal</p>
+            <p class="text-slate-400 text-xs mt-1 italic italic">Knowledge is a treasure that accompanies its owner everywhere.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

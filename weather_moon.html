@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天气预报中英术语对照表 | Weather Forecast Glossary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .term-card:hover {
+            transform: translateY(-2px);
+            transition: all 0.2s ease;
+        }
+        .sidebar-link.active {
+            color: #2563eb;
+            background-color: #eff6ff;
+            border-right: 4px solid #2563eb;
+        }
+        table { border-collapse: separate; border-spacing: 0; }
+        th { background-color: #f8fafc; }
+        tr:last-child td:first-child { border-bottom-left-radius: 0.5rem; }
+        tr:last-child td:last-child { border-bottom-right-radius: 0.5rem; }
+        
+        .moon-breakdown {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid #64748b;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <header class="fixed top-0 w-full z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl">🌦️</span>
+                <div class="flex flex-col md:flex-row md:items-baseline md:gap-2">
+                    <h1 class="text-lg md:text-xl font-bold tracking-tight text-slate-900">天气预报术语对照</h1>
+                    <span class="text-blue-600 font-semibold text-sm md:text-base">Weather Forecast Glossary</span>
+                </div>
+            </div>
+            <div class="hidden lg:block text-xs font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded">
+                CN / EN Reference
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 pt-24 pb-12 flex flex-col md:flex-row gap-8">
+        
+        <aside class="md:w-64 flex-shrink-0">
+            <nav class="sticky top-24 space-y-1 bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 px-2">分类目录 Catalog</p>
+                <a href="#basic" class="sidebar-link block px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-100 transition-colors">1. 基本状况 Basic</a>
+                <a href="#forms" class="sidebar-link block px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-100 transition-colors">2. 天气形态 Forms</a>
+                <a href="#radar" class="sidebar-link block px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-100 transition-colors">3. 雷达与地图 Radar</a>
+                <a href="#air" class="sidebar-link block px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-100 transition-colors">4. 空气与花粉 Air</a>
+                <a href="#indices" class="sidebar-link block px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-100 transition-colors">5. 环境指数 Indices</a>
+                <a href="#parameters" class="sidebar-link block px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-100 transition-colors">6. 气象参数 Parameters</a>
+                <a href="#moon" class="sidebar-link block px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-100 transition-colors">7. 月相信息 Moon</a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 space-y-12">
+
+            <section id="basic" class="scroll-mt-24">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold flex items-center gap-2 text-slate-800">
+                        <span class="bg-blue-100 p-2 rounded-lg text-blue-600">☀️</span> 基本天气状况 Basic Conditions
+                    </h2>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden mb-6">
+                    <div class="p-4 bg-slate-50 border-bottom border-slate-200 font-semibold flex justify-between">
+                        <span>晴朗与阴天</span>
+                        <span class="text-slate-400 text-sm font-normal">Clear & Cloudy</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead>
+                                <tr>
+                                    <th class="px-6 py-3 border-b">中文术语 (CN)</th>
+                                    <th class="px-6 py-3 border-b">英文术语 (EN)</th>
+                                    <th class="px-6 py-3 border-b">说明 / 变体 Description</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr><td class="px-6 py-4 font-medium">晴</td><td class="px-6 py-4">Clear / Sunny</td><td class="px-6 py-4 text-slate-500">Sunny 常用于白天，Clear 通用</td></tr>
+                                <tr><td class="px-6 py-4 font-medium">少云</td><td class="px-6 py-4">Partly Cloudy</td><td class="px-6 py-4 text-slate-500">云量较少</td></tr>
+                                <tr><td class="px-6 py-4 font-medium">多云</td><td class="px-6 py-4">Cloudy / Mostly Cloudy</td><td class="px-6 py-4 text-slate-500">大部分天空被云覆盖</td></tr>
+                                <tr><td class="px-6 py-4 font-medium">阴</td><td class="px-6 py-4">Overcast</td><td class="px-6 py-4 text-slate-500">天空完全被云遮蔽</td></tr>
+                                <tr><td class="px-6 py-4 font-medium">晴间多云</td><td class="px-6 py-4">Intervals of Clouds and Sun</td><td class="px-6 py-4 text-slate-500">Sunny Intervals</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="p-4 bg-slate-50 border-bottom border-slate-200 font-semibold flex justify-between">
+                        <span>降水与极端天气 (概览)</span>
+                        <span class="text-slate-400 text-sm font-normal">Precipitation & Extreme Overview</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead>
+                                <tr>
+                                    <th class="px-6 py-3 border-b">中文术语 (CN)</th>
+                                    <th class="px-6 py-3 border-b">英文术语 (EN)</th>
+                                    <th class="px-6 py-3 border-b">强度 / 类型 Intensity</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr><td class="px-6 py-4 font-medium">阵雨</td><td class="px-6 py-4">Showers</td><td class="px-6 py-4 text-slate-500 italic">突发性降水</td></tr>
+                                <tr><td class="px-6 py-4 font-medium">雷阵雨</td><td class="px-6 py-4">Thunderstorm / T-Storms</td><td class="px-6 py-4 text-slate-500">伴有雷电</td></tr>
+                                <tr><td class="px-6 py-4 font-medium">毛毛雨</td><td class="px-6 py-4">Drizzle</td><td class="px-6 py-4 text-slate-500">极细小的雨滴</td></tr>
+                                <tr><td class="px-6 py-4 font-medium">雨夹雪</td><td class="px-6 py-4">Rain and Snow Mixed</td><td class="px-6 py-4 text-slate-500">Sleet</td></tr>
+                                <tr><td class="px-6 py-4 font-medium">台风 / 飓风</td><td class="px-6 py-4">Typhoon / Hurricane</td><td class="px-6 py-4 text-slate-500">按地域划分名称</td></tr>
+                                <tr><td class="px-6 py-4 font-medium">沙尘暴</td><td class="px-6 py-4">Sandstorm / Dust Storm</td><td class="px-6 py-4 text-slate-500">Visibility warning</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="forms" class="scroll-mt-24">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold flex items-center gap-2 text-slate-800">
+                        <span class="bg-cyan-100 p-2 rounded-lg text-cyan-600">🌧️</span> 天气形态 Forms of Weather
+                    </h2>
+                    <p class="text-sm text-slate-500 mt-2">（基本名词层 · 最基本不可再拆 · App/预报通用）</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="px-4 py-2 bg-slate-800 text-white text-sm font-bold">1️⃣ 降水类 Precipitation</div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead>
+                                    <tr class="bg-slate-50"><th class="px-4 py-2 border-b">中文</th><th class="px-4 py-2 border-b">英文</th><th class="px-4 py-2 border-b">说明</th></tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100">
+                                    <tr><td class="px-4 py-2">雨</td><td class="px-4 py-2 font-medium">Rain</td><td class="px-4 py-2 text-slate-500">最基本降水</td></tr>
+                                    <tr><td class="px-4 py-2">小雨</td><td class="px-4 py-2 font-medium">Light Rain</td><td class="px-4 py-2 text-slate-500">强度分级</td></tr>
+                                    <tr><td class="px-4 py-2">中雨</td><td class="px-4 py-2 font-medium">Moderate Rain</td><td class="px-4 py-2 text-slate-500">强度分级</td></tr>
+                                    <tr><td class="px-4 py-2">大雨</td><td class="px-4 py-2 font-medium">Heavy Rain</td><td class="px-4 py-2 text-slate-500">强度分级</td></tr>
+                                    <tr><td class="px-4 py-2">毛毛雨</td><td class="px-4 py-2 font-medium">Drizzle</td><td class="px-4 py-2 text-slate-500">极细、连续</td></tr>
+                                    <tr><td class="px-4 py-2">细雨</td><td class="px-4 py-2 font-medium">Fine Rain</td><td class="px-4 py-2 text-slate-500">比 drizzle 稍明显</td></tr>
+                                    <tr><td class="px-4 py-2">阵雨</td><td class="px-4 py-2 font-medium">Showers</td><td class="px-4 py-2 text-slate-500">短暂、局地</td></tr>
+                                    <tr><td class="px-4 py-2">雷雨</td><td class="px-4 py-2 font-medium">Thunderstorm</td><td class="px-4 py-2 text-slate-500">有雷电</td></tr>
+                                    <tr><td class="px-4 py-2">雷阵雨</td><td class="px-4 py-2 font-medium">Thunder Showers</td><td class="px-4 py-2 text-slate-500">阵发雷雨</td></tr>
+                                    <tr><td class="px-4 py-2">冻雨</td><td class="px-4 py-2 font-medium">Freezing Rain</td><td class="px-4 py-2 text-slate-500">接触结冰</td></tr>
+                                    <tr><td class="px-4 py-2">雨夹雪</td><td class="px-4 py-2 font-medium">Sleet / Rain and Snow</td><td class="px-4 py-2 text-slate-500">混合冰粒</td></tr>
+                                    <tr><td class="px-4 py-2">冰粒</td><td class="px-4 py-2 font-medium">Ice Pellets</td><td class="px-4 py-2 text-slate-500">硬颗粒</td></tr>
+                                    <tr><td class="px-4 py-2">冰雹</td><td class="px-4 py-2 font-medium">Hail</td><td class="px-4 py-2 text-slate-500">块状冰</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="px-4 py-2 bg-blue-600 text-white text-sm font-bold">2️⃣ 雪类 Snow Forms</div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead>
+                                    <tr class="bg-slate-50"><th class="px-4 py-2 border-b">中文</th><th class="px-4 py-2 border-b">英文</th><th class="px-4 py-2 border-b">说明</th></tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100">
+                                    <tr><td class="px-4 py-2">雪</td><td class="px-4 py-2 font-medium">Snow</td><td class="px-4 py-2 text-slate-500">总称</td></tr>
+                                    <tr><td class="px-4 py-2">小雪</td><td class="px-4 py-2 font-medium">Light Snow</td><td class="px-4 py-2 text-slate-500">强度分级</td></tr>
+                                    <tr><td class="px-4 py-2">中雪</td><td class="px-4 py-2 font-medium">Moderate Snow</td><td class="px-4 py-2 text-slate-500">强度分级</td></tr>
+                                    <tr><td class="px-4 py-2">大雪</td><td class="px-4 py-2 font-medium">Heavy Snow</td><td class="px-4 py-2 text-slate-500">强度分级</td></tr>
+                                    <tr><td class="px-4 py-2">暴雪</td><td class="px-4 py-2 font-medium">Blizzard</td><td class="px-4 py-2 text-slate-500">强风+大雪</td></tr>
+                                    <tr><td class="px-4 py-2">阵雪</td><td class="px-4 py-2 font-medium">Snow Showers</td><td class="px-4 py-2 text-slate-500">间歇</td></tr>
+                                    <tr><td class="px-4 py-2">粒雪 / 冰晶雪</td><td class="px-4 py-2 font-medium">Graupel / Ice Pellets</td><td class="px-4 py-2 text-slate-500">小颗粒状</td></tr>
+                                    <tr><td class="px-4 py-2">粉雪</td><td class="px-4 py-2 font-medium">Powder Snow</td><td class="px-4 py-2 text-slate-500">描写型</td></tr>
+                                    <tr><td class="px-4 py-2">湿雪</td><td class="px-4 py-2 font-medium">Wet Snow</td><td class="px-4 py-2 text-slate-500">含水高</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="px-4 py-2 bg-slate-500 text-white text-sm font-bold">3️⃣ 雾与能见度 Fog & Visibility</div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead>
+                                    <tr class="bg-slate-50"><th class="px-4 py-2 border-b">中文</th><th class="px-4 py-2 border-b">英文</th><th class="px-4 py-2 border-b">说明</th></tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100">
+                                    <tr><td class="px-4 py-2">雾</td><td class="px-4 py-2 font-medium">Fog</td><td class="px-4 py-2 text-slate-500">能见度低</td></tr>
+                                    <tr><td class="px-4 py-2">轻雾</td><td class="px-4 py-2 font-medium">Mist</td><td class="px-4 py-2 text-slate-500">较薄</td></tr>
+                                    <tr><td class="px-4 py-2">浓雾</td><td class="px-4 py-2 font-medium">Dense Fog</td><td class="px-4 py-2 text-slate-500">危险</td></tr>
+                                    <tr><td class="px-4 py-2">霾</td><td class="px-4 py-2 font-medium">Haze</td><td class="px-4 py-2 text-slate-500">干悬浮</td></tr>
+                                    <tr><td class="px-4 py-2">雾霾</td><td class="px-4 py-2 font-medium">Smog</td><td class="px-4 py-2 text-slate-500">污染型烟雾</td></tr>
+                                    <tr><td class="px-4 py-2">烟雾</td><td class="px-4 py-2 font-medium">Smoke</td><td class="px-4 py-2 text-slate-500">火源</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="px-4 py-2 bg-blue-400 text-white text-sm font-bold">4️⃣ 风类 Wind (as Weather Forms)</div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead>
+                                    <tr class="bg-slate-50"><th class="px-4 py-2 border-b">中文</th><th class="px-4 py-2 border-b">英文</th><th class="px-4 py-2 border-b">说明</th></tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100">
+                                    <tr><td class="px-4 py-2">风</td><td class="px-4 py-2 font-medium">Wind</td><td class="px-4 py-2 text-slate-500">总称</td></tr>
+                                    <tr><td class="px-4 py-2">微风</td><td class="px-4 py-2 font-medium">Breeze</td><td class="px-4 py-2 text-slate-500">轻</td></tr>
+                                    <tr><td class="px-4 py-2">大风</td><td class="px-4 py-2 font-medium">Strong Wind</td><td class="px-4 py-2 text-slate-500">强</td></tr>
+                                    <tr><td class="px-4 py-2">阵风</td><td class="px-4 py-2 font-medium">Gusts</td><td class="px-4 py-2 text-slate-500">突发</td></tr>
+                                    <tr><td class="px-4 py-2">狂风</td><td class="px-4 py-2 font-medium">Gale</td><td class="px-4 py-2 text-slate-500">警报级</td></tr>
+                                    <tr><td class="px-4 py-2">飓风</td><td class="px-4 py-2 font-medium">Hurricane</td><td class="px-4 py-2 text-slate-500">热带系统</td></tr>
+                                    <tr><td class="px-4 py-2">台风</td><td class="px-4 py-2 font-medium">Typhoon</td><td class="px-4 py-2 text-slate-500">区域命名</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="px-4 py-2 bg-red-700 text-white text-sm font-bold">5️⃣ 风暴与极端天气 Storms & Extreme</div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead>
+                                    <tr class="bg-slate-50"><th class="px-4 py-2 border-b">中文</th><th class="px-4 py-2 border-b">英文</th><th class="px-4 py-2 border-b">说明</th></tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100">
+                                    <tr><td class="px-4 py-2">暴风雨</td><td class="px-4 py-2 font-medium">Storm</td><td class="px-4 py-2 text-slate-500">广义</td></tr>
+                                    <tr><td class="px-4 py-2">雷暴</td><td class="px-4 py-2 font-medium">Severe Thunderstorm</td><td class="px-4 py-2 text-slate-500">强对流</td></tr>
+                                    <tr><td class="px-4 py-2">沙尘暴</td><td class="px-4 py-2 font-medium">Sandstorm / Dust Storm</td><td class="px-4 py-2 text-slate-500">能见度骤降</td></tr>
+                                    <tr><td class="px-4 py-2">龙卷风</td><td class="px-4 py-2 font-medium">Tornado</td><td class="px-4 py-2 text-slate-500">旋转气柱</td></tr>
+                                    <tr><td class="px-4 py-2">冰暴</td><td class="px-4 py-2 font-medium">Ice Storm</td><td class="px-4 py-2 text-slate-500">大范围冻雨</td></tr>
+                                    <tr><td class="px-4 py-2">热浪</td><td class="px-4 py-2 font-medium">Heat Wave</td><td class="px-4 py-2 text-slate-500">持续高温</td></tr>
+                                    <tr><td class="px-4 py-2">寒潮</td><td class="px-4 py-2 font-medium">Cold Wave</td><td class="px-4 py-2 text-slate-500">强冷空气</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="radar" class="scroll-mt-24">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold flex items-center gap-2 text-slate-800">
+                        <span class="bg-green-100 p-2 rounded-lg text-green-600">📡</span> 雷达与地图 Radar & Maps
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 flex justify-between items-center term-card">
+                        <div>
+                            <p class="text-xs text-slate-500 font-bold uppercase">Radar</p>
+                            <p class="text-lg font-bold">雷达</p>
+                        </div>
+                        <span class="text-slate-300 text-sm">Real-time Monitoring</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 flex justify-between items-center term-card">
+                        <div>
+                            <p class="text-xs text-slate-500 font-bold uppercase">Satellite Imagery</p>
+                            <p class="text-lg font-bold">云图</p>
+                        </div>
+                        <span class="text-slate-300 text-sm">Satellite View</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 flex justify-between items-center term-card">
+                        <div>
+                            <p class="text-xs text-slate-500 font-bold uppercase">Precipitation Radar</p>
+                            <p class="text-lg font-bold">降水雷达</p>
+                        </div>
+                        <span class="text-slate-300 text-sm">Rain/Snow Dist.</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 flex justify-between items-center term-card">
+                        <div>
+                            <p class="text-xs text-slate-500 font-bold uppercase">Wind Flow</p>
+                            <p class="text-lg font-bold">风场图</p>
+                        </div>
+                        <span class="text-slate-300 text-sm">Direction & Speed</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="air" class="scroll-mt-24">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold flex items-center gap-2 text-slate-800">
+                        <span class="bg-orange-100 p-2 rounded-lg text-orange-600">😷</span> 空气与花粉 Air & Pollen
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+                        <div class="p-3 bg-slate-50 border-b font-bold text-sm flex justify-between">
+                            <span>空气质量等级</span>
+                            <span>AQI Levels</span>
+                        </div>
+                        <div class="p-4 space-y-3">
+                            <div class="flex justify-between items-center"><span class="bg-green-500 text-white text-xs px-2 py-1 rounded w-24 text-center">Good 优</span> <span class="text-sm">空气清新 Fresh Air</span></div>
+                            <div class="flex justify-between items-center"><span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded w-24 text-center">Moderate 良</span> <span class="text-sm">可接受 Acceptable</span></div>
+                            <div class="flex justify-between items-center"><span class="bg-orange-500 text-white text-xs px-2 py-1 rounded w-24 text-center">Unhealthy 不健康</span> <span class="text-sm">敏感人群注意 Sensitive</span></div>
+                            <div class="flex justify-between items-center"><span class="bg-red-600 text-white text-xs px-2 py-1 rounded w-24 text-center">Hazardous 有害</span> <span class="text-sm">严重污染 Health Risk</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+                        <div class="p-3 bg-slate-50 border-b font-bold text-sm flex justify-between">
+                            <span>花粉类型</span>
+                            <span>Pollen Types</span>
+                        </div>
+                        <div class="p-4 space-y-4">
+                            <div class="flex justify-between">
+                                <span class="font-medium italic">Tree Pollen</span>
+                                <span>树木花粉 <small class="text-slate-400">(Spring)</small></span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium italic">Grass Pollen</span>
+                                <span>草类花粉 <small class="text-slate-400">(Summer)</small></span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium italic">Weed Pollen</span>
+                                <span>杂草花粉 <small class="text-slate-400">(Autumn)</small></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="indices" class="scroll-mt-24">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold flex items-center gap-2 text-slate-800">
+                        <span class="bg-yellow-100 p-2 rounded-lg text-yellow-600">🧴</span> 环境指数 Indices
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-lg mb-4 text-purple-600 flex justify-between items-baseline">
+                            <span>紫外线指数</span>
+                            <span class="text-sm font-normal text-slate-400">UV Index</span>
+                        </h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between pb-1 border-b"><span>Low (0-2) 低</span> <span class="text-slate-400">Safe 安全</span></div>
+                            <div class="flex justify-between pb-1 border-b"><span>Moderate (3-5) 中</span> <span class="text-slate-400">Sunscreen recommended</span></div>
+                            <div class="flex justify-between pb-1 border-b"><span>High (6-7) 高</span> <span class="text-slate-400">Protection required</span></div>
+                            <div class="flex justify-between"><span>Extreme (11+) 极端</span> <span class="text-red-500 font-bold">High Risk</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-lg mb-4 text-blue-600 flex justify-between items-baseline">
+                            <span>风力级别</span>
+                            <span class="text-sm font-normal text-slate-400">Wind Force</span>
+                        </h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between pb-1 border-b"><span>Calm / Light Breeze</span> <span class="text-slate-400">无风 / 微风</span></div>
+                            <div class="flex justify-between pb-1 border-b"><span>Fresh / Strong Wind</span> <span class="text-slate-400">清劲风 / 强风</span></div>
+                            <div class="flex justify-between pb-1 border-b"><span>Gusts</span> <span class="text-slate-400">阵风 (Sudden bursts)</span></div>
+                            <div class="flex justify-between"><span>Gale</span> <span class="text-red-500 font-bold">大风警报 Warning</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="parameters" class="scroll-mt-24">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold flex items-center gap-2 text-slate-800">
+                        <span class="bg-indigo-100 p-2 rounded-lg text-indigo-600">📊</span> 气象参数 Parameters
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-white p-4 rounded-xl border border-slate-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                                <span class="font-bold">露点 Dew Point</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-500">反映体感湿度：Humid (闷热), Oppressive (窒息感), Muggy (湿闷)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+                                <span class="font-bold">气压 Pressure</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-500">Rising (气压上升/转晴), Falling (气压下降/风雨将至)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-gray-400"></span>
+                                <span class="font-bold">能见度 Visibility</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-500">Excellent (极佳), Poor (较差), Fog (浓雾)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                                <span class="font-bold">湿度 Humidity</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-500">Relative Humidity (相对湿度), Comfortable (舒适区间)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="moon" class="scroll-mt-24">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold flex items-center gap-2 text-slate-800">
+                        <span class="bg-slate-800 p-2 rounded-lg text-white">🌙</span> 月相与天文 Moon & Astro
+                    </h2>
+                </div>
+                
+                <div class="bg-slate-900 text-white p-6 rounded-2xl overflow-hidden shadow-xl mb-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                        <div><div class="text-3xl mb-2">🌑</div><p class="text-xs text-slate-400 uppercase tracking-tighter">New Moon</p><p class="font-medium">新月</p></div>
+                        <div><div class="text-3xl mb-2">🌓</div><p class="text-xs text-slate-400 uppercase tracking-tighter">First Quarter</p><p class="font-medium">上弦月</p></div>
+                        <div><div class="text-3xl mb-2">🌕</div><p class="text-xs text-slate-400 uppercase tracking-tighter">Full Moon</p><p class="font-medium">满月</p></div>
+                        <div><div class="text-3xl mb-2">🌗</div><p class="text-xs text-slate-400 uppercase tracking-tighter">Last Quarter</p><p class="font-medium">下弦月</p></div>
+                        <div><div class="text-3xl mb-2">🌒</div><p class="text-xs text-slate-400 uppercase tracking-tighter">Waxing Crescent</p><p class="font-medium">渐盈眉月</p></div>
+                        <div><div class="text-3xl mb-2">🌔</div><p class="text-xs text-slate-400 uppercase tracking-tighter">Waxing Gibbous</p><p class="font-medium">渐盈凸月</p></div>
+                        <div><div class="text-3xl mb-2">🌖</div><p class="text-xs text-slate-400 uppercase tracking-tighter">Waning Gibbous</p><p class="font-medium">渐亏凸月</p></div>
+                        <div><div class="text-3xl mb-2">🌘</div><p class="text-xs text-slate-400 uppercase tracking-tighter">Waning Crescent</p><p class="font-medium">残月</p></div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl border border-slate-200 p-6">
+                    <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        词源拆解 Morphology Breakdown
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="moon-breakdown p-3 rounded">
+                            <p class="text-sm font-bold text-blue-600 mb-1">渐 (jiàn) + 盈 (yíng) = 渐盈 (Waxing)</p>
+                            <div class="space-y-1">
+                                <p class="text-xs text-slate-600"><strong>渐:</strong> Gradually / 逐渐</p>
+                                <p class="text-xs text-slate-600"><strong>盈:</strong> To fill / 充满、盈满</p>
+                                <p class="text-xs text-slate-400 italic">Combined: The moon is gradually filling its circle.</p>
+                            </div>
+                        </div>
+                        <div class="moon-breakdown p-3 rounded">
+                            <p class="text-sm font-bold text-blue-600 mb-1">渐 (jiàn) + 亏 (kuī) = 渐亏 (Waning)</p>
+                            <div class="space-y-1">
+                                <p class="text-xs text-slate-600"><strong>渐:</strong> Gradually / 逐渐</p>
+                                <p class="text-xs text-slate-600"><strong>亏:</strong> To lose or diminish / 减少、亏损</p>
+                                <p class="text-xs text-slate-400 italic">Combined: The moon is gradually losing its light.</p>
+                            </div>
+                        </div>
+                        <div class="moon-breakdown p-3 rounded">
+                            <p class="text-sm font-bold text-blue-600 mb-1">上/下 (shàng/xià) + 弦 (xián) = 弦月 (Quarter)</p>
+                            <div class="space-y-1">
+                                <p class="text-xs text-slate-600"><strong>上/下:</strong> Upper or lower</p>
+                                <p class="text-xs text-slate-600"><strong>弦:</strong> Bowstring / 弓弦</p>
+                                <p class="text-xs text-slate-400 italic">Combined: Half moon with a straight edge like a bowstring.</p>
+                            </div>
+                        </div>
+                        <div class="moon-breakdown p-3 rounded">
+                            <p class="text-sm font-bold text-blue-600 mb-1">凸 (tū) + 月 (yuè) = 凸月 (Gibbous)</p>
+                            <div class="space-y-1">
+                                <p class="text-xs text-slate-600"><strong>凸:</strong> Convex / 高出、突起</p>
+                                <p class="text-xs text-slate-400 italic">Combined: A bulging moon shape (greater than 50%).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm font-semibold">天气预报术语对照表 · Weather Forecast Glossary</p>
+            <p class="text-slate-400 text-xs mt-2 italic">Based on CMA standards & Weather App Common Interface (v2025)</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.sidebar-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
